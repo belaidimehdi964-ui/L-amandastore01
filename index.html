@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Amanda Store - Premium Sports Jerseys</title>
+    <link rel="icon" type="image/png" href="Gemini_Generated_Image_khus8pkhus8pkhus.png">
+    <style>
+        :root {
+            --primary-color: #2c5530; /* Emerald from your logo */
+            --secondary-color: #4a7c59;
+            --accent-color: #a8d5ba;
+            --bg-color: #f7fbf7;
+            --text-dark: #222;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color); 
+            color: var(--text-dark);
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-color: white; 
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .site-logo {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .header-cart-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .header-cart-btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-1px);
+        }
+
+        .welcome-banner {
+            background: linear-gradient(135deg, #1e3a20, var(--primary-color));
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .welcome-banner h2 {
+            margin: 0 0 10px 0;
+            font-size: 2.4em;
+        }
+
+        .welcome-banner p {
+            margin: 0;
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .product-item {
+            background-color: white;
+            padding: 24px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            border: 1px solid #e6f0e6;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .product-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+        }
+
+        .product-item img {
+            max-width: 100%;
+            height: 200px;
+            object-fit: contain;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            background-color: #fafafa;
+        }
+
+        .product-item h3 {
+            margin: 10px 0 5px;
+            color: #111;
+            font-size: 1.2em;
+            text-transform: capitalize;
+        }
+
+        .product-item p.price {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.3em;
+            margin: 0 0 12px;
+        }
+
+        .stock-indicator {
+            font-size: 0.85em;
+            margin-bottom: 15px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+        
+        .stock-in {
+            background-color: #edf7ed;
+            color: #2e7d32;
+        }
+        
+        .stock-out {
+            background-color: #fdeded;
+            color: #d32f2f;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+            font-size: 0.95em;
+            transition: all 0.2s;
+        }
+
+        .btn-buy {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-buy:hover:not(:disabled) {
+            background-color: #1e3a20;
+        }
+
+        .btn-basket {
+            background-color: #f0f7f0;
+            color: var(--primary-color);
+            border: 1px solid var(--accent-color);
+        }
+
+        .btn-basket:hover:not(:disabled) {
+            background-color: var(--accent-color);
+        }
+
+        .btn:disabled {
+            background-color: #eaeaea;
+            color: #aaa;
+            cursor: not-allowed;
+            border: none;
+        }
+
+        /* Side Contact Bar */
+        .side-contact-bar {
+            position: fixed;
+            right: 0;
+            top: 35%;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .contact-tab {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9em;
+            border-radius: 8px 0 0 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transform: translateX(calc(100% - 46px));
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: -2px 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .contact-tab:hover {
+            transform: translateX(0);
+            background-color: var(--secondary-color);
+        }
+
+        .contact-tab svg {
+            min-width: 18px;
+            fill: white;
+        }
+
+        /* Checkout Form Section */
+        .checkout-section {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            max-width: 600px;
+            margin: 40px auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            border: 1px solid #e6f0e6;
+        }
+
+        .checkout-section h2 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 1.8em;
+        }
+
+        .basket-summary {
+            background-color: #fafbfa;
+            border: 1px dashed var(--accent-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .basket-items-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .basket-items-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #edf4ed;
+        }
+
+        .total-price-box {
+            text-align: right;
+            font-weight: bold;
+            font-size: 1.2em;
+            color: var(--primary-color);
+            margin-top: 15px;
+        }
+
+        .checkout-form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: var(--secondary-color);
+            font-size: 0.95em;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #c2dec2;
+            border-radius: 6px;
+            font-size: 1em;
+            box-sizing: border-box;
+            background-color: white;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        .btn-send {
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 1.1em;
+            padding: 14px;
+            width: 100%;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.2s;
+        }
+
+        .btn-send:hover {
+            background-color: #1e3a20;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #777;
+            font-size: 0.9em;
+            border-top: 1px solid #edf4ed;
+            background-color: white;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 12px;
+            }
+            main {
+                padding: 20px;
+            }
+            .checkout-section {
+                padding: 25px 20px;
+            }
+            .welcome-banner h2 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="side-contact-bar">
+        <a href="tel:0672434217" class="contact-tab">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            <span>Call Us Now</span>
+        </a>
+        <a href="mailto:lamandastore998@gmail.com?subject=l'Amanda%20Store%20Inquiry" class="contact-tab">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <span>Email Support</span>
+        </a>
+    </div>
+
+    <header>
+        <div class="header-logo-container">
+            <img src="Gemini_Generated_Image_khus8pkhus8pkhus.png" alt="l'Amanda store Logo" class="site-logo">
+            <h1>L'Amanda Store</h1>
+        </div>
+        <a href="#checkout" class="header-cart-btn" id="cartNavBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+            <span>Basket (0)</span>
+        </a>
+    </header>
+
+    <div class="welcome-banner">
+        <h2>Welcome to L'Amanda Store</h2>
+        <p>Discover our premium selection of authentic sports jerseys. Reliable delivery options available!</p>
+    </div>
+
+    <main>
+        <div class="product-grid">
+            
+            <!-- Item 1 -->
+            <div class="product-item" id="item-mexico">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsmSIL2OwObv6VgbeYuSxze01sYSGgQXNbqcGvTXjbQQ&s=10" alt="Mexico Jersey">
+                <h3>Mexico Jersey</h3>
+                <p class="price">3,000 DA</p>
+                <div class="stock-indicator" id="stock-mexico"></div>
+                <div class="btn-container">
+                    <button class="btn btn-buy" onclick="purchaseAction('Mexico Jersey', 3000, true)">Buy</button>
+                    <button class="btn btn-basket" onclick="purchaseAction('Mexico Jersey', 3000, false)">To Basket</button>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="product-item" id="item-barcelona">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMLYDWDIWWKcFaQcxCm-KMEbvufYcHh34FSYHFJwZzIg&s=10" alt="Barcelona Jersey">
+                <h3>Barcelona Jersey</h3>
+                <p class="price">3,000 DA</p>
+                <div class="stock-indicator" id="stock-barcelona"></div>
+                <div class="btn-container">
+                    <button class="btn btn-buy" onclick="purchaseAction('Barcelona Jersey', 3000, true)">Buy</button>
+                    <button class="btn btn-basket" onclick="purchaseAction('Barcelona Jersey', 3000, false)">To Basket</button>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="product-item" id="item-manchester">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwaHVin5kq-Kp3tNd8Y2C4Jd5cOFsL2zgyIVHEznRXWg&s" alt="Manchester United Jersey">
+                <h3>Manchester United Full Kit</h3>
+                <p class="price">2,500 DA</p>
+                <div class="stock-indicator" id="stock-manchester"></div>
+                <div class="btn-container">
+                    <button class="btn btn-buy" onclick="purchaseAction('Manchester United Full Kit', 2500, true)">Buy</button>
+                    <button class="btn btn-basket" onclick="purchaseAction('Manchester United Full Kit', 2500, false)">To Basket</button>
+                </div>
+            </div>
+
+            <!-- Item 4 (Note: Replace this image src with a real link) -->
+            <div class="product-item" id="item-madrid">
+                <img src="https://placehold.co/300x200/edf7ed/2c5530?text=Madrid+Jersey" alt="Madrid Jersey">
+                <h3>Madrid Jersey</h3>
+                <p class="price">3,000 DA</p>
+                <div class="stock-indicator" id="stock-madrid"></div>
+                <div class="btn-container">
+                    <button class="btn btn-buy" onclick="purchaseAction('Madrid Jersey', 3000, true)">Buy</button>
+                    <button class="btn btn-basket" onclick="purchaseAction('Madrid Jersey', 3000, false)">To Basket</button>
+                </div> 
+            </div>
+
+            <!-- Item 5 -->
+            <div class="product-item" id="item-blank1">
+                <img src="https://placehold.co/300x200/edf7ed/2c5530?text=Premium+Jersey+1" alt="Premium Jersey 1">
+                <h3>Premium Jersey 1</h3>
+                <p class="price">2,800 DA</p>
+                <div class="stock-indicator" id="stock-blank1"></div>
+                <div class="btn-container">
+                    <button class="btn btn-buy" onclick="purchaseAction('Premium Jersey 1', 2800, true)">Buy</button>
+                    <button class="btn btn-basket" onclick="purchaseAction('Premium Jersey 1', 2800, false)">To Basket</button>
+                </div> 
+            </div>        
+
+            <!-- Item 6 -->
+            <div class="product-item" id="item-blank2">
+                <img src="https://placehold.co/300x200/edf7ed/2c5530?text=Premium+Jersey+2" alt="Premium Jersey 2">
+                <h3>Premium Jersey 2</h3>
+                <p class="price">2,800 DA</p>
+                <div class="stock-indicator" id="stock-blank2"></div>
+                <div class="btn-container">
+                    <button class="btn btn-buy" onclick="purchaseAction('Premium Jersey 2', 2800, true)">Buy</button>
+                    <button class="btn btn-basket" onclick="purchaseAction('Premium Jersey 2', 2800, false)">To Basket</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="checkout" class="checkout-section">
+            <h2>Checkout Form</h2>
+            
+            <div class="basket-summary">
+                <h4 style="margin-top: 0; color: var(--primary-color);">Your Selected Items:</h4>
+                <ul class="basket-items-list" id="basketList">
+                    <li style="color: #888;">Your basket is empty.</li>
+                </ul>
+                <div class="total-price-box">Total: <span id="totalPrice">0</span> DA</div>
+            </div>
+
+            <form id="orderForm" action="https://formspree.io/f/xlgyrgpg" method="POST" class="checkout-form">
+                <input type="hidden" id="hiddenCartData" name="Items_Ordered" value="">
+
+                <div class="form-group">
+                    <label for="clientName">Full Name:</label>
+                    <input type="text" id="clientName" name="Client_Name" required placeholder="Enter your name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="clientPhone">Phone Number:</label>
+                    <input type="tel" id="clientPhone" name="Client_Phone" required placeholder="Enter your phone number">
+                </div>
+
+                <div class="form-group">
+                    <label for="clientSize">Choose Your Size:</label>
+                    <select id="clientSize" name="Client_Size" required>
+                        <option value="" disabled selected>Select a size...</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="clientAddress">Shipping Address:</label>
+                    <textarea id="clientAddress" name="Client_Address" required placeholder="Enter your full address details"></textarea>
+                </div>
+                
+                <button type="submit" class="btn-send">Send Order</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 L'Amanda Store. All rights reserved.
+    </footer>
+
+    <script>
+        const initialInventory = {
+            'Mexico Jersey': 5,
+            'Barcelona Jersey': 2,
+            'Manchester United Full Kit': 0, 
+            'Madrid Jersey': 8,
+            'Premium Jersey 1': 4,
+            'Premium Jersey 2': 1
+        };
+
+        let inventory = JSON.parse(localStorage.getItem('store_inventory'));
+        if (!inventory) {
+            inventory = { ...initialInventory };
+            localStorage.setItem('store_inventory', JSON.stringify(inventory));
+        }
+
+        let cart = [];
+
+        function renderStockDisplay() {
+            const stockMap = {
+                'Mexico Jersey': 'stock-mexico',
+                'Barcelona Jersey': 'stock-barcelona',
+                'Manchester United Full Kit': 'stock-manchester',
+                'Madrid Jersey': 'stock-madrid',
+                'Premium Jersey 1': 'stock-blank1',
+                'Premium Jersey 2': 'stock-blank2'
+            };
+
+            for (let name in inventory) {
+                let currentStock = inventory[name];
+                let elementId = stockMap[name];
+                let container = document.getElementById(elementId);
+                
+                if (container) {
+                    let parentItem = container.closest('.product-item');
+                    let actionButtons = parentItem.querySelectorAll('.btn');
+
+                    if (currentStock <= 0) {
+                        container.innerHTML = `<span class="stock-out">Sold Out</span>`;
+                        actionButtons.forEach(btn => btn.disabled = true);
+                    } else {
+                        container.innerHTML = `<span class="stock-in">Only ${currentStock} left</span>`;
+                        actionButtons.forEach(btn => btn.disabled = false);
+                    }
+                }
+            }
+        }
+
+        function purchaseAction(itemName, itemPrice, autoScroll) {
+            let totalInCart = cart.filter(item => item.name === itemName).length;
+
+            if (inventory[itemName] - totalInCart <= 0) {
+                alert("Sorry, there are no more quantities available of this item!");
+                return;
+            }
+
+            addToCart(itemName, itemPrice, autoScroll);
+        }
+
+        function addToCart(itemName, itemPrice, autoScroll) {
+            cart.push({ name: itemName, price: itemPrice });
+            updateBasketUI();
+
+            if(autoScroll) {
+                document.getElementById('checkout').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function updateBasketUI() {
+            document.getElementById('cartNavBtn').querySelector('span').innerText = `Basket (${cart.length})`;
+
+            const listContainer = document.getElementById('basketList');
+            const totalContainer = document.getElementById('totalPrice');
+            
+            if (cart.length === 0) {
+                listContainer.innerHTML = `<li style="color: #888;">Your basket is empty.</li>`;
+                totalContainer.innerText = "0";
+                document.getElementById('hiddenCartData').value = "";
+                return;
+            }
+
+            let listHTML = "";
+            let finalTotal = 0;
+            let emailText = "";
+
+            cart.forEach((item, index) => {
+                listHTML += `<li><span>${item.name}</span> <strong>${item.price.toLocaleString()} DA</strong></li>`;
+                finalTotal += item.price;
+                emailText += `[Item ${index + 1}: ${item.name} - ${item.price} DA] `;
+            });
+
+            listContainer.innerHTML = listHTML;
+            totalContainer.innerText = finalTotal.toLocaleString();
+
+            document.getElementById('hiddenCartData').value = `${emailText} | Total Price: ${finalTotal} DA`;
+        }
+
+        document.getElementById('orderForm').addEventListener('submit', function(event) {
+            if(cart.length === 0) {
+                event.preventDefault(); 
+                alert("Your basket is empty! Please add a jersey before submitting.");
+                return;
+            }
+
+            cart.forEach(item => {
+                if(inventory[item.name] > 0) {
+                    inventory[item.name]--;
+                }
+            });
+
+            localStorage.setItem('store_inventory', JSON.stringify(inventory));
+            alert("Thank you for buying! Your order is being sent via Formspree.");
+        });
+
+        renderStockDisplay();
+    </script>
+</body>
+</html>
