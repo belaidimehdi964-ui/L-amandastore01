@@ -3,26 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>l'Amanda store - Green Fashion</title>
+    <title>L'Amanda Store - Premium Sports Jerseys</title>
     <link rel="icon" type="image/png" href="Gemini_Generated_Image_khus8pkhus8pkhus.png">
     <style>
+        :root {
+            --primary-color: #2c5530; 
+            --secondary-color: #4a7c59;
+            --accent-color: #a8d5ba;
+            --bg-color: #f7fbf7;
+            --text-dark: #222;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f1f8f1; 
-            color: #333;
+            background-color: var(--bg-color); 
+            color: var(--text-dark);
             scroll-behavior: smooth;
         }
 
         header {
-            background-color: #a8d5ba; 
-            color: white;
-            padding: 15px 50px;
+            background-color: white; 
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -31,51 +38,52 @@
         .header-logo-container {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
 
         .site-logo {
-            height: 50px;
+            height: 45px;
             width: auto;
-            border-radius: 5px;
+            object-fit: contain;
         }
 
         header h1 {
             margin: 0;
-            font-size: 1.8em;
+            font-size: 1.5em;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
         }
 
         .header-cart-btn {
-            background-color: white;
-            color: #4a7c59;
-            border: 2px solid #4a7c59;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
             padding: 10px 20px;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
+            border-radius: 6px;
+            font-weight: 600;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            transition: all 0.3s;
+            transition: all 0.2s ease;
         }
 
         .header-cart-btn:hover {
-            background-color: #f1f8f1;
+            background-color: var(--secondary-color);
+            transform: translateY(-1px);
         }
 
-        /* Welcome Section */
         .welcome-banner {
-            background-color: #2c5530;
+            background: linear-gradient(135deg, #1e3a20, var(--primary-color));
             color: white;
             text-align: center;
-            padding: 40px 20px;
-            margin-bottom: 20px;
+            padding: 50px 20px;
         }
 
         .welcome-banner h2 {
             margin: 0 0 10px 0;
-            font-size: 2.2em;
+            font-size: 2.4em;
         }
 
         .welcome-banner p {
@@ -85,83 +93,98 @@
         }
 
         main {
-            padding: 20px 50px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
         }
 
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
             margin-bottom: 50px;
         }
 
         .product-item {
             background-color: white;
-            padding: 20px;
-            border-radius: 8px;
+            padding: 24px;
+            border-radius: 12px;
             text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-            border: 1px solid #e0eee0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            border: 1px solid #e6f0e6;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .product-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
         }
 
         .product-item img {
             max-width: 100%;
-            height: 180px;
+            height: 200px;
             object-fit: contain;
-            border-radius: 4px;
+            border-radius: 6px;
             margin-bottom: 15px;
+            background-color: #fafafa;
         }
 
         .product-item h3 {
-            margin: 10px 0;
-            color: #2c5530;
+            margin: 10px 0 5px;
+            color: #111;
+            font-size: 1.2em;
+            text-transform: capitalize;
         }
 
         .product-item p.price {
-            color: #4a7c59;
-            font-weight: bold;
-            font-size: 1.2em;
-            margin: 5px 0 10px;
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.3em;
+            margin: 0 0 12px;
         }
 
-        /* Stock Counter Styles */
         .stock-indicator {
-            font-size: 0.9em;
+            font-size: 0.85em;
             margin-bottom: 15px;
-            font-weight: 500;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+            display: inline-block;
         }
+        
         .stock-in {
-            color: #666;
+            background-color: #edf7ed;
+            color: #2e7d32;
         }
+        
         .stock-out {
-            color: #d9534f;
-            font-weight: bold;
+            background-color: #fdeded;
+            color: #d32f2f;
         }
 
         .btn-container {
             display: flex;
             gap: 10px;
-            justify-content: center;
         }
 
         .btn {
             flex: 1;
-            padding: 10px;
+            padding: 12px;
             border: none;
-            border-radius: 5px;
+            border-radius: 6px;
             cursor: pointer;
             font-weight: bold;
             text-decoration: none;
             text-align: center;
-            transition: background 0.3s;
+            font-size: 0.95em;
+            transition: all 0.2s;
         }
 
         .btn-buy {
-            background-color: #2c5530;
+            background-color: var(--primary-color);
             color: white;
         }
 
@@ -170,50 +193,52 @@
         }
 
         .btn-basket {
-            background-color: #a8d5ba;
-            color: #2c5530;
+            background-color: #f0f7f0;
+            color: var(--primary-color);
+            border: 1px solid var(--accent-color);
         }
 
         .btn-basket:hover:not(:disabled) {
-            background-color: #8cc0a1;
+            background-color: var(--accent-color);
         }
 
         .btn:disabled {
-            background-color: #e0e0e0;
-            color: #999;
+            background-color: #eaeaea;
+            color: #aaa;
             cursor: not-allowed;
+            border: none;
         }
 
         /* Side Contact Bar */
         .side-contact-bar {
             position: fixed;
             right: 0;
-            top: 30%;
+            top: 35%;
             z-index: 1000;
             display: flex;
             flex-direction: column;
-            gap: 2px;
+            gap: 4px;
         }
 
         .contact-tab {
-            background-color: #2c5530;
+            background-color: var(--primary-color);
             color: white;
-            padding: 12px 15px;
+            padding: 12px 16px;
             text-decoration: none;
             font-weight: bold;
             font-size: 0.9em;
-            border-radius: 5px 0 0 5px;
+            border-radius: 8px 0 0 8px;
             display: flex;
             align-items: center;
-            gap: 10px;
-            transform: translateX(calc(100% - 45px));
-            transition: transform 0.3s ease;
-            box-shadow: -2px 2px 5px rgba(0,0,0,0.1);
+            gap: 12px;
+            transform: translateX(calc(100% - 46px));
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: -2px 4px 10px rgba(0,0,0,0.1);
         }
 
         .contact-tab:hover {
             transform: translateX(0);
-            background-color: #4a7c59;
+            background-color: var(--secondary-color);
         }
 
         .contact-tab svg {
@@ -225,26 +250,26 @@
         .checkout-section {
             background-color: white;
             padding: 40px;
-            border-radius: 8px;
+            border-radius: 12px;
             max-width: 600px;
             margin: 40px auto;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            border: 1px solid #e0eee0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            border: 1px solid #e6f0e6;
         }
 
         .checkout-section h2 {
             text-align: center;
-            color: #2c5530;
+            color: var(--primary-color);
             margin-top: 0;
+            font-size: 1.8em;
         }
 
-        /* Basket Summary Box */
         .basket-summary {
-            background-color: #f9fdf9;
-            border: 1px dashed #a8d5ba;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
+            background-color: #fafbfa;
+            border: 1px dashed var(--accent-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
         }
 
         .basket-items-list {
@@ -256,41 +281,50 @@
         .basket-items-list li {
             display: flex;
             justify-content: space-between;
-            padding: 5px 0;
-            border-bottom: 1px solid #e0eee0;
+            padding: 8px 0;
+            border-bottom: 1px solid #edf4ed;
         }
 
         .total-price-box {
             text-align: right;
             font-weight: bold;
-            font-size: 1.1em;
-            color: #2c5530;
-            margin-top: 10px;
+            font-size: 1.2em;
+            color: var(--primary-color);
+            margin-top: 15px;
         }
 
         .checkout-form {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 18px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #4a7c59;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: var(--secondary-color);
+            font-size: 0.95em;
         }
 
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ccdcc0;
-            border-radius: 5px;
+            padding: 12px 14px;
+            border: 1px solid #c2dec2;
+            border-radius: 6px;
             font-size: 1em;
             box-sizing: border-box;
             background-color: white;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
         }
 
         .form-group textarea {
@@ -299,16 +333,17 @@
         }
 
         .btn-send {
-            background-color: #2c5530;
+            background-color: var(--primary-color);
             color: white;
-            font-size: 1.2em;
-            padding: 15px;
+            font-size: 1.1em;
+            padding: 14px;
             width: 100%;
             border: none;
-            border-radius: 5px;
+            border-radius: 6px;
             font-weight: bold;
             cursor: pointer;
-            margin-top: 20px;
+            margin-top: 10px;
+            transition: background 0.2s;
         }
 
         .btn-send:hover {
@@ -317,63 +352,24 @@
 
         footer {
             text-align: center;
-            padding: 30px;
-            color: #666;
+            padding: 40px 20px;
+            color: #777;
             font-size: 0.9em;
-        }
-
-        .features-bar {
-            display: flex;
-            justify-content: space-around;
+            border-top: 1px solid #edf4ed;
             background-color: white;
-            padding: 20px;
-            margin: 20px 50px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-            border: 1px solid #e0eee0;
-            text-align: center;
-        }
-
-        .feature-item h4 {
-            margin: 0 0 5px 0;
-            color: #2c5530;
-        }
-
-        .feature-item p {
-            margin: 0;
-            font-size: 0.9em;
-            color: #666;
-        }
-
-        /* Responsive Mobile Layout Fixes */
-        @media (max-width: 1024px) {
-            .product-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
         }
 
         @media (max-width: 768px) {
             header {
                 padding: 15px 20px;
                 flex-direction: column;
-                gap: 15px;
-                text-align: center;
-            }
-            .features-bar {
-                flex-direction: column;
-                gap: 15px;
-                margin: 20px;
+                gap: 12px;
             }
             main {
                 padding: 20px;
             }
-            .product-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
             .checkout-section {
-                padding: 20px;
-                margin: 20px;
+                padding: 25px 20px;
             }
             .welcome-banner h2 {
                 font-size: 1.8em;
@@ -383,13 +379,12 @@
 </head>
 <body>
 
-    <!-- Floating Contact Side Bar (Change phone and email here) -->
     <div class="side-contact-bar">
         <a href="tel:0672434217" class="contact-tab">
             <svg viewBox="0 0 24 24" width="18" height="18"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
             <span>Call Us Now</span>
         </a>
-        <a href="mailto:lamndastore998@gmai.com?subject=l'Amanda%20Store%20Inquiry" class="contact-tab">
+        <a href="mailto:gangasteralg@gmail.com?subject=l'Amanda%20Store%20Inquiry" class="contact-tab"></a>
             <svg viewBox="0 0 24 24" width="18" height="18"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
             <span>Email Support</span>
         </a>
@@ -397,8 +392,8 @@
 
     <header>
         <div class="header-logo-container">
-            <img src="Gemini_Generated_Image_khus8pkhus8pkhus.png" alt="l'Amande store Logo" class="site-logo">
-            <h1>l'Amanda store</h1>
+            <img src="Gemini_Generated_Image_khus8pkhus8pkhus.png" alt="l'Amanda store Logo" class="site-logo">
+            <h1>L'Amanda Store</h1>
         </div>
         <a href="#checkout" class="header-cart-btn" id="cartNavBtn">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
@@ -406,10 +401,9 @@
         </a>
     </header>
 
-    <!-- Welcome Sign -->
     <div class="welcome-banner">
-        <h2>Welcome to l'Amanda Store!</h2>
-        <p>Discover our premium selection of authentic sports jerseys. cheap delivery on select items!</p>
+        <h2>Welcome to L'Amanda Store</h2>
+        <p>Discover our premium selection of authentic sports jerseys. Reliable delivery options available!</p>
     </div>
 
     <main>
@@ -417,87 +411,86 @@
             
             <!-- Item 1 -->
             <div class="product-item" id="item-mexico">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsmSIL2OwObv6VgbeYuSxze01sYSGgQXNbqcGvTXjbQQ&s=10" alt="mexico jersey">
-                <h3>mexico jersey</h3>
-                <p class="price">da 3000</p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsmSIL2OwObv6VgbeYuSxze01sYSGgQXNbqcGvTXjbQQ&s=10" alt="Mexico Jersey">
+                <h3>Mexico Jersey</h3>
+                <p class="price">3,000 DA</p>
                 <div class="stock-indicator" id="stock-mexico"></div>
                 <div class="btn-container">
-                    <button class="btn btn-buy" onclick="purchaseAction('mexico jersey', 3000, true)">Buy</button>
-                    <button class="btn btn-basket" onclick="purchaseAction('mexico jersey', 3000, false)">to the basket</button>
+                    <button class="btn btn-buy" onclick="purchaseAction('Mexico Jersey', 3000, true)">Buy</button>
+                    <button class="btn btn-basket" onclick="purchaseAction('Mexico Jersey', 3000, false)">To Basket</button>
                 </div>
             </div>
 
             <!-- Item 2 -->
             <div class="product-item" id="item-barcelona">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMLYDWDIWWKcFaQcxCm-KMEbvufYcHh34FSYHFJwZzIg&s=10" alt="barcelona jersey">
-                <h3>barcelona jersey</h3>
-                <p class="price">da 3000</p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMLYDWDIWWKcFaQcxCm-KMEbvufYcHh34FSYHFJwZzIg&s=10" alt="Barcelona Jersey">
+                <h3>Barcelona Jersey</h3>
+                <p class="price">3,000 DA</p>
                 <div class="stock-indicator" id="stock-barcelona"></div>
                 <div class="btn-container">
-                    <button class="btn btn-buy" onclick="purchaseAction('barcelona jersey', 3000, true)">Buy</button>
-                    <button class="btn btn-basket" onclick="purchaseAction('barcelona jersey', 3000, false)">to the basket</button>
+                    <button class="btn btn-buy" onclick="purchaseAction('Barcelona Jersey', 3000, true)">Buy</button>
+                    <button class="btn btn-basket" onclick="purchaseAction('Barcelona Jersey', 3000, false)">To Basket</button>
                 </div>
             </div>
 
             <!-- Item 3 -->
             <div class="product-item" id="item-manchester">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwaHVin5kq-Kp3tNd8Y2C4Jd5cOFsL2zgyIVHEznRXWg&s" alt="manchester united jersey">
-                <h3>manchester united full jersey</h3>
-                <p class="price">da 2500</p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwaHVin5kq-Kp3tNd8Y2C4Jd5cOFsL2zgyIVHEznRXWg&s" alt="Manchester United Jersey">
+                <h3>Manchester United Full Kit</h3>
+                <p class="price">2,500 DA</p>
                 <div class="stock-indicator" id="stock-manchester"></div>
                 <div class="btn-container">
-                    <button class="btn btn-buy" onclick="purchaseAction('manchester united full jersey', 2500, true)">Buy</button>
-                    <button class="btn btn-basket" onclick="purchaseAction('manchester united full jersey', 2500, false)">to the basket</button>
+                    <button class="btn btn-buy" onclick="purchaseAction('Manchester United Full Kit', 2500, true)">Buy</button>
+                    <button class="btn btn-basket" onclick="purchaseAction('Manchester United Full Kit', 2500, false)">To Basket</button>
                 </div>
             </div>
 
             <!-- Item 4 -->
             <div class="product-item" id="item-madrid">
-                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQAlAMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAAEBQADBgcCAf/EAEUQAAEDAgMEBgQLBgUFAAAAAAEAAgMEEQUSIQYxQXETIlFhgbEykaHBBxQjJDM0QlJicnMVNUOi0eFjgpKywhYlU2WD/8QAGgEAAg..." alt="madrid jersey">
-                <h3>madrid jersey</h3>
-                <p class="price">da 3000</p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeLNCqjm1eLpFIL8InT4WHNG9sQl0nGy3n9gz-A-CdLQ&s=10" alt="Madrid Jersey">
+                <h3>Madrid Jersey</h3>
+                <p class="price">3,000 DA</p>
                 <div class="stock-indicator" id="stock-madrid"></div>
                 <div class="btn-container">
-                    <button class="btn btn-buy" onclick="purchaseAction('madrid jersey', 3000, true)">Buy</button>
-                    <button class="btn btn-basket" onclick="purchaseAction('madrid jersey', 3000, false)">to the basket</button>
+                    <button class="btn btn-buy" onclick="purchaseAction('Madrid Jersey', 3000, true)">Buy</button>
+                    <button class="btn btn-basket" onclick="purchaseAction('Madrid Jersey', 3000, false)">To Basket</button>
                 </div> 
             </div>
 
-            <!-- Item 5 -->
-            <div class="product-item" id="item-blank1">
-                <img src="" alt="jersey">
-                <h3>blank jersey 1</h3>
-                <p class="price">da 2800</p>
-                <div class="stock-indicator" id="stock-blank1"></div>
+            <!-- Item 5 - REPLACED WITH VINTAGE JERSEY -->
+            <div class="product-item" id="item-vintage">
+                <img src="https://placehold.co/300x200/edf7ed/2c5530?text=Vintage+Jersey" alt="Vintage Jersey">
+                <h3>Vintage Jersey</h3>
+                <p class="price">2,800 DA</p>
+                <div class="stock-indicator" id="stock-vintage"></div>
                 <div class="btn-container">
-                    <button class="btn btn-buy" onclick="purchaseAction('blank jersey 1', 2800, true)">Buy</button>
-                    <button class="btn btn-basket" onclick="purchaseAction('blank jersey 1', 2800, false)">to the basket</button>
+                    <button class="btn btn-buy" onclick="purchaseAction('Vintage Jersey', 2800, true)">Buy</button>
+                    <button class="btn btn-basket" onclick="purchaseAction('Vintage Jersey', 2800, false)">To Basket</button>
                 </div> 
             </div>        
 
             <!-- Item 6 -->
             <div class="product-item" id="item-blank2">
-                <img src="" alt="jersey">
-                <h3>blank jersey 2</h3>
-                <p class="price">da 2800</p>
+                <img src="https://placehold.co/300x200/edf7ed/2c5530?text=Premium+Jersey+2" alt="Premium Jersey 2">
+                <h3>Premium Jersey 2</h3>
+                <p class="price">2,800 DA</p>
                 <div class="stock-indicator" id="stock-blank2"></div>
                 <div class="btn-container">
-                    <button class="btn btn-buy" onclick="purchaseAction('blank jersey 2', 2800, true)">Buy</button>
-                    <button class="btn btn-basket" onclick="purchaseAction('blank jersey 2', 2800, false)">to the basket</button>
+                    <button class="btn btn-buy" onclick="purchaseAction('Premium Jersey 2', 2800, true)">Buy</button>
+                    <button class="btn btn-basket" onclick="purchaseAction('Premium Jersey 2', 2800, false)">To Basket</button>
                 </div>
             </div>
         </div>
 
-        <!-- Checkout Form Section -->
         <div id="checkout" class="checkout-section">
             <h2>Checkout Form</h2>
             
             <div class="basket-summary">
-                <h4 style="margin-top: 0; color: #2c5530;">Your Selected Items:</h4>
+                <h4 style="margin-top: 0; color: var(--primary-color);">Your Selected Items:</h4>
                 <ul class="basket-items-list" id="basketList">
                     <li style="color: #888;">Your basket is empty.</li>
                 </ul>
-                <div class="total-price-box">Total: da <span id="totalPrice">0</span></div>
+                <div class="total-price-box">Total: <span id="totalPrice">0</span> DA</div>
             </div>
 
             <form id="orderForm" action="https://formspree.io/f/xlgyrgpg" method="POST" class="checkout-form">
@@ -525,7 +518,7 @@
                 
                 <div class="form-group">
                     <label for="clientAddress">Shipping Address:</label>
-                    <textarea id="clientAddress" name="Client_Address" required placeholder="Enter your address"></textarea>
+                    <textarea id="clientAddress" name="Client_Address" required placeholder="Enter your full address details"></textarea>
                 </div>
                 
                 <button type="submit" class="btn-send">Send Order</button>
@@ -534,38 +527,36 @@
     </main>
 
     <footer>
-        &copy; 2026 l'Amanda store. All rights reserved.
+        &copy; 2026 L'Amanda Store. All rights reserved.
     </footer>
 
     <script>
-        // EDITABLE STOCK CONFIGURATION
-        // Modify these numbers to set your initial layout balances
+        // EVERY ITEM SET TO 10
         const initialInventory = {
-            'mexico jersey': 10,
-            'barcelona jersey': 10,
-            'manchester united full jersey': 10, 
-            'madrid jersey': 10,
-            'blank jersey 1': 10,
-            'blank jersey 2': 10
+            'Mexico Jersey': 10,
+            'Barcelona Jersey': 10,
+            'Manchester United Full Kit': 10, 
+            'Madrid Jersey': 10,
+            'Vintage Jersey': 10,
+            'Premium Jersey 2': 10
         };
 
-        // Load inventory status from browser memory or fallback to default configuration values
-        let inventory = JSON.parse(localStorage.getItem('store_inventory'));
-        if (!inventory) {
-            inventory = { ...initialInventory };
-            localStorage.setItem('store_inventory', JSON.stringify(inventory));
-        }
+        // Clear local storage logic to force stock numbers to refresh to 10 instantly
+        localStorage.removeItem('store_inventory');
+
+        let inventory = { ...initialInventory };
+        localStorage.setItem('store_inventory', JSON.stringify(inventory));
 
         let cart = [];
 
         function renderStockDisplay() {
             const stockMap = {
-                'mexico jersey': 'stock-mexico',
-                'barcelona jersey': 'stock-barcelona',
-                'manchester united full jersey': 'stock-manchester',
-                'madrid jersey': 'stock-madrid',
-                'blank jersey 1': 'stock-blank1',
-                'blank jersey 2': 'stock-blank2'
+                'Mexico Jersey': 'stock-mexico',
+                'Barcelona Jersey': 'stock-barcelona',
+                'Manchester United Full Kit': 'stock-manchester',
+                'Madrid Jersey': 'stock-madrid',
+                'Vintage Jersey': 'stock-vintage',
+                'Premium Jersey 2': 'stock-blank2'
             };
 
             for (let name in inventory) {
@@ -581,7 +572,7 @@
                         container.innerHTML = `<span class="stock-out">Sold Out</span>`;
                         actionButtons.forEach(btn => btn.disabled = true);
                     } else {
-                        container.innerHTML = `<span class="stock-in">Left: ${currentStock}</span>`;
+                        container.innerHTML = `<span class="stock-in">Only ${currentStock} left</span>`;
                         actionButtons.forEach(btn => btn.disabled = false);
                     }
                 }
@@ -626,18 +617,17 @@
             let emailText = "";
 
             cart.forEach((item, index) => {
-                listHTML += `<li><span>${item.name}</span> <strong>da ${item.price}</strong></li>`;
+                listHTML += `<li><span>${item.name}</span> <strong>${item.price.toLocaleString()} DA</strong></li>`;
                 finalTotal += item.price;
-                emailText += `[Item ${index + 1}: ${item.name} - da ${item.price}] `;
+                emailText += `[Item ${index + 1}: ${item.name} - ${item.price} DA] `;
             });
 
             listContainer.innerHTML = listHTML;
-            totalContainer.innerText = finalTotal;
+            totalContainer.innerText = finalTotal.toLocaleString();
 
-            document.getElementById('hiddenCartData').value = `${emailText} | Total Price: da ${finalTotal}`;
+            document.getElementById('hiddenCartData').value = `${emailText} | Total Price: ${finalTotal} DA`;
         }
 
-        // Form submission listener logic execution block 
         document.getElementById('orderForm').addEventListener('submit', function(event) {
             if(cart.length === 0) {
                 event.preventDefault(); 
@@ -645,21 +635,18 @@
                 return;
             }
 
-            // Deduct from storage ONLY when the user clicks send and form validation passes
             cart.forEach(item => {
                 if(inventory[item.name] > 0) {
                     inventory[item.name]--;
                 }
             });
 
-            // Save the updated data values back into LocalStorage instantly before page changes location paths
             localStorage.setItem('store_inventory', JSON.stringify(inventory));
-
             alert("Thank you for buying! Your order is being sent via Formspree.");
         });
 
-        // Initialize display rules sets cleanly
         renderStockDisplay();
+        
     </script>
 </body>
 </html>

@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="Gemini_Generated_Image_khus8pkhus8pkhus.png">
     <style>
         :root {
-            --primary-color: #2c5530; /* Emerald from your logo */
+            --primary-color: #2c5530; 
             --secondary-color: #4a7c59;
             --accent-color: #a8d5ba;
             --bg-color: #f7fbf7;
@@ -445,7 +445,7 @@
                 </div>
             </div>
 
-            <!-- Item 4 (Note: Replace this image src with a real link) -->
+            <!-- Item 4 -->
             <div class="product-item" id="item-madrid">
                 <img src="https://placehold.co/300x200/edf7ed/2c5530?text=Madrid+Jersey" alt="Madrid Jersey">
                 <h3>Madrid Jersey</h3>
@@ -457,15 +457,15 @@
                 </div> 
             </div>
 
-            <!-- Item 5 -->
+            <!-- Item 5 - REPLACED WITH VINTAGE JERSEY -->
             <div class="product-item" id="item-vintage">
-                <img src="https://placehold.co/300x200/edf7ed/2c5530?text=Premium+Jersey+1" alt="vintage jersey">
-                <h3>vintage jersey</h3>
-                <p class="price">3000 DA</p>
-                <div class="stock-indicator" id="stock-blank1"></div>
+                <img src="https://placehold.co/300x200/edf7ed/2c5530?text=Vintage+Jersey" alt="Vintage Jersey">
+                <h3>Vintage Jersey</h3>
+                <p class="price">2,800 DA</p>
+                <div class="stock-indicator" id="stock-vintage"></div>
                 <div class="btn-container">
-                    <button class="btn btn-buy" onclick="purchaseAction('Premium Jersey 1', 2800, true)">Buy</button>
-                    <button class="btn btn-basket" onclick="purchaseAction('Premium Jersey 1', 2800, false)">To Basket</button>
+                    <button class="btn btn-buy" onclick="purchaseAction('Vintage Jersey', 2800, true)">Buy</button>
+                    <button class="btn btn-basket" onclick="purchaseAction('Vintage Jersey', 2800, false)">To Basket</button>
                 </div> 
             </div>        
 
@@ -531,19 +531,21 @@
     </footer>
 
     <script>
+        // EVERY ITEM SET TO 10
         const initialInventory = {
             'Mexico Jersey': 10,
             'Barcelona Jersey': 10,
             'Manchester United Full Kit': 10, 
             'Madrid Jersey': 10,
-            'vintage Jersey': 10,
-            'Premium Jersey 2': 10        };
+            'Vintage Jersey': 10,
+            'Premium Jersey 2': 10
+        };
 
-        let inventory = JSON.parse(localStorage.getItem('store_inventory'));
-        if (!inventory) {
-            inventory = { ...initialInventory };
-            localStorage.setItem('store_inventory', JSON.stringify(inventory));
-        }
+        // Clear local storage logic to force stock numbers to refresh to 10 instantly
+        localStorage.removeItem('store_inventory');
+
+        let inventory = { ...initialInventory };
+        localStorage.setItem('store_inventory', JSON.stringify(inventory));
 
         let cart = [];
 
@@ -553,7 +555,7 @@
                 'Barcelona Jersey': 'stock-barcelona',
                 'Manchester United Full Kit': 'stock-manchester',
                 'Madrid Jersey': 'stock-madrid',
-                'vintage Jersey': 'stock-vintage',
+                'Vintage Jersey': 'stock-vintage',
                 'Premium Jersey 2': 'stock-blank2'
             };
 
