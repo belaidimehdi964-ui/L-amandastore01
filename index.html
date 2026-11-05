@@ -1,651 +1,735 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L'Amanda Store - Premium Sports Jerseys</title>
-    <link rel="icon" type="image/png" href="Gemini_Generated_Image_khus8pkhus8pkhus.png">
-    <style>
-        :root {
-            --primary-color: #2c5530; 
-            --secondary-color: #4a7c59;
-            --accent-color: #a8d5ba;
-            --bg-color: #f7fbf7;
-            --text-dark: #222;
-        }
-
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color); 
-            color: var(--text-dark);
-            scroll-behavior: smooth;
-        }
-
-        header {
-            background-color: white; 
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .header-logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .site-logo {
-            height: 45px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 1.5em;
-            color: var(--primary-color);
-            letter-spacing: -0.5px;
-        }
-
-        .header-cart-btn {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.2s ease;
-        }
-
-        .header-cart-btn:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-1px);
-        }
-
-        .welcome-banner {
-            background: linear-gradient(135deg, #1e3a20, var(--primary-color));
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
-        }
-
-        .welcome-banner h2 {
-            margin: 0 0 10px 0;
-            font-size: 2.4em;
-        }
-
-        .welcome-banner p {
-            margin: 0;
-            font-size: 1.1em;
-            opacity: 0.9;
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        .product-item {
-            background-color: white;
-            padding: 24px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-            border: 1px solid #e6f0e6;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .product-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-        }
-
-        .product-item img {
-            max-width: 100%;
-            height: 200px;
-            object-fit: contain;
-            border-radius: 6px;
-            margin-bottom: 15px;
-            background-color: #fafafa;
-        }
-
-        .product-item h3 {
-            margin: 10px 0 5px;
-            color: #111;
-            font-size: 1.2em;
-            text-transform: capitalize;
-        }
-
-        .product-item p.price {
-            color: var(--primary-color);
-            font-weight: 700;
-            font-size: 1.3em;
-            margin: 0 0 12px;
-        }
-
-        .stock-indicator {
-            font-size: 0.85em;
-            margin-bottom: 15px;
-            font-weight: 600;
-            padding: 4px 10px;
-            border-radius: 20px;
-            display: inline-block;
-        }
-        
-        .stock-in {
-            background-color: #edf7ed;
-            color: #2e7d32;
-        }
-        
-        .stock-out {
-            background-color: #fdeded;
-            color: #d32f2f;
-        }
-
-        .btn-container {
-            display: flex;
-            gap: 10px;
-        }
-
-        .btn {
-            flex: 1;
-            padding: 12px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: bold;
-            text-decoration: none;
-            text-align: center;
-            font-size: 0.95em;
-            transition: all 0.2s;
-        }
-
-        .btn-buy {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .btn-buy:hover:not(:disabled) {
-            background-color: #1e3a20;
-        }
-
-        .btn-basket {
-            background-color: #f0f7f0;
-            color: var(--primary-color);
-            border: 1px solid var(--accent-color);
-        }
-
-        .btn-basket:hover:not(:disabled) {
-            background-color: var(--accent-color);
-        }
-
-        .btn:disabled {
-            background-color: #eaeaea;
-            color: #aaa;
-            cursor: not-allowed;
-            border: none;
-        }
-
-        /* Side Contact Bar */
-        .side-contact-bar {
-            position: fixed;
-            right: 0;
-            top: 35%;
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .contact-tab {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 12px 16px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.9em;
-            border-radius: 8px 0 0 8px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            transform: translateX(calc(100% - 46px));
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: -2px 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .contact-tab:hover {
-            transform: translateX(0);
-            background-color: var(--secondary-color);
-        }
-
-        .contact-tab svg {
-            min-width: 18px;
-            fill: white;
-        }
-
-        /* Checkout Form Section */
-        .checkout-section {
-            background-color: white;
-            padding: 40px;
-            border-radius: 12px;
-            max-width: 600px;
-            margin: 40px auto;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-            border: 1px solid #e6f0e6;
-        }
-
-        .checkout-section h2 {
-            text-align: center;
-            color: var(--primary-color);
-            margin-top: 0;
-            font-size: 1.8em;
-        }
-
-        .basket-summary {
-            background-color: #fafbfa;
-            border: 1px dashed var(--accent-color);
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 25px;
-        }
-
-        .basket-items-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .basket-items-list li {
-            display: flex;
-            justify-content: space-between;
-            padding: 8px 0;
-            border-bottom: 1px solid #edf4ed;
-        }
-
-        .total-price-box {
-            text-align: right;
-            font-weight: bold;
-            font-size: 1.2em;
-            color: var(--primary-color);
-            margin-top: 15px;
-        }
-
-        .checkout-form {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 6px;
-            font-weight: 600;
-            color: var(--secondary-color);
-            font-size: 0.95em;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 14px;
-            border: 1px solid #c2dec2;
-            border-radius: 6px;
-            font-size: 1em;
-            box-sizing: border-box;
-            background-color: white;
-            transition: border-color 0.2s;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            height: 100px;
-        }
-
-        .btn-send {
-            background-color: var(--primary-color);
-            color: white;
-            font-size: 1.1em;
-            padding: 14px;
-            width: 100%;
-            border: none;
-            border-radius: 6px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 10px;
-            transition: background 0.2s;
-        }
-
-        .btn-send:hover {
-            background-color: #1e3a20;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            color: #777;
-            font-size: 0.9em;
-            border-top: 1px solid #edf4ed;
-            background-color: white;
-        }
-
-        @media (max-width: 768px) {
-            header {
-                padding: 15px 20px;
-                flex-direction: column;
-                gap: 12px;
-            }
-            main {
-                padding: 20px;
-            }
-            .checkout-section {
-                padding: 25px 20px;
-            }
-            .welcome-banner h2 {
-                font-size: 1.8em;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L'Amonda Store - Maillots Officiels &amp; Kits Sportifs Premium | Algérie</title>
+  
+  <meta name="description" content="Découvrez la collection exclusive de maillots de football officiels, kits complets et éditions rétro chez L'Amonda Store. Livraison rapide et paiement à la livraison sur 58 Wilayas.">
+  <meta name="keywords" content="maillots algerie, maillot football alger, kits sportifs, maillot retro, l'amonda store, livraison 58 wilayas, barcelone, real madrid, mexique">
+  <meta name="author" content="L'Amonda Store Algérie">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  
+  <!-- Google Web Fonts: Outfit (Display) & Plus Jakarta Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6.5.1 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Custom Modern Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div class="side-contact-bar">
-        <a href="tel:0672434217" class="contact-tab">
-            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-            <span>Call Us Now</span>
+  <!-- =========================================================================
+       1. TOP PROMO & ANNOUNCEMENT BAR
+       ========================================================================= -->
+  <div class="top-ticker" role="region" aria-label="Informations de livraison">
+    <div class="container ticker-inner">
+      <span class="ticker-badge"><i class="fa-solid fa-truck-fast"></i> 58 WILAYAS</span>
+      <span>Livraison express à domicile &amp; en point relais | <strong>Paiement à la livraison 100% sécurisé</strong></span>
+      <a href="tel:0672434217" class="ticker-phone">
+        <i class="fa-solid fa-phone"></i> Infoline : 06 72 43 42 17
+      </a>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       2. HEADER & NAVIGATION BAR
+       ========================================================================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      
+      <!-- Brand Logo Link -->
+      <a href="#hero" class="brand-link" aria-label="Page d'accueil L'Amonda Store">
+        <div class="brand-emblem">
+          <img src="logo.svg" alt="L'Amonda Store Logo" width="40" height="40">
+        </div>
+        <div class="brand-info">
+          <div class="brand-name">L'AMONDA <span>STORE</span></div>
+          <div class="brand-subtitle">Sport &amp; Athletic Boutique</div>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="main-nav" aria-label="Navigation Principale">
+        <a href="#hero" class="nav-link active">Accueil</a>
+        <a href="#catalog" class="nav-link">Nos Maillots</a>
+        <a href="javascript:void(0)" class="nav-link" onclick="UI.openSizeGuide()">Guide des Tailles</a>
+        <a href="#testimonials" class="nav-link">Avis Clients</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <!-- Direct Link to Secure Admin Dashboard -->
+        <a href="dashboard.html" class="header-btn btn-admin-link" title="Portail Administrateur">
+          <i class="fa-solid fa-chart-line"></i> <span>Admin Portal</span>
         </a>
-        <a href="mailto:gangasteralg@gmail.com?subject=l'Amanda%20Store%20Inquiry" class="contact-tab">
-            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-            <span>Email Support</span>
-        </a>
+
+        <!-- Cart Button with Counter -->
+        <button type="button" class="header-btn btn-cart-nav" id="cartNavBtn" onclick="UI.openCartDrawer()" aria-label="Voir le panier">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span>Panier</span>
+          <span class="cart-counter-badge" id="cartNavCount">0</span>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button type="button" class="mobile-toggle" onclick="UI.openCartDrawer()" aria-label="Ouvrir le panier">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       3. HERO SECTION WITH SOCIAL PROOF & BADGES
+       ========================================================================= -->
+  <section class="hero-section" id="hero">
+    <div class="container hero-grid">
+      
+      <!-- Hero Copy -->
+      <div class="hero-content">
+        <div class="hero-badge-pill">
+          <i class="fa-solid fa-shield-halved"></i> 100% Qualité Supérieure Certifiée
+        </div>
+        
+        <h1 class="hero-title">
+          Les Maillots Officiels &amp; Kits de Légende <span class="highlight">Chez Vous en 48H</span>
+        </h1>
+        
+        <p class="hero-lead">
+          Découvrez notre collection de maillots de clubs et équipes nationales. Tissu technique Dri-FIT respirant, flocages impeccables, disponibles dans toutes les tailles de S à XXL.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#catalog" class="btn-primary-hero">
+            <i class="fa-solid fa-shirt"></i> Découvrir la Collection
+          </a>
+          <a href="https://wa.me/213672434217?text=Bonjour%20L'Amonda%20Store,%20je%20souhaite%20des%20renseignements" target="_blank" rel="noopener noreferrer" class="btn-secondary-hero">
+            <i class="fa-brands fa-whatsapp"></i> Commander par WhatsApp
+          </a>
+        </div>
+
+        <!-- Trust Features Grid in Hero -->
+        <div class="hero-trust-grid">
+          <div class="trust-item">
+            <div class="trust-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+            <div class="trust-text">
+              <h4>Paiement à la Livraison</h4>
+              <p>Réglez uniquement à la réception</p>
+            </div>
+          </div>
+
+          <div class="trust-item">
+            <div class="trust-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
+            <div class="trust-text">
+              <h4>Livraison 58 Wilayas</h4>
+              <p>Yalidine &amp; ZR Express 24-48h</p>
+            </div>
+          </div>
+
+          <div class="trust-item">
+            <div class="trust-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+            <div class="trust-text">
+              <h4>Échange Facile</h4>
+              <p>Garantie taille et conformité</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Showcase Card -->
+      <div class="hero-card-showcase">
+        <span class="showcase-badge"><i class="fa-solid fa-fire"></i> Best-Seller 2026</span>
+        <div class="showcase-img-wrap">
+          <img src="https://images.unsplash.com/photo-1577223625816-7546f13df25d?auto=format&fit=crop&w=600&q=80" alt="Mexico Jersey Preview" onerror="this.src='logo.svg'">
+        </div>
+        <div class="showcase-details">
+          <h3>Mexico Jersey Édition Spéciale</h3>
+          <div class="showcase-price">3 000 DA</div>
+          <button type="button" class="btn-primary-hero" style="width:100%; justify-content:center; padding:12px;" onclick="UI.handleBuyNow('mexico')">
+            <i class="fa-solid fa-cart-shopping"></i> Commander Immédiatement
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       4. PRODUCT CATALOG WITH DYNAMIC FILTERS & SEARCH
+       ========================================================================= -->
+  <main class="catalog-section" id="catalog">
+    <div class="container">
+      
+      <!-- Section Header -->
+      <div class="section-head">
+        <div class="section-title-wrap">
+          <h2>Collection Maillots &amp; Équipements</h2>
+          <p>Sélectionnez votre maillot préféré et choisissez votre taille instantanément.</p>
+        </div>
+      </div>
+
+      <!-- Catalog Filter Toolbar -->
+      <div class="catalog-toolbar">
+        
+        <!-- Search Input -->
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" class="search-input" id="jerseySearchInput" placeholder="Rechercher une équipe, un club, un maillot..." autocomplete="off">
+        </div>
+
+        <!-- Filter Category Tabs -->
+        <div class="filter-tabs">
+          <button type="button" class="filter-btn active" data-category="all">Tous les Maillots</button>
+          <button type="button" class="filter-btn" data-category="clubs">Clubs Européens</button>
+          <button type="button" class="filter-btn" data-category="national">Équipes Nationales</button>
+          <button type="button" class="filter-btn" data-category="kits">Kits &amp; Ensembles</button>
+          <button type="button" class="filter-btn" data-category="retro">Collection Rétro</button>
+        </div>
+
+      </div>
+
+      <!-- Dynamic Product Cards Grid (Populated securely by app.js) -->
+      <div class="product-grid" id="productsGrid">
+        <!-- Javascript renders catalog here -->
+      </div>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       5. ALGERIA 58 WILAYAS CHECKOUT & BASKET SECTION
+       ========================================================================= -->
+  <section class="checkout-section" id="checkoutSection">
+    <div class="container">
+      
+      <div class="checkout-grid">
+        
+        <!-- Left Column: High-Security Order Form -->
+        <div class="card-checkout">
+          <div class="form-header-bar">
+            <div class="form-header-icon">
+              <i class="fa-solid fa-truck-moving"></i>
+            </div>
+            <div class="form-header-text">
+              <h3>Formulaire de Commande Sécurisé</h3>
+              <p>Remplissez vos coordonnées pour recevoir votre colis. Paiement en espèces à la livraison.</p>
+            </div>
+          </div>
+
+          <form id="orderForm" class="secure-form" novalidate>
+            
+            <!-- Anti-Spam Honeypot Field (Inaudible to humans, traps spambots) -->
+            <input type="text" name="_website_botcheck" class="anti-bot-honey" tabindex="-1" autocomplete="off">
+
+            <!-- Full Name -->
+            <div class="form-group">
+              <label class="form-label" for="clientName">
+                <span>Nom &amp; Prénom <span class="label-required">*</span></span>
+                <span class="form-hint">Ex: Amine Benali</span>
+              </label>
+              <div class="input-wrap">
+                <i class="fa-solid fa-user input-icon"></i>
+                <input type="text" id="clientName" name="client_name" class="form-input" placeholder="Entrez votre nom complet" required autocomplete="name">
+              </div>
+            </div>
+
+            <!-- Phone Number & Wilaya Row -->
+            <div class="form-row">
+              
+              <!-- Algerian Phone Number -->
+              <div class="form-group">
+                <label class="form-label" for="clientPhone">
+                  <span>Numéro de Téléphone <span class="label-required">*</span></span>
+                  <span class="form-hint">Format Algérien</span>
+                </label>
+                <div class="input-wrap">
+                  <i class="fa-solid fa-phone input-icon"></i>
+                  <input type="tel" id="clientPhone" name="client_phone" class="form-input" placeholder="06 72 43 42 17" required autocomplete="tel">
+                </div>
+              </div>
+
+              <!-- Wilaya Selector (All 58 Wilayas) -->
+              <div class="form-group">
+                <label class="form-label" for="clientWilaya">
+                  <span>Wilaya de Livraison <span class="label-required">*</span></span>
+                  <span class="form-hint">58 Wilayas</span>
+                </label>
+                <div class="input-wrap">
+                  <i class="fa-solid fa-map-location-dot input-icon"></i>
+                  <select id="clientWilaya" name="client_wilaya" class="form-select" required>
+                    <!-- Populated dynamically with all 58 Wilayas -->
+                  </select>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Delivery Mode Selection -->
+            <div class="form-group">
+              <label class="form-label">
+                <span>Mode de Livraison Souhaité :</span>
+              </label>
+              <div class="delivery-options-grid">
+                
+                <label class="delivery-radio-label">
+                  <input type="radio" name="delivery_type" value="home" checked>
+                  <div class="delivery-card-tile">
+                    <div class="delivery-title">
+                      <i class="fa-solid fa-house"></i> À Domicile
+                    </div>
+                    <div class="delivery-desc">Livré directement chez vous par le livreur</div>
+                  </div>
+                </label>
+
+                <label class="delivery-radio-label">
+                  <input type="radio" name="delivery_type" value="desk">
+                  <div class="delivery-card-tile">
+                    <div class="delivery-title">
+                      <i class="fa-solid fa-building"></i> Point Relais / Stop Desk
+                    </div>
+                    <div class="delivery-desc">Récupération au bureau Yalidine de votre Wilaya</div>
+                  </div>
+                </label>
+
+              </div>
+            </div>
+
+            <!-- Full Address -->
+            <div class="form-group">
+              <label class="form-label" for="clientAddress">
+                <span>Adresse Complète ou Commune <span class="label-required">*</span></span>
+                <span class="form-hint">Quartier, rue, n° de porte</span>
+              </label>
+              <div class="input-wrap">
+                <i class="fa-solid fa-location-dot input-icon"></i>
+                <textarea id="clientAddress" name="client_address" class="form-textarea" placeholder="Ex: Cité 500 logements, Batiment B, Alger..." required></textarea>
+              </div>
+            </div>
+
+            <!-- Optional Courier Instructions -->
+            <div class="form-group">
+              <label class="form-label" for="clientNotes">
+                <span>Remarques ou instructions pour le livreur (Optionnel) :</span>
+              </label>
+              <div class="input-wrap">
+                <input type="text" id="clientNotes" name="client_notes" class="form-input" placeholder="Ex: Appelez-moi avant de passer le matin">
+              </div>
+            </div>
+
+            <!-- Payment Security Guarantee Box -->
+            <div class="payment-badge-box">
+              <i class="fa-solid fa-shield-check payment-icon-shield"></i>
+              <div class="payment-text">
+                <h4>Paiement 100% à la Livraison (Cash on Delivery)</h4>
+                <p>Vous ne payez rien en ligne. Vous inspectez votre colis et réglez le livreur en espèces.</p>
+              </div>
+            </div>
+
+            <!-- Order Submit Button -->
+            <button type="submit" class="btn-submit-order" id="btnSubmitOrder">
+              <i class="fa-solid fa-lock"></i> Confirmer Ma Commande (Paiement à la livraison)
+            </button>
+
+            <!-- Security Seals -->
+            <div class="security-seal-row">
+              <span><i class="fa-solid fa-lock"></i> Connexion SSL 256-bit</span>
+              <span><i class="fa-solid fa-shield-virus"></i> Protection Anti-Spam</span>
+              <span><i class="fa-solid fa-truck"></i> Expédition Garantie</span>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- Right Column: Real-Time Order & Basket Summary -->
+        <div class="order-summary-box">
+          
+          <div class="summary-heading">
+            <h3><i class="fa-solid fa-bag-shopping"></i> Votre Panier</h3>
+            <button type="button" class="size-guide-btn" onclick="cart.clearCart()">Vider</button>
+          </div>
+
+          <!-- Empty Cart Notice -->
+          <div id="checkoutEmptyState" class="empty-cart-state" style="display:none;">
+            <i class="fa-solid fa-cart-arrow-down"></i>
+            <p>Votre panier est vide. Choisissez un maillot ci-dessus !</p>
+          </div>
+
+          <!-- Selected Items List -->
+          <ul class="summary-items-list" id="checkoutItemsList">
+            <!-- Rendered dynamically by app.js -->
+          </ul>
+
+          <!-- Promo Coupon Box -->
+          <div class="coupon-box">
+            <input type="text" id="couponCodeInput" class="coupon-input" placeholder="Code Promo (ex: AMONDA10)">
+            <button type="button" id="btnApplyCoupon" class="btn-apply-coupon">Appliquer</button>
+          </div>
+
+          <!-- Financial Calculation Breakdown -->
+          <div class="summary-totals">
+            <div class="summary-row">
+              <span>Sous-total articles :</span>
+              <strong id="summarySubtotal">0 DA</strong>
+            </div>
+
+            <div class="summary-row">
+              <span>Frais de livraison estimés :</span>
+              <strong id="summaryDelivery">0 DA</strong>
+            </div>
+
+            <div class="summary-row total-row">
+              <span>Total à Payer :</span>
+              <span id="summaryGrandTotal">0 DA</span>
+            </div>
+          </div>
+
+          <!-- Direct WhatsApp Alternative Button -->
+          <a href="https://wa.me/213672434217?text=Bonjour,%20je%20souhaite%20passer%20commande" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-order">
+            <i class="fa-brands fa-whatsapp"></i> Commander Directement sur WhatsApp
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       6. REVIEWS & TESTIMONIALS (SOCIAL PROOF)
+       ========================================================================= -->
+  <section class="trust-section" id="testimonials">
+    <div class="container">
+      
+      <div style="text-align: center; max-width: 650px; margin: 0 auto;">
+        <span class="ticker-badge" style="background:#edf7ed; color:var(--primary); font-size:0.8rem;">
+          <i class="fa-solid fa-star"></i> AVIS CLIENTS VÉRIFIÉS
+        </span>
+        <h2 style="font-family:var(--font-display); font-size:2.1rem; color:var(--primary); margin-top:10px;">
+          Plus de 1 200 Clients Satisfaits en Algérie
+        </h2>
+        <p style="color:var(--text-muted); font-size:0.95rem;">
+          La fidélité de nos acheteurs témoigne de notre engagement envers la qualité et la rapidité.
+        </p>
+      </div>
+
+      <div class="reviews-grid">
+        
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-body">
+            "Maillot du Mexique reçu en 24h à Alger Bab Ezzouar ! Le tissu est d'une qualité incroyable, les coutures et les badges sont parfaits. Merci L'Amonda Store !"
+          </p>
+          <div class="review-author">
+            <div class="author-avatar">YB</div>
+            <div class="author-info">
+              <h4>Youcef B.</h4>
+              <span>Alger (Wilaya 16) - Acheteur Vérifié</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-body">
+            "Pack complet Manchester United au top. J'avais des doutes sur la taille mais le guide des tailles était très précis. Service client très réactif sur WhatsApp."
+          </p>
+          <div class="review-author">
+            <div class="author-avatar">KM</div>
+            <div class="author-info">
+              <h4>Karim M.</h4>
+              <span>Oran (Wilaya 31) - Acheteur Vérifié</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-body">
+            "Le maillot rétro est magnifique ! La matière satinée vintage ressemble exactement aux maillots originaux d'époque. Paiement à la livraison sans aucun souci."
+          </p>
+          <div class="review-author">
+            <div class="author-avatar">SN</div>
+            <div class="author-info">
+              <h4>Samir N.</h4>
+              <span>Sétif (Wilaya 19) - Acheteur Vérifié</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       7. FOOTER & CONTACT INFORMATION
+       ========================================================================= -->
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      
+      <!-- Brand & Mission Column -->
+      <div class="footer-col">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+          <img src="logo.svg" alt="L'Amonda Logo" width="36" height="36" style="filter: brightness(0) invert(1);">
+          <span style="font-family:var(--font-display); font-size:1.35rem; font-weight:800; letter-spacing:-0.5px;">L'AMONDA STORE</span>
+        </div>
+        <p>
+          Boutique de référence en Algérie pour les maillots de football officiels, kits sportifs et pièces rétro collectors. Qualité supérieure et livraison garantie sur l'ensemble des 58 Wilayas.
+        </p>
+        <div style="display:flex; gap:10px; font-size:1.2rem; color:var(--accent-mint);">
+          <a href="https://wa.me/213672434217" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="tel:0672434217"><i class="fa-solid fa-phone"></i></a>
+          <a href="mailto:gangasteralg@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Navigation -->
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="#hero">Accueil</a></li>
+          <li><a href="#catalog">Catalogue des Maillots</a></li>
+          <li><a href="javascript:void(0)" onclick="UI.openSizeGuide()">Guide des Tailles</a></li>
+          <li><a href="#checkoutSection">Commander / Panier</a></li>
+          <li><a href="dashboard.html">Portail Administrateur</a></li>
+        </ul>
+      </div>
+
+      <!-- Customer Policies -->
+      <div class="footer-col">
+        <h4>Engagements &amp; Aide</h4>
+        <ul class="footer-links">
+          <li><a href="javascript:void(0)">Paiement à la Livraison</a></li>
+          <li><a href="javascript:void(0)">Tarifs Yalidine 58 Wilayas</a></li>
+          <li><a href="javascript:void(0)">Politique d'Échange (48h)</a></li>
+          <li><a href="javascript:void(0)">Conseils d'Entretien Textiles</a></li>
+          <li><a href="javascript:void(0)">Confidentialité &amp; Sécurité</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info Details -->
+      <div class="footer-col">
+        <h4>Nous Contacter</h4>
+        <ul class="footer-contact-list">
+          <li class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <strong>Service Client &amp; Suivi :</strong><br>
+              <a href="tel:0672434217" style="color:var(--accent-mint); font-weight:700;">06 72 43 42 17</a>
+            </div>
+          </li>
+          <li class="footer-contact-item">
+            <i class="fa-brands fa-whatsapp"></i>
+            <div>
+              <strong>WhatsApp Direct :</strong><br>
+              <a href="https://wa.me/213672434217" target="_blank" rel="noopener noreferrer" style="color:var(--whatsapp); font-weight:700;">+213 672 43 42 17</a>
+            </div>
+          </li>
+          <li class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <strong>Email de Gestion :</strong><br>
+              <span>gangasteralg@gmail.com</span>
+            </div>
+          </li>
+          <li class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <strong>Disponibilité :</strong><br>
+              <span>Expédition active vers les 58 Wilayas d'Algérie</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
     </div>
 
-    <header>
-        <div class="header-logo-container">
-            <img src="Gemini_Generated_Image_khus8pkhus8pkhus.png" alt="l'Amanda store Logo" class="site-logo">
-            <h1>L'Amanda Store</h1>
-        </div>
-        <a href="#checkout" class="header-cart-btn" id="cartNavBtn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-            <span>Basket (0)</span>
-        </a>
-    </header>
-
-    <div class="welcome-banner">
-        <h2>Welcome to L'Amanda Store</h2>
-        <p>Discover our premium selection of authentic sports jerseys. Reliable delivery options available!</p>
+    <!-- Sub-footer bottom bar -->
+    <div class="container footer-bottom">
+      <div>
+        &copy; 2026 <strong>L'Amonda Store</strong>. Tous droits réservés. Plateforme E-Commerce Sécurisée.
+      </div>
+      <div style="display:flex; gap:16px; align-items:center;">
+        <span><i class="fa-solid fa-shield-halved"></i> Données Chiffrées</span>
+        <span><i class="fa-solid fa-box-open"></i> Contrôle Colis Autorisé</span>
+      </div>
     </div>
+  </footer>
 
-    <main>
-        <div class="product-grid">
-            
-            <!-- Item 1 -->
-            <div class="product-item" id="item-mexico">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsmSIL2OwObv6VgbeYuSxze01sYSGgQXNbqcGvTXjbQQ&s=10" alt="Mexico Jersey">
-                <h3>Mexico Jersey</h3>
-                <p class="price">3,000 DA</p>
-                <div class="stock-indicator" id="stock-mexico"></div>
-                <div class="btn-container">
-                    <button class="btn btn-buy" onclick="purchaseAction('Mexico Jersey', 3000, true)">Buy</button>
-                    <button class="btn btn-basket" onclick="purchaseAction('Mexico Jersey', 3000, false)">To Basket</button>
-                </div>
-            </div>
+  <!-- =========================================================================
+       8. FLOATING ACTION BUTTONS (CALL & WHATSAPP)
+       ========================================================================= -->
+  <div class="floating-actions-bar" aria-label="Assistance Rapide">
+    <a href="https://wa.me/213672434217?text=Bonjour%20L'Amonda%20Store" target="_blank" rel="noopener noreferrer" class="floating-pill pill-whatsapp" title="Discuter sur WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span>WhatsApp</span>
+    </a>
+    <a href="tel:0672434217" class="floating-pill pill-call" title="Appeler le Service Client">
+      <i class="fa-solid fa-phone"></i>
+      <span>06 72 43 42 17</span>
+    </a>
+  </div>
 
-            <!-- Item 2 -->
-            <div class="product-item" id="item-barcelona">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMLYDWDIWWKcFaQcxCm-KMEbvufYcHh34FSYHFJwZzIg&s=10" alt="Barcelona Jersey">
-                <h3>Barcelona Jersey</h3>
-                <p class="price">3,000 DA</p>
-                <div class="stock-indicator" id="stock-barcelona"></div>
-                <div class="btn-container">
-                    <button class="btn btn-buy" onclick="purchaseAction('Barcelona Jersey', 3000, true)">Buy</button>
-                    <button class="btn btn-basket" onclick="purchaseAction('Barcelona Jersey', 3000, false)">To Basket</button>
-                </div>
-            </div>
+  <!-- =========================================================================
+       9. SLIDE-OUT CART DRAWER
+       ========================================================================= -->
+  <div class="cart-drawer-backdrop" id="cartDrawerBackdrop" onclick="UI.closeCartDrawer()">
+    <div class="cart-drawer" onclick="event.stopPropagation()">
+      <div class="drawer-header">
+        <h3><i class="fa-solid fa-bag-shopping"></i> Mon Panier</h3>
+        <button type="button" class="btn-close-modal" onclick="UI.closeCartDrawer()">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
 
-            <!-- Item 3 -->
-            <div class="product-item" id="item-manchester">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwaHVin5kq-Kp3tNd8Y2C4Jd5cOFsL2zgyIVHEznRXWg&s" alt="Manchester United Jersey">
-                <h3>Manchester United Full Kit</h3>
-                <p class="price">2,500 DA</p>
-                <div class="stock-indicator" id="stock-manchester"></div>
-                <div class="btn-container">
-                    <button class="btn btn-buy" onclick="purchaseAction('Manchester United Full Kit', 2500, true)">Buy</button>
-                    <button class="btn btn-basket" onclick="purchaseAction('Manchester United Full Kit', 2500, false)">To Basket</button>
-                </div>
-            </div>
+      <div class="drawer-body" id="drawerItemsList">
+        <!-- Rendered dynamically -->
+      </div>
 
-            <!-- Item 4 -->
-            <div class="product-item" id="item-madrid">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXWaMajl2utf3j-y93o7yJC9v4ciL62tpWrNwCcrMLjA&s=10" alt="Madrid Jersey">
-                <h3>Madrid Jersey</h3>
-                <p class="price">3,000 DA</p>
-                <div class="stock-indicator" id="stock-madrid"></div>
-                <div class="btn-container">
-                    <button class="btn btn-buy" onclick="purchaseAction('Madrid Jersey', 3000, true)">Buy</button>
-                    <button class="btn btn-basket" onclick="purchaseAction('Madrid Jersey', 3000, false)">To Basket</button>
-                </div> 
-            </div>
-
-            <!-- Item 5 - REPLACED WITH VINTAGE JERSEY -->
-            <div class="product-item" id="item-vintage">
-                <img src="https://foot-star.com/wp-content/uploads/2025/03/Maillot-Retro-Barca-Domicile-Special-Edition.jpg" alt="Vintage barca Jersey">
-                <h3>Vintage barca Jersey</h3>
-                <p class="price">2,800 DA</p>
-                <div class="stock-indicator" id="stock-vintage"></div>
-                <div class="btn-container">
-                    <button class="btn btn-buy" onclick="purchaseAction('Vintage Jersey', 2800, true)">Buy</button>
-                    <button class="btn btn-basket" onclick="purchaseAction('Vintage Jersey', 2800, false)">To Basket</button>
-                </div> 
-            </div>        
-
-            <!-- Item 6 -->
-            <div class="product-item" id="item-blank2">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUsrkSYV7d_-uOvedCE3cOnBWJC5g-SD_hinK1TWGTrg&s=10" alt="Premium Jersey 2">
-                <h3>Premium Jersey 2</h3>
-                <p class="price">2,800 DA</p>
-                <div class="stock-indicator" id="stock-blank2"></div>
-                <div class="btn-container">
-                    <button class="btn btn-buy" onclick="purchaseAction('Premium Jersey 2', 2800, true)">Buy</button>
-                    <button class="btn btn-basket" onclick="purchaseAction('Premium Jersey 2', 2800, false)">To Basket</button>
-                </div>
-            </div>
+      <div class="drawer-footer">
+        <div class="drawer-totals-row">
+          <span>Sous-total :</span>
+          <span id="drawerTotalAmount">0 DA</span>
         </div>
+        <button type="button" class="btn-submit-order" onclick="UI.closeCartDrawer(); document.getElementById('checkoutSection').scrollIntoView({behavior:'smooth'});">
+          Passer à la Caisse <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
 
-        <div id="checkout" class="checkout-section">
-            <h2>Checkout Form</h2>
-            
-            <div class="basket-summary">
-                <h4 style="margin-top: 0; color: var(--primary-color);">Your Selected Items:</h4>
-                <ul class="basket-items-list" id="basketList">
-                    <li style="color: #888;">Your basket is empty.</li>
-                </ul>
-                <div class="total-price-box">Total: <span id="totalPrice">0</span> DA</div>
-            </div>
+  <!-- =========================================================================
+       10. QUICK VIEW PRODUCT DETAIL MODAL
+       ========================================================================= -->
+  <div class="modal-overlay" id="quickViewModal">
+    <div class="modal-dialog">
+      <button type="button" class="btn-close-modal" onclick="UI.closeModal('quickViewModal')">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div id="quickViewModalBody">
+        <!-- Injected securely by app.js -->
+      </div>
+    </div>
+  </div>
 
-            <form id="orderForm" action="https://formspree.io/f/xlgyrgpg" method="POST" class="checkout-form">
-                <input type="hidden" id="hiddenCartData" name="Items_Ordered" value="">
+  <!-- =========================================================================
+       11. SIZE GUIDE MODAL (TABLE DE MESURES S / M / L / XL / XXL)
+       ========================================================================= -->
+  <div class="modal-overlay" id="sizeGuideModal">
+    <div class="modal-dialog">
+      <button type="button" class="btn-close-modal" onclick="UI.closeModal('sizeGuideModal')">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div style="text-align:center; margin-bottom:20px;">
+        <i class="fa-solid fa-ruler-combined" style="font-size:2rem; color:var(--primary);"></i>
+        <h3 style="font-family:var(--font-display); font-size:1.5rem; color:var(--primary); margin-top:8px;">Guide des Tailles Maillots</h3>
+        <p style="font-size:0.88rem; color:var(--text-muted);">Mesures standards en centimètres (cm) pour les maillots athlétiques.</p>
+      </div>
 
-                <div class="form-group">
-                    <label for="clientName">Full Name:</label>
-                    <input type="text" id="clientName" name="Client_Name" required placeholder="Enter your name">
-                </div>
-                
-                <div class="form-group">
-                    <label for="clientPhone">Phone Number:</label>
-                    <input type="tel" id="clientPhone" name="Client_Phone" required placeholder="Enter your phone number">
-                </div>
+      <table style="width:100%; border-collapse:collapse; text-align:center; font-size:0.9rem;">
+        <thead>
+          <tr style="background:#edf7ed; color:var(--primary);">
+            <th style="padding:10px; border:1px solid #ddd;">Taille</th>
+            <th style="padding:10px; border:1px solid #ddd;">Tour de Poitrine</th>
+            <th style="padding:10px; border:1px solid #ddd;">Longueur</th>
+            <th style="padding:10px; border:1px solid #ddd;">Poids Conseillé</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:10px; border:1px solid #ddd; font-weight:800;">S</td>
+            <td style="padding:10px; border:1px solid #ddd;">92 - 97 cm</td>
+            <td style="padding:10px; border:1px solid #ddd;">70 cm</td>
+            <td style="padding:10px; border:1px solid #ddd;">55 - 68 kg</td>
+          </tr>
+          <tr>
+            <td style="padding:10px; border:1px solid #ddd; font-weight:800;">M</td>
+            <td style="padding:10px; border:1px solid #ddd;">98 - 104 cm</td>
+            <td style="padding:10px; border:1px solid #ddd;">72 cm</td>
+            <td style="padding:10px; border:1px solid #ddd;">68 - 78 kg</td>
+          </tr>
+          <tr>
+            <td style="padding:10px; border:1px solid #ddd; font-weight:800;">L</td>
+            <td style="padding:10px; border:1px solid #ddd;">105 - 111 cm</td>
+            <td style="padding:10px; border:1px solid #ddd;">74 cm</td>
+            <td style="padding:10px; border:1px solid #ddd;">78 - 88 kg</td>
+          </tr>
+          <tr>
+            <td style="padding:10px; border:1px solid #ddd; font-weight:800;">XL</td>
+            <td style="padding:10px; border:1px solid #ddd;">112 - 118 cm</td>
+            <td style="padding:10px; border:1px solid #ddd;">76 cm</td>
+            <td style="padding:10px; border:1px solid #ddd;">88 - 98 kg</td>
+          </tr>
+          <tr>
+            <td style="padding:10px; border:1px solid #ddd; font-weight:800;">XXL</td>
+            <td style="padding:10px; border:1px solid #ddd;">119 - 126 cm</td>
+            <td style="padding:10px; border:1px solid #ddd;">78 cm</td>
+            <td style="padding:10px; border:1px solid #ddd;">98 - 110 kg</td>
+          </tr>
+        </tbody>
+      </table>
 
-                <div class="form-group">
-                    <label for="clientSize">Choose Your Size:</label>
-                    <select id="clientSize" name="Client_Size" required>
-                        <option value="" disabled selected>Select a size...</option>
-                        <option value="M">M</option>
-                        <option value="L">L</option>
-                        <option value="XL">XL</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="clientAddress">Shipping Address:</label>
-                    <textarea id="clientAddress" name="Client_Address" required placeholder="Enter your full address details"></textarea>
-                </div>
-                
-                <button type="submit" class="btn-send">Send Order</button>
-            </form>
-        </div>
-    </main>
+      <div style="background:#fafafa; border-radius:8px; padding:12px; margin-top:16px; font-size:0.85rem; color:#555;">
+        <i class="fa-solid fa-circle-info" style="color:var(--primary);"></i> <strong>Conseil :</strong> Si vous préférez une coupe plus ample ou portez un pull léger en dessous, nous vous recommandons de choisir une taille au-dessus.
+      </div>
+    </div>
+  </div>
 
-    <footer>
-        &copy; 2026 L'Amanda Store. All rights reserved.
-    </footer>
+  <!-- =========================================================================
+       12. ORDER CONFIRMATION & RECEIPT SUCCESS MODAL
+       ========================================================================= -->
+  <div class="modal-overlay" id="orderSuccessModal">
+    <div class="modal-dialog" style="text-align:center;">
+      <div class="success-checkmark-box">
+        <i class="fa-solid fa-check"></i>
+      </div>
+      
+      <h3 style="font-family:var(--font-display); font-size:1.8rem; color:var(--primary); margin-bottom:6px;">Commande Confirmée !</h3>
+      <p style="color:var(--text-muted); font-size:0.95rem;">
+        Merci pour votre confiance. Votre commande a été enregistrée avec succès. Notre équipe vous contactera par téléphone avant l'expédition.
+      </p>
 
-    <script>
-        // EVERY ITEM SET TO 10
-        const initialInventory = {
-            'Mexico Jersey': 10,
-            'Barcelona Jersey': 10,
-            'Manchester United Full Kit': 10, 
-            'Madrid Jersey': 10,
-            'Vintage Jersey': 10,
-            'Premium Jersey 2': 10
-        };
+      <!-- Printable Order Receipt Box -->
+      <div class="receipt-box" id="orderReceiptBox">
+        <!-- Injected securely -->
+      </div>
 
-        // Clear local storage logic to force stock numbers to refresh to 10 instantly
-        localStorage.removeItem('store_inventory');
+      <div style="display:flex; flex-direction:column; gap:10px; margin-top:20px;">
+        <a id="btnModalWhatsAppConfirm" href="#" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-order" style="margin:0; font-size:1rem; padding:14px;">
+          <i class="fa-brands fa-whatsapp"></i> Confirmer sur WhatsApp en 1 Clic
+        </a>
 
-        let inventory = { ...initialInventory };
-        localStorage.setItem('store_inventory', JSON.stringify(inventory));
+        <button type="button" class="btn-card btn-add-basket" style="padding:12px;" onclick="window.print()">
+          <i class="fa-solid fa-print"></i> Imprimer le Reçu
+        </button>
 
-        let cart = [];
+        <button type="button" class="btn-card" style="padding:10px; background:none; color:var(--text-muted);" onclick="UI.closeModal('orderSuccessModal')">
+          Fermer et continuer vos achats
+        </button>
+      </div>
+    </div>
+  </div>
 
-        function renderStockDisplay() {
-            const stockMap = {
-                'Mexico Jersey': 'stock-mexico',
-                'Barcelona Jersey': 'stock-barcelona',
-                'Manchester United Full Kit': 'stock-manchester',
-                'Madrid Jersey': 'stock-madrid',
-                'Vintage Jersey': 'stock-vintage',
-                'Premium Jersey 2': 'stock-blank2'
-            };
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
 
-            for (let name in inventory) {
-                let currentStock = inventory[name];
-                let elementId = stockMap[name];
-                let container = document.getElementById(elementId);
-                
-                if (container) {
-                    let parentItem = container.closest('.product-item');
-                    let actionButtons = parentItem.querySelectorAll('.btn');
-
-                    if (currentStock <= 0) {
-                        container.innerHTML = `<span class="stock-out">Sold Out</span>`;
-                        actionButtons.forEach(btn => btn.disabled = true);
-                    } else {
-                        container.innerHTML = `<span class="stock-in">Only ${currentStock} left</span>`;
-                        actionButtons.forEach(btn => btn.disabled = false);
-                    }
-                }
-            }
-        }
-
-        function purchaseAction(itemName, itemPrice, autoScroll) {
-            let totalInCart = cart.filter(item => item.name === itemName).length;
-
-            if (inventory[itemName] - totalInCart <= 0) {
-                alert("Sorry, there are no more quantities available of this item!");
-                return;
-            }
-
-            addToCart(itemName, itemPrice, autoScroll);
-        }
-
-        function addToCart(itemName, itemPrice, autoScroll) {
-            cart.push({ name: itemName, price: itemPrice });
-            updateBasketUI();
-
-            if(autoScroll) {
-                document.getElementById('checkout').scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-
-        function updateBasketUI() {
-            document.getElementById('cartNavBtn').querySelector('span').innerText = `Basket (${cart.length})`;
-
-            const listContainer = document.getElementById('basketList');
-            const totalContainer = document.getElementById('totalPrice');
-            
-            if (cart.length === 0) {
-                listContainer.innerHTML = `<li style="color: #888;">Your basket is empty.</li>`;
-                totalContainer.innerText = "0";
-                document.getElementById('hiddenCartData').value = "";
-                return;
-            }
-
-            let listHTML = "";
-            let finalTotal = 0;
-            let emailText = "";
-
-            cart.forEach((item, index) => {
-                listHTML += `<li><span>${item.name}</span> <strong>${item.price.toLocaleString()} DA</strong></li>`;
-                finalTotal += item.price;
-                emailText += `[Item ${index + 1}: ${item.name} - ${item.price} DA] `;
-            });
-
-            listContainer.innerHTML = listHTML;
-            totalContainer.innerText = finalTotal.toLocaleString();
-
-            document.getElementById('hiddenCartData').value = `${emailText} | Total Price: ${finalTotal} DA`;
-        }
-
-        document.getElementById('orderForm').addEventListener('submit', function(event) {
-            if(cart.length === 0) {
-                event.preventDefault(); 
-                alert("Your basket is empty! Please add a jersey before submitting.");
-                return;
-            }
-
-            cart.forEach(item => {
-                if(inventory[item.name] > 0) {
-                    inventory[item.name]--;
-                }
-            });
-
-            localStorage.setItem('store_inventory', JSON.stringify(inventory));
-            alert("Thank you for buying! Your order is being sent via Formspree.");
-        });
-
-        renderStockDisplay();
-    </script>
+  <!-- Client Application Script -->
+  <script src="app.js"></script>
 </body>
 </html>

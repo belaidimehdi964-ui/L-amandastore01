@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Amanda Store - Live Order Dashboard</title>
+    <link rel="icon" type="image/png" href="Gemini_Generated_Image_khus8pkhus8pkhus.png">
+    <style>
+        :root {
+            --primary-color: #2c5530; 
+            --secondary-color: #4a7c59;
+            --accent-color: #a8d5ba;
+            --bg-color: #f7fbf7;
+            --text-dark: #222;
+            --border-color: #e6f0e6;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color); 
+            color: var(--text-dark);
+        }
+
+        header {
+            background-color: white; 
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .header-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .site-logo {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .dashboard-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #edf7ed;
+            color: #2e7d32;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85em;
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #2e7d32;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.9); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.5; }
+            100% { transform: scale(0.9); opacity: 1; }
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.01);
+        }
+
+        .stat-card h3 {
+            margin: 0 0 5px 0;
+            color: #777;
+            font-size: 0.9em;
+            text-transform: uppercase;
+        }
+
+        .stat-card p {
+            margin: 0;
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .ledger-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            border: 1px solid var(--border-color);
+        }
+
+        .ledger-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .ledger-header h2 {
+            margin: 0;
+            color: var(--primary-color);
+            font-size: 1.4em;
+        }
+
+        .btn-refresh {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-refresh:hover {
+            background-color: #1e3a20;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95em;
+        }
+
+        th {
+            background-color: #fafbfa;
+            color: var(--secondary-color);
+            padding: 14px 16px;
+            font-weight: 600;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        td {
+            padding: 14px 16px;
+            border-bottom: 1px solid #edf4ed;
+            vertical-align: middle;
+        }
+
+        tr:hover td {
+            background-color: #fcfdfc;
+        }
+
+        .item-badge {
+            display: inline-block;
+            background-color: #edf7ed;
+            color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            border: 1px solid #d0ebd0;
+        }
+
+        .total-badge {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .empty-state {
+            text-align: center;
+            color: #888;
+            padding: 40px 0;
+            font-style: italic;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #777;
+            font-size: 0.9em;
+            border-top: 1px solid #edf4ed;
+            background-color: white;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-logo-container">
+            <img src="Gemini_Generated_Image_khus8pkhus8pkhus.png" alt="l'Amanda store Logo" class="site-logo">
+            <h1>L'Amanda Store</h1>
+        </div>
+        <div class="dashboard-status">
+            <div class="pulse-dot"></div>
+            <span>Live Sheet Connected</span>
+        </div>
+    </header>
+
+    <main>
+        <!-- Analytical Stats Cards -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Orders</h3>
+                <p id="statOrders">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Total Revenue</h3>
+                <p id="statRevenue">0 DA</p>
+            </div>
+        </div>
+
+        <!-- Orders Database Table Grid -->
+        <section class="ledger-section">
+            <div class="ledger-header">
+                <h2>Live Sales Ledger</h2>
+                <button class="btn-refresh" onclick="fetchLiveOrders()">Refresh Sheet Data</button>
+            </div>
+            
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Customer Details</th>
+                            <th>Phone Number</th>
+                            <th>Size</th>
+                            <th>Shipping Address</th>
+                            <th>Items Ordered</th>
+                            <th>Revenue Collected</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ledgerTableBody">
+                        <tr>
+                            <td colspan="6" class="empty-state">Loading live database records from Google Sheets...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2026 L'Amanda Store - Automated Admin Portal.
+    </footer>
+
+    <script>
+        const API_ENDPOINT = "https://api.sheetbest.com/sheets/30e3bc87-c617-4fdc-9923-d873060d3c46";
+
+        async function fetchLiveOrders() {
+            const tbody = document.getElementById('ledgerTableBody');
+            try {
+                const response = await fetch(API_ENDPOINT);
+                if (!response.ok) throw new Error("Could not access API link");
+                
+                const data = await response.ok ? await response.json() : [];
+                
+                if (data.length === 0) {
+                    tbody.innerHTML = `<tr><td colspan="6" class="empty-state">No order rows found inside this sheet.</td></tr>`;
+                    updateMetrics(0, 0);
+                    return;
+                }
+
+                let totalSales = 0;
+                let tableRowsHTML = "";
+
+                // Reverse data sequence array to show newest row values at the very top
+                data.reverse().forEach(row => {
+                    // Fallbacks handle keys matching form inputs
+                    const name = row["Client_Name"] || row["Customer Name"] || "N/A";
+                    const phone = row["Client_Phone"] || row["Phone"] || "N/A";
+                    const size = row["Client_Size"] || row["Size"] || "N/A";
+                    const address = row["Client_Address"] || row["Address"] || "N/A";
+                    const items = row["Items_Ordered"] || row["Items Ordered"] || "N/A";
+                    const totalRaw = row["Total_Price"] || row["Total Price"] || "0";
+
+                    // Remove non-numeric artifacts to compute financial counts
+                    const cashVal = parseInt(totalRaw.replace(/[^0-9]/g, '')) || 0;
+                    totalSales += cashVal;
+
+                    tableRowsHTML += `
+                        <tr>
+                            <td><strong>${name}</strong></td>
+                            <td><span style="color:#555;">${phone}</span></td>
+                            <td><span class="item-badge" style="background:#f0f4f0; color:#2c5530;">${size}</span></td>
+                            <td><small style="color:#666;">${address}</small></td>
+                            <td><span class="item-badge">${items}</span></td>
+                            <td class="total-badge">${cashVal.toLocaleString()} DA</td>
+                        </tr>`;
+                });
+
+                tbody.innerHTML = tableRowsHTML;
+                updateMetrics(data.length, totalSales);
+
+            } catch (err) {
+                tbody.innerHTML = `<tr><td colspan="6" class="empty-state" style="color:#d32f2f;">Error fetching data: ${err.message}</td></tr>`;
+            }
+        }
+
+        function updateMetrics(count, revenue) {
+            document.getElementById('statOrders').innerText = count;
+            document.getElementById('statRevenue').innerText = revenue.toLocaleString() + " DA";
+        }
+
+        // Automatic engine initialization loop
+        window.onload = fetchLiveOrders;
+    </script>
+</body>
+</html>
