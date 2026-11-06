@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>L'Amonda Store - Portail Administrateur Sécurisé &amp; Suivi des Commandes</title>
+  <title>L'Amonda Store - Portail Administrateur Sécurisé &amp; Suivi des Ventes</title>
   
   <meta name="robots" content="noindex, nofollow">
   <meta name="referrer" content="no-referrer">
@@ -48,7 +48,6 @@
       flex-direction: column;
     }
 
-    /* Admin Top Header */
     header {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
@@ -147,7 +146,6 @@
       border: 1px solid rgba(211, 47, 47, 0.2);
     }
 
-    /* Main Dashboard Layout */
     main {
       max-width: 1360px;
       width: 100%;
@@ -156,7 +154,6 @@
       flex: 1;
     }
 
-    /* KPI Analytics Grid */
     .kpi-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -176,9 +173,7 @@
       transition: transform 0.2s;
     }
 
-    .kpi-card:hover {
-      transform: translateY(-2px);
-    }
+    .kpi-card:hover { transform: translateY(-2px); }
 
     .kpi-icon {
       width: 52px;
@@ -211,7 +206,6 @@
       color: var(--primary);
     }
 
-    /* Ledger Section */
     .ledger-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -284,29 +278,13 @@
       transition: all 0.2s;
     }
 
-    .btn-refresh {
-      background: var(--primary);
-      color: #ffffff;
-    }
+    .btn-refresh { background: var(--primary); color: #ffffff; }
+    .btn-refresh:hover { background: var(--primary-hover); }
 
-    .btn-refresh:hover {
-      background: var(--primary-hover);
-    }
+    .btn-export { background: #f0f7f0; color: var(--primary); border: 1px solid var(--border); }
+    .btn-export:hover { background: var(--border); }
 
-    .btn-export {
-      background: #f0f7f0;
-      color: var(--primary);
-      border: 1px solid var(--border);
-    }
-
-    .btn-export:hover {
-      background: var(--border);
-    }
-
-    /* Table Styles */
-    .table-container {
-      overflow-x: auto;
-    }
+    .table-container { overflow-x: auto; }
 
     table {
       width: 100%;
@@ -332,11 +310,8 @@
       vertical-align: middle;
     }
 
-    tr:hover td {
-      background-color: #fbfdfb;
-    }
+    tr:hover td { background-color: #fbfdfb; }
 
-    /* Badges in Table */
     .badge-size {
       display: inline-block;
       background: #eef5ee;
@@ -379,9 +354,7 @@
       text-decoration: none;
     }
 
-    .btn-wa-call:hover {
-      background: #1eb855;
-    }
+    .btn-wa-call:hover { background: #1eb855; }
 
     .btn-print-slip {
       display: inline-flex;
@@ -397,11 +370,8 @@
       cursor: pointer;
     }
 
-    .btn-print-slip:hover {
-      background: var(--border);
-    }
+    .btn-print-slip:hover { background: var(--border); }
 
-    /* Order Status Select */
     .status-select {
       padding: 4px 8px;
       border-radius: 6px;
@@ -423,7 +393,6 @@
       font-size: 0.95rem;
     }
 
-    /* Security PIN Gate Modal */
     .auth-overlay {
       position: fixed;
       inset: 0;
@@ -485,9 +454,7 @@
       transition: border-color 0.2s;
     }
 
-    .auth-input:focus {
-      border-color: var(--primary);
-    }
+    .auth-input:focus { border-color: var(--primary); }
 
     .auth-btn {
       width: 100%;
@@ -502,9 +469,7 @@
       transition: background 0.2s;
     }
 
-    .auth-btn:hover {
-      background: var(--primary-hover);
-    }
+    .auth-btn:hover { background: var(--primary-hover); }
 
     .auth-error {
       color: var(--danger);
@@ -514,7 +479,6 @@
       display: none;
     }
 
-    /* Print Slip Hidden Area */
     @media print {
       body * { visibility: hidden; }
       #printableSlip, #printableSlip * { visibility: visible; }
@@ -524,9 +488,7 @@
 </head>
 <body>
 
-  <!-- =========================================================================
-       SECURITY PIN AUTHENTICATION GATE
-       ========================================================================= -->
+  <!-- SECURITY PIN AUTHENTICATION GATE -->
   <div class="auth-overlay" id="authGate">
     <div class="auth-box">
       <div class="auth-shield">
@@ -544,9 +506,6 @@
     </div>
   </div>
 
-  <!-- =========================================================================
-       DASHBOARD TOP NAVIGATION
-       ========================================================================= -->
   <header>
     <div class="brand-group">
       <img src="logo.svg" alt="L'Amonda Logo" class="brand-logo">
@@ -572,14 +531,8 @@
     </div>
   </header>
 
-  <!-- =========================================================================
-       DASHBOARD BODY
-       ========================================================================= -->
   <main>
-    
-    <!-- KPI Analytics Grid -->
     <div class="kpi-grid">
-      
       <div class="kpi-card">
         <div class="kpi-icon icon-orders">
           <i class="fa-solid fa-box-archive"></i>
@@ -619,10 +572,8 @@
           <p>58 / 58</p>
         </div>
       </div>
-
     </div>
 
-    <!-- Live Sales Ledger Section -->
     <section class="ledger-card">
       <div class="ledger-top-bar">
         <div class="ledger-title">
@@ -671,13 +622,10 @@
         </table>
       </div>
     </section>
-
   </main>
 
-  <!-- Printable Slip Container (Visible only when printing) -->
   <div id="printableSlip" style="display:none; padding:40px; font-family:sans-serif;"></div>
 
-  <!-- Dashboard Security Logic Script -->
   <script src="dashboard.js"></script>
 </body>
 </html>

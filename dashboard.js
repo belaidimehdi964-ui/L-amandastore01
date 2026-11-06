@@ -24,9 +24,6 @@ const Dashboard = {
     this.setupEventListeners();
   },
 
-  // ==========================================================================
-  // 1. PIN AUTHENTICATION & BRUTE-FORCE LOCKOUT
-  // ==========================================================================
   checkAuthentication() {
     const isAuth = sessionStorage.getItem(DASHBOARD_CONFIG.sessionKey);
     const authGate = document.getElementById('authGate');
@@ -42,7 +39,6 @@ const Dashboard = {
   },
 
   verifyPin(enteredPin) {
-    // Check Lockout
     const lockoutUntil = localStorage.getItem('lamonda_lockout_until');
     if (lockoutUntil && Date.now() < parseInt(lockoutUntil)) {
       const remainingSec = Math.ceil((parseInt(lockoutUntil) - Date.now()) / 1000);
@@ -85,9 +81,6 @@ const Dashboard = {
     window.location.reload();
   },
 
-  // ==========================================================================
-  // 2. STRICT ANTI-XSS SANITIZATION
-  // ==========================================================================
   sanitize(str) {
     if (str === null || str === undefined) return '';
     return String(str)
@@ -98,7 +91,6 @@ const Dashboard = {
       .replace(/'/g, '&#39;');
   },
 
-  // Clean Algerian phone number for wa.me / tel links
   sanitizePhoneForLink(phone) {
     const digits = String(phone).replace(/\D/g, '');
     if (digits.startsWith('0')) {
@@ -110,9 +102,6 @@ const Dashboard = {
     return digits;
   },
 
-  // ==========================================================================
-  // 3. FETCH LIVE ORDERS
-  // ==========================================================================
   async fetchLiveOrders() {
     const tbody = document.getElementById('ledgerTableBody');
     if (tbody) {
@@ -133,7 +122,6 @@ const Dashboard = {
       const rawData = await response.json();
       this.ordersData = Array.isArray(rawData) ? rawData : [];
 
-      // Sort newest first
       this.ordersData.reverse();
       this.filteredData = [...this.ordersData];
 
@@ -155,9 +143,6 @@ const Dashboard = {
     }
   },
 
-  // ==========================================================================
-  // 4. RENDER LEDGER TABLE
-  // ==========================================================================
   renderTable() {
     const tbody = document.getElementById('ledgerTableBody');
     if (!tbody) return;
@@ -178,7 +163,6 @@ const Dashboard = {
     const savedStatuses = JSON.parse(localStorage.getItem('lamonda_order_statuses') || '{}');
 
     this.filteredData.forEach((row, index) => {
-      // Support varied column names from form submissions
       const orderId = row["Order_ID"] || `CMD-${index + 1}`;
       const name = row["Client_Name"] || row["Customer Name"] || "Client";
       const phone = row["Client_Phone"] || row["Phone"] || "N/A";
@@ -189,11 +173,9 @@ const Dashboard = {
       const totalRaw = row["Total_Price"] || row["Total Price"] || "0";
       const date = row["Order_Date"] || "Récemment";
 
-      // Numeric calculation
       const numericPrice = parseInt(String(totalRaw).replace(/[^0-9]/g, '')) || 0;
       const cleanPhone = this.sanitizePhoneForLink(phone);
 
-      // Order status
       const currentStatus = savedStatuses[orderId] || 'pending';
       const statusClass = `status-${currentStatus}`;
 
@@ -254,9 +236,6 @@ const Dashboard = {
     tbody.innerHTML = rowsHTML;
   },
 
-  // ==========================================================================
-  // 5. STATUS TRACKING PERSISTENCE
-  // ==========================================================================
   updateStatus(orderId, newStatus, selectElement) {
     const saved = JSON.parse(localStorage.getItem('lamonda_order_statuses') || '{}');
     saved[orderId] = newStatus;
@@ -265,9 +244,6 @@ const Dashboard = {
     selectElement.className = `status-select status-${newStatus}`;
   },
 
-  // ==========================================================================
-  // 6. METRICS COMPUTATION
-  // ==========================================================================
   computeMetrics() {
     const totalOrders = this.ordersData.length;
     let totalRevenue = 0;
@@ -289,9 +265,6 @@ const Dashboard = {
     if (aovEl) aovEl.textContent = `${aov.toLocaleString()} DA`;
   },
 
-  // ==========================================================================
-  // 7. PRINT PACKING SLIP / INVOICE (Yalidine Standard)
-  // ==========================================================================
   printPackingSlip(index) {
     const row = this.filteredData[index];
     if (!row) return;
@@ -371,9 +344,6 @@ const Dashboard = {
     window.print();
   },
 
-  // ==========================================================================
-  // 8. EXPORT TO CSV / EXCEL WITH UTF-8 BOM
-  // ==========================================================================
   exportToCSV() {
     if (this.ordersData.length === 0) {
       alert("Aucune commande à exporter.");
@@ -381,7 +351,7 @@ const Dashboard = {
     }
 
     const headers = ["Order_ID", "Date", "Client_Name", "Phone", "Wilaya", "Address", "Size", "Items_Ordered", "Total_Price"];
-    let csvContent = "\uFEFF"; // UTF-8 BOM for Excel compatibility
+    let csvContent = "\uFEFF";
 
     csvContent += headers.join(";") + "\r\n";
 
@@ -410,11 +380,7 @@ const Dashboard = {
     document.body.removeChild(link);
   },
 
-  // ==========================================================================
-  // 9. EVENT LISTENERS
-  // ==========================================================================
   setupEventListeners() {
-    // PIN Form
     const pinForm = document.getElementById('adminPinForm');
     if (pinForm) {
       pinForm.addEventListener('submit', (e) => {
@@ -424,7 +390,6 @@ const Dashboard = {
       });
     }
 
-    // Search filter
     const searchInput = document.getElementById('adminSearchInput');
     if (searchInput) {
       searchInput.addEventListener('input', (e) => {
@@ -443,7 +408,6 @@ const Dashboard = {
       });
     }
 
-    // Inactivity Auto-Logout (15 minutes)
     let inactivityTimer;
     const resetTimer = () => {
       clearTimeout(inactivityTimer);

@@ -89,79 +89,52 @@ const ALGERIA_WILAYAS = [
 ];
 
 // ============================================================================
-// 3. PRODUCT CATALOG
+// 3. PRODUCT CATALOG - 3 EXACT ITEMS (PRICE: 2,500 DA EACH)
 // ============================================================================
 const PRODUCTS = [
   {
-    id: "mexico",
-    name: "Mexico Jersey 2024/26",
-    category: "national",
-    price: 3000,
-    originalPrice: 3800,
-    image: "https://images.unsplash.com/photo-1577223625816-7546f13df25d?auto=format&fit=crop&w=600&q=80",
-    badge: "Best-Seller",
-    badgeClass: "badge-bestseller",
-    description: "Maillot officiel Mexique Coupe du Monde. Tissu Dry-Fit ultra respirant avec blason thermocollé de haute précision.",
-    sizes: ["S", "M", "L", "XL", "XXL"]
-  },
-  {
     id: "barcelona",
-    name: "FC Barcelona Home Jersey",
+    name: "Barcelona Jersey",
+    subtitle: "Édition Spéciale Kobe Bryant / Black Mamba",
     category: "clubs",
-    price: 3000,
-    originalPrice: 4000,
-    image: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80",
-    badge: "Classique",
-    badgeClass: "badge-bestseller",
-    description: "Le mythique maillot Blaugrana du FC Barcelone. Confort athlétique d'élite, finitions professionnelles certifiées.",
-    sizes: ["M", "L", "XL"]
-  },
-  {
-    id: "manchester",
-    name: "Manchester United Full Kit",
-    category: "kits",
     price: 2500,
     originalPrice: 3500,
-    image: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=600&q=80",
-    badge: "Ensemble Complet",
-    badgeClass: "badge-new",
-    description: "Pack complet Manchester United : Maillot officiel + Short de match assorti. Idéal pour l'entraînement ou les sorties sportives.",
-    sizes: ["M", "L", "XL"]
+    image: "../../.gemini/antigravity/brain/48d3c21d-944e-4d8c-ab75-54be72258b8e/.user_uploaded/media_1793912932028_f678e3e9.jpg",
+    fallbackImage: "C:/Users/pc dell/.gemini/antigravity/brain/48d3c21d-944e-4d8c-ab75-54be72258b8e/.user_uploaded/media_1793912932028_f678e3e9.jpg",
+    cdnFallback: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMLYDWDIWWKcFaQcxCm-KMEbvufYcHh34FSYHFJwZzIg&s=10",
+    badge: "Édition Spéciale",
+    badgeClass: "badge-bestseller",
+    description: "Maillot FC Barcelone Édition Spéciale Kobe Bryant / Black Mamba. Dégradé violet et noir, écusson violet, logo Sheath et sponsor Spotify doré.",
+    sizes: ["S", "M", "L", "XL", "XXL"]
   },
   {
     id: "madrid",
-    name: "Real Madrid Home Royal",
+    name: "Madrid Jersey",
+    subtitle: "Édition Rétro Vert Émeraude 2024/25",
     category: "clubs",
-    price: 3000,
-    originalPrice: 3900,
-    image: "https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=600&q=80",
-    badge: "Top Vente",
-    badgeClass: "badge-bestseller",
-    description: "Édition Blanche Royale Real Madrid. Tissu premium anti-transpiration avec détails dorés subtils et écusson brodé.",
+    price: 2500,
+    originalPrice: 3500,
+    image: "../../.gemini/antigravity/brain/48d3c21d-944e-4d8c-ab75-54be72258b8e/.user_uploaded/media_1793912932083_686e1421.webp",
+    fallbackImage: "C:/Users/pc dell/.gemini/antigravity/brain/48d3c21d-944e-4d8c-ab75-54be72258b8e/.user_uploaded/media_1793912932083_686e1421.webp",
+    cdnFallback: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeLNCqjm1eLpFIL8InT4WHNG9sQl0nGy3n9gz-A-CdLQ&s=10",
+    badge: "Édition Rétro",
+    badgeClass: "badge-new",
+    description: "Maillot Real Madrid Vert Émeraude Édition Rétro. Motif monogramme RMCF en filigrane, logo Adidas Trefoil classique et col blanc athlétique.",
     sizes: ["S", "M", "L", "XL", "XXL"]
   },
   {
-    id: "vintage",
-    name: "Vintage Retro Classic Jersey",
-    category: "retro",
-    price: 2800,
-    originalPrice: 3600,
-    image: "https://images.unsplash.com/photo-1556906781-9a412961c28c?auto=format&fit=crop&w=600&q=80",
-    badge: "Édition Rétro",
-    badgeClass: "badge-retro",
-    description: "Pièce de collection Vintage des années 90/2000. Col polo rétro travaillé, matière satinée fidèle aux originaux de légende.",
-    sizes: ["M", "L", "XL"]
-  },
-  {
-    id: "algeria",
-    name: "Algeria Fennecs National Jersey",
+    id: "mexico",
+    name: "Mexico Jersey",
+    subtitle: "Édition Officielle Calendrier Aztèque",
     category: "national",
-    price: 3200,
-    originalPrice: 4200,
-    image: "https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=600&q=80",
-    badge: "Édition Spéciale",
-    badgeClass: "badge-new",
-    description: "Maillot des Fennecs d'Algérie aux deux étoiles dorées. Tissu respirant vert et blanc, coupe moderne ajustée.",
+    price: 2500,
+    originalPrice: 3500,
+    image: "../../.gemini/antigravity/brain/48d3c21d-944e-4d8c-ab75-54be72258b8e/.user_uploaded/media_1793912932103_121edc50.jpg",
+    fallbackImage: "C:/Users/pc dell/.gemini/antigravity/brain/48d3c21d-944e-4d8c-ab75-54be72258b8e/.user_uploaded/media_1793912932103_121edc50.jpg",
+    cdnFallback: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsmSIL2OwObv6VgbeYuSxze01sYSGgQXNbqcGvTXjbQQ&s=10",
+    badge: "Best-Seller",
+    badgeClass: "badge-bestseller",
+    description: "Maillot officiel Mexique Vert à motifs aztèques traditionnels. Tissu Dry-Fit ultra respirant avec blason thermocollé de haute précision.",
     sizes: ["S", "M", "L", "XL", "XXL"]
   }
 ];
@@ -170,7 +143,6 @@ const PRODUCTS = [
 // 4. MAXIMUM SECURITY PROTOCOLS & SANITIZATION
 // ============================================================================
 const Security = {
-  // Prevent Cross-Site Scripting (XSS)
   escapeHTML(str) {
     if (typeof str !== 'string') return '';
     return str
@@ -181,14 +153,12 @@ const Security = {
       .replace(/'/g, '&#39;');
   },
 
-  // Validate Algerian Phone Number: 05, 06, 07 followed by 8 digits, or +213 format
   isValidAlgerianPhone(phone) {
     const cleaned = phone.replace(/[\s\-\.]/g, '');
     const regex = /^(0|\+213|00213)?[567][0-9]{8}$/;
     return regex.test(cleaned);
   },
 
-  // Format phone cleanly: 06 72 43 42 17
   formatAlgerianPhone(phone) {
     const cleaned = phone.replace(/\D/g, '');
     if (cleaned.length === 10 && cleaned.startsWith('0')) {
@@ -197,25 +167,21 @@ const Security = {
     return phone;
   },
 
-  // Validate Full Name (2 to 60 valid characters, no code injection)
   isValidName(name) {
     const trimmed = name.trim();
     if (trimmed.length < 2 || trimmed.length > 60) return false;
-    // Allow unicode letters, spaces, hyphens, and apostrophes
     const regex = /^[\p{L}\s\-\'\.]{2,60}$/u;
     return regex.test(trimmed);
   },
 
-  // Anti-Spam Bot Honeypot Check + Timestamp Check
   isHumanSubmission(formElement, pageLoadTime) {
     const honey = formElement.querySelector('input[name="_website_botcheck"]');
     if (honey && honey.value.trim() !== '') {
       console.warn('Bot submission blocked: honeypot filled');
       return false;
     }
-    // Form must take at least 2.5 seconds to fill out (prevents automated instant scripts)
     const elapsed = Date.now() - pageLoadTime;
-    if (elapsed < 2500) {
+    if (elapsed < 2000) {
       console.warn('Bot submission blocked: too fast (' + elapsed + 'ms)');
       return false;
     }
@@ -229,25 +195,24 @@ const Security = {
 const Inventory = {
   getInventory() {
     try {
-      const stored = localStorage.getItem('lamonda_inventory');
+      const stored = localStorage.getItem('lamonda_inventory_v3');
       if (stored) {
         return JSON.parse(stored);
       }
     } catch (e) {
       console.error('Error reading inventory', e);
     }
-    // Initialize default inventory
     const initial = {};
     PRODUCTS.forEach(p => {
       initial[p.name] = STORE_CONFIG.initialStockPerItem;
     });
-    localStorage.setItem('lamonda_inventory', JSON.stringify(initial));
+    localStorage.setItem('lamonda_inventory_v3', JSON.stringify(initial));
     return initial;
   },
 
   saveInventory(inventory) {
     try {
-      localStorage.setItem('lamonda_inventory', JSON.stringify(inventory));
+      localStorage.setItem('lamonda_inventory_v3', JSON.stringify(inventory));
     } catch (e) {
       console.error('Error saving inventory', e);
     }
@@ -274,7 +239,7 @@ class CartEngine {
   constructor() {
     this.items = this.loadCart();
     this.selectedWilaya = null;
-    this.deliveryType = 'home'; // 'home' or 'desk'
+    this.deliveryType = 'home';
     this.appliedCoupon = null;
   }
 
@@ -319,6 +284,8 @@ class CartEngine {
         price: product.price,
         size: size,
         image: product.image,
+        fallbackImage: product.fallbackImage,
+        cdnFallback: product.cdnFallback,
         qty: quantity
       });
     }
@@ -377,13 +344,11 @@ class CartEngine {
     if (this.items.length === 0) return 0;
     const subtotal = this.getSubtotal();
     
-    // Free shipping threshold qualification
     if (subtotal >= STORE_CONFIG.freeShippingThreshold) {
       return 0;
     }
 
     if (!this.selectedWilaya) {
-      // Default delivery fee if wilaya not selected yet
       return this.deliveryType === 'home' ? 600 : 400;
     }
 
@@ -408,20 +373,16 @@ class CartEngine {
   }
 
   updateUI() {
-    // 1. Update Navigation Cart Badge with pop animation
     const badge = document.getElementById('cartNavCount');
     if (badge) {
       const count = this.getItemsCount();
       badge.textContent = count;
       badge.classList.remove('cart-bounce');
-      void badge.offsetWidth; // Trigger reflow
+      void badge.offsetWidth;
       badge.classList.add('cart-bounce');
     }
 
-    // 2. Render Checkout Summary
     this.renderSummaryList();
-
-    // 3. Render Slide-out Drawer
     this.renderDrawerList();
   }
 
@@ -453,7 +414,8 @@ class CartEngine {
 
       html += `
         <li class="summary-item">
-          <img src="${item.image}" alt="${safeName}" class="summary-item-img" onerror="this.src='logo.svg'">
+          <img src="${item.image}" alt="${safeName}" class="summary-item-img" 
+               onerror="if(this.dataset.fallback !== '1'){ this.dataset.fallback='1'; this.src='${item.fallbackImage}'; } else if(this.dataset.cdn !== '1'){ this.dataset.cdn='1'; this.src='${item.cdnFallback}'; } else { this.src='logo.svg'; }">
           <div class="summary-item-info">
             <div class="summary-item-title">${safeName}</div>
             <span class="summary-item-size">Taille : ${safeSize}</span>
@@ -509,7 +471,8 @@ class CartEngine {
 
       html += `
         <div class="summary-item" style="border-bottom: 1px solid var(--border-light); padding: 12px 0;">
-          <img src="${item.image}" alt="${safeName}" class="summary-item-img">
+          <img src="${item.image}" alt="${safeName}" class="summary-item-img"
+               onerror="if(this.dataset.fallback !== '1'){ this.dataset.fallback='1'; this.src='${item.fallbackImage}'; } else if(this.dataset.cdn !== '1'){ this.dataset.cdn='1'; this.src='${item.cdnFallback}'; } else { this.src='logo.svg'; }">
           <div class="summary-item-info">
             <div class="summary-item-title">${safeName}</div>
             <span class="summary-item-size">Taille : ${safeSize}</span>
@@ -532,7 +495,6 @@ class CartEngine {
   }
 }
 
-// Global Cart Instance
 const cart = new CartEngine();
 
 // ============================================================================
@@ -585,10 +547,9 @@ const UI = {
         stockMarkup = `<span class="stock-pill stock-low"><span class="stock-dot"></span>Dernières pièces (${stock}) !</span>`;
       }
 
-      // Sizes Radio options
       let sizesMarkup = '';
       p.sizes.forEach((s, idx) => {
-        const checked = idx === 0 ? 'checked' : '';
+        const checked = idx === 1 ? 'checked' : '';
         sizesMarkup += `
           <label class="size-radio-label">
             <input type="radio" name="size_${p.id}" value="${s}" ${checked}>
@@ -604,14 +565,15 @@ const UI = {
           </div>
 
           <div class="product-img-wrap">
-            <img src="${p.image}" alt="${Security.escapeHTML(p.name)}" loading="lazy" onerror="this.src='logo.svg'">
+            <img src="${p.image}" alt="${Security.escapeHTML(p.name)}" loading="lazy"
+                 onerror="if(this.dataset.fallback !== '1'){ this.dataset.fallback='1'; this.src='${p.fallbackImage}'; } else if(this.dataset.cdn !== '1'){ this.dataset.cdn='1'; this.src='${p.cdnFallback}'; } else { this.src='logo.svg'; }">
             <button type="button" class="btn-quick-preview" onclick="UI.openQuickView('${p.id}')">
               <i class="fa-solid fa-eye"></i> Aperçu Détails
             </button>
           </div>
 
           <div class="product-meta">
-            <div class="product-category">${p.category === 'clubs' ? 'Club Européen' : p.category === 'national' ? 'Équipe Nationale' : p.category === 'kits' ? 'Kit Complet' : 'Collection Rétro'}</div>
+            <div class="product-category">${p.subtitle || 'Maillot Athlétique'}</div>
             <h3 class="product-title">${Security.escapeHTML(p.name)}</h3>
             
             <div class="product-pricing">
@@ -667,7 +629,7 @@ const UI = {
   handleAddToCart(productId) {
     const selectedSizeRadio = document.querySelector(`input[name="size_${productId}"]:checked`);
     const size = selectedSizeRadio ? selectedSizeRadio.value : 'L';
-    cart.addItem(productId, size, 1);
+    return cart.addItem(productId, size, 1);
   },
 
   handleBuyNow(productId) {
@@ -688,12 +650,11 @@ const UI = {
     const body = document.getElementById('quickViewModalBody');
     if (!modal || !body) return;
 
-    const stock = Inventory.getStock(product.name);
-
     body.innerHTML = `
       <div style="display:flex; gap:24px; flex-wrap:wrap; align-items:center;">
         <div style="flex:1; min-width:240px; text-align:center; background:#f7faf7; padding:20px; border-radius:12px;">
-          <img src="${product.image}" alt="${Security.escapeHTML(product.name)}" style="max-height:260px; margin:0 auto; object-fit:contain;">
+          <img src="${product.image}" alt="${Security.escapeHTML(product.name)}" style="max-height:280px; margin:0 auto; object-fit:contain;"
+               onerror="if(this.dataset.fallback !== '1'){ this.dataset.fallback='1'; this.src='${product.fallbackImage}'; } else if(this.dataset.cdn !== '1'){ this.dataset.cdn='1'; this.src='${product.cdnFallback}'; } else { this.src='logo.svg'; }">
         </div>
         <div style="flex:1.2; min-width:260px;">
           <span class="badge-tag ${product.badgeClass}" style="margin-bottom:8px; display:inline-block;">${product.badge}</span>
@@ -701,10 +662,10 @@ const UI = {
           <div style="font-size:1.5rem; font-weight:800; color:var(--primary); margin:10px 0;">${product.price.toLocaleString()} ${STORE_CONFIG.currency}</div>
           <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:16px;">${Security.escapeHTML(product.description)}</p>
           <div style="background:#eaf6ea; color:#2e7d32; padding:8px 12px; border-radius:8px; font-weight:700; font-size:0.85rem; margin-bottom:20px;">
-            ✓ Tissu Dri-FIT 100% Respirant &amp; Écussons de Haute Qualité
+            ✓ Tissu Dri-FIT 100% Respirant &amp; Écussons Haute Précision
           </div>
           <button class="btn-submit-order" onclick="UI.handleBuyNow('${product.id}'); UI.closeModal('quickViewModal');">
-            Commander ce modèle
+            Commander ce modèle (2 500 DA)
           </button>
         </div>
       </div>
@@ -756,7 +717,6 @@ const UI = {
   },
 
   setupEventListeners() {
-    // 1. Category Filter Buttons
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -766,7 +726,6 @@ const UI = {
       });
     });
 
-    // 2. Search Input Filter
     const searchInput = document.getElementById('jerseySearchInput');
     if (searchInput) {
       searchInput.addEventListener('input', (e) => {
@@ -775,7 +734,6 @@ const UI = {
       });
     }
 
-    // 3. Wilaya Selection Change Listener
     const wilayaSelect = document.getElementById('clientWilaya');
     if (wilayaSelect) {
       wilayaSelect.addEventListener('change', (e) => {
@@ -788,7 +746,6 @@ const UI = {
       });
     }
 
-    // 4. Delivery Type Radios (Home vs Desk)
     document.querySelectorAll('input[name="delivery_type"]').forEach(radio => {
       radio.addEventListener('change', (e) => {
         cart.deliveryType = e.target.value;
@@ -796,7 +753,6 @@ const UI = {
       });
     });
 
-    // 5. Phone Input Formatting on the fly
     const phoneInput = document.getElementById('clientPhone');
     if (phoneInput) {
       phoneInput.addEventListener('blur', (e) => {
@@ -804,7 +760,6 @@ const UI = {
       });
     }
 
-    // 6. Coupon Application
     const applyCouponBtn = document.getElementById('btnApplyCoupon');
     const couponInput = document.getElementById('couponCodeInput');
     if (applyCouponBtn && couponInput) {
@@ -824,35 +779,28 @@ const UI = {
       });
     }
 
-    // 7. Secure Checkout Form Submission Handler
     const checkoutForm = document.getElementById('orderForm');
     if (checkoutForm) {
       checkoutForm.addEventListener('submit', (e) => this.handleOrderSubmission(e));
     }
   },
 
-  // ==========================================================================
-  // 8. HIGH-SECURITY TRIPLE-ORDER SUBMISSION ENGINE
-  // ==========================================================================
   async handleOrderSubmission(event) {
     event.preventDefault();
 
     const form = event.target;
     const submitBtn = document.getElementById('btnSubmitOrder');
 
-    // Security Gate 1: Check if cart has items
     if (cart.items.length === 0) {
       this.showToast('Votre panier est vide ! Veuillez ajouter au moins un maillot.', 'danger');
       return;
     }
 
-    // Security Gate 2: Honeypot & Timing Verification against spambots
     if (!Security.isHumanSubmission(form, this.pageLoadTimestamp)) {
       this.showToast('Validation de sécurité échouée. Veuillez réessayer.', 'danger');
       return;
     }
 
-    // Security Gate 3: Extract & Validate Inputs
     const clientName = form.elements['client_name'].value.trim();
     const clientPhone = form.elements['client_phone'].value.trim();
     const clientWilayaCode = form.elements['client_wilaya'].value;
@@ -886,31 +834,24 @@ const UI = {
     const selectedWilayaObj = ALGERIA_WILAYAS.find(w => w.code === clientWilayaCode);
     const wilayaName = selectedWilayaObj ? selectedWilayaObj.name : clientWilayaCode;
 
-    // Generate Order ID & Timestamps
     const orderId = 'AMD-' + Math.floor(100000 + Math.random() * 900000);
     const orderTimestamp = new Date().toLocaleString('fr-FR');
     const grandTotal = cart.getGrandTotal();
     const deliveryFee = cart.getDeliveryFee();
 
-    // Prepare Items Summary String
     let itemsSummaryText = cart.items.map(it => 
       `${it.name} (Taille: ${it.size}) × ${it.qty}`
     ).join(' | ');
 
-    // Prepare Sizes List String
     let sizesSummaryText = cart.items.map(it => 
       `${it.name}: ${it.size} (Qté: ${it.qty})`
     ).join('; ');
 
-    // UI Loading State
     if (submitBtn) {
       submitBtn.disabled = true;
       submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Transmission Sécurisée...`;
     }
 
-    // ------------------------------------------------------------------------
-    // CHANNEL 1 & 2: Background Submission to Formspree + SheetBest API
-    // ------------------------------------------------------------------------
     const payload = {
       Order_ID: orderId,
       Client_Name: clientName,
@@ -926,21 +867,17 @@ const UI = {
       Order_Date: orderTimestamp
     };
 
-    let formspreeSuccess = false;
-
     try {
-      // 1. Post to Formspree via AJAX
-      const formspreePromise = fetch(STORE_CONFIG.formspreeEndpoint, {
+      fetch(STORE_CONFIG.formspreeEndpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
         body: JSON.stringify(payload)
-      });
+      }).catch(e => console.warn('Formspree background notice:', e));
 
-      // 2. Post to SheetBest Google Sheets in parallel
-      const sheetBestPromise = fetch(STORE_CONFIG.sheetBestEndpoint, {
+      fetch(STORE_CONFIG.sheetBestEndpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -948,22 +885,14 @@ const UI = {
         body: JSON.stringify(payload)
       }).catch(err => console.warn('SheetBest async notice:', err));
 
-      const response = await formspreePromise;
-      if (response.ok) {
-        formspreeSuccess = true;
-      }
     } catch (networkErr) {
-      console.warn('Direct network post fallback:', networkErr);
+      console.warn('Network notice:', networkErr);
     }
 
-    // Decrement stock in local inventory
     cart.items.forEach(item => {
       Inventory.decrementStock(item.name, item.qty);
     });
 
-    // ------------------------------------------------------------------------
-    // CHANNEL 3: Prepare Direct 1-Click WhatsApp Confirmation
-    // ------------------------------------------------------------------------
     const whatsappMessage = encodeURIComponent(
       `*NOUVELLE COMMANDE L'AMONDA STORE*\n` +
       `--------------------------------\n` +
@@ -984,7 +913,6 @@ const UI = {
 
     const whatsappUrl = `https://wa.me/${STORE_CONFIG.whatsappNumber}?text=${whatsappMessage}`;
 
-    // Show Confirmation Modal
     this.displayOrderSuccessModal({
       orderId,
       clientName,
@@ -995,7 +923,6 @@ const UI = {
       items: [...cart.items]
     });
 
-    // Reset Form & Clear Cart
     form.reset();
     cart.clearCart();
 
@@ -1047,7 +974,6 @@ const UI = {
   }
 };
 
-// Initialize Application when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
   UI.init();
 });

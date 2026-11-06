@@ -1,31 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
   <defs>
-    <!-- Background subtle gradient -->
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="100%" stop-color="#f8fbf8"/>
-    </linearGradient>
-    
-    <!-- Almond seed gradient -->
     <linearGradient id="almondGrad" x1="20%" y1="10%" x2="80%" y2="90%">
       <stop offset="0%" stop-color="#9eb653"/>
       <stop offset="50%" stop-color="#8a9e43"/>
       <stop offset="100%" stop-color="#738435"/>
     </linearGradient>
 
-    <!-- Leaf 1 gradient (left) -->
     <linearGradient id="leafLeftGrad" x1="0%" y1="50%" x2="100%" y2="50%">
       <stop offset="0%" stop-color="#a6d573"/>
       <stop offset="100%" stop-color="#8ec756"/>
     </linearGradient>
 
-    <!-- Leaf 2 gradient (top right) -->
     <linearGradient id="leafTopRightGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#9ed268"/>
       <stop offset="100%" stop-color="#7ebc45"/>
     </linearGradient>
 
-    <!-- Leaf 3 gradient (bottom right) -->
     <linearGradient id="leafBottomRightGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#87c450"/>
       <stop offset="100%" stop-color="#6ea838"/>
@@ -37,39 +27,31 @@
   </defs>
 
   <g transform="translate(0, -10)">
-    <!-- LEAF 1: Left Leaf -->
-    <path d="M 175 145 C 130 160 110 135 118 105 C 145 102 170 120 175 145 Z" 
-          fill="url(#leafLeftGrad)"/>
-    <!-- Leaf 1 Vein -->
+    <!-- Leaf 1: Left Leaf -->
+    <path d="M 175 145 C 130 160 110 135 118 105 C 145 102 170 120 175 145 Z" fill="url(#leafLeftGrad)"/>
     <path d="M 120 108 Q 146 126 172 142" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.85"/>
 
-    <!-- LEAF 2: Top Right Leaf -->
-    <path d="M 215 125 C 220 70 260 45 285 52 C 285 85 255 120 215 125 Z" 
-          fill="url(#leafTopRightGrad)"/>
-    <!-- Leaf 2 Vein -->
+    <!-- Leaf 2: Top Right Leaf -->
+    <path d="M 215 125 C 220 70 260 45 285 52 C 285 85 255 120 215 125 Z" fill="url(#leafTopRightGrad)"/>
     <path d="M 280 55 Q 252 86 220 122" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.85"/>
 
-    <!-- LEAF 3: Bottom Right Leaf -->
-    <path d="M 220 150 C 265 140 288 165 282 195 C 255 198 230 180 220 150 Z" 
-          fill="url(#leafBottomRightGrad)"/>
-    <!-- Leaf 3 Vein -->
+    <!-- Leaf 3: Bottom Right Leaf -->
+    <path d="M 220 150 C 265 140 288 165 282 195 C 255 198 230 180 220 150 Z" fill="url(#leafBottomRightGrad)"/>
     <path d="M 278 192 Q 252 174 224 153" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.85"/>
 
-    <!-- CENTRAL ALMOND SEED -->
-    <!-- Almond Outer Contour -->
+    <!-- Central Almond Seed -->
     <path d="M 200 48 C 235 95 242 165 200 188 C 158 165 165 95 200 48 Z" 
           fill="url(#almondGrad)" 
           stroke="#5c4a30" 
           stroke-width="4.5"
           filter="url(#subtleShadow)"/>
 
-    <!-- Almond Inner Natural Spots/Texture -->
     <ellipse cx="193" cy="85" rx="4.5" ry="9" fill="#5c4a30" opacity="0.75" transform="rotate(-15 193 85)"/>
     <ellipse cx="196" cy="104" rx="3.5" ry="4" fill="#5c4a30" opacity="0.75"/>
     <ellipse cx="203" cy="130" rx="2" ry="3.5" fill="#5c4a30" opacity="0.45"/>
   </g>
 
-  <!-- BRAND TYPOGRAPHY -->
+  <!-- Typography -->
   <text x="200" y="248" 
         text-anchor="middle" 
         font-family="'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif" 
