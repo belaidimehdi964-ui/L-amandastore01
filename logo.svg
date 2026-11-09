@@ -1,70 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
   <defs>
-    <linearGradient id="almondGrad" x1="20%" y1="10%" x2="80%" y2="90%">
-      <stop offset="0%" stop-color="#9eb653"/>
-      <stop offset="50%" stop-color="#8a9e43"/>
-      <stop offset="100%" stop-color="#738435"/>
+    <linearGradient id="leafGradLeft" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7ebc52" />
+      <stop offset="100%" stop-color="#9ddc70" />
     </linearGradient>
-
-    <linearGradient id="leafLeftGrad" x1="0%" y1="50%" x2="100%" y2="50%">
-      <stop offset="0%" stop-color="#a6d573"/>
-      <stop offset="100%" stop-color="#8ec756"/>
+    <linearGradient id="leafGradRight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8ecf63" />
+      <stop offset="100%" stop-color="#69a540" />
     </linearGradient>
-
-    <linearGradient id="leafTopRightGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#9ed268"/>
-      <stop offset="100%" stop-color="#7ebc45"/>
+    <linearGradient id="leafGradTopRight" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#82c755" />
+      <stop offset="100%" stop-color="#a7e67c" />
     </linearGradient>
-
-    <linearGradient id="leafBottomRightGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#87c450"/>
-      <stop offset="100%" stop-color="#6ea838"/>
+    <linearGradient id="seedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a2b85d" />
+      <stop offset="100%" stop-color="#8a9e49" />
     </linearGradient>
-
-    <filter id="subtleShadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#142817" flood-opacity="0.12"/>
-    </filter>
   </defs>
 
-  <g transform="translate(0, -10)">
-    <!-- Leaf 1: Left Leaf -->
-    <path d="M 175 145 C 130 160 110 135 118 105 C 145 102 170 120 175 145 Z" fill="url(#leafLeftGrad)"/>
-    <path d="M 120 108 Q 146 126 172 142" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.85"/>
+  <!-- Top Right Leaf -->
+  <path d="M 215 130 C 235 70, 275 40, 295 45 C 298 75, 275 115, 235 140 Z" 
+        fill="url(#leafGradTopRight)" opacity="0.95" />
+  <path d="M 220 125 Q 260 85 292 48" stroke="#ffffff" stroke-width="2.5" fill="none" opacity="0.6" stroke-linecap="round" />
 
-    <!-- Leaf 2: Top Right Leaf -->
-    <path d="M 215 125 C 220 70 260 45 285 52 C 285 85 255 120 215 125 Z" fill="url(#leafTopRightGrad)"/>
-    <path d="M 280 55 Q 252 86 220 122" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.85"/>
+  <!-- Left Leaf -->
+  <path d="M 160 135 C 105 130, 80 155, 75 180 C 105 195, 150 175, 175 145 Z" 
+        fill="url(#leafGradLeft)" />
+  <path d="M 80 177 Q 120 165 170 143" stroke="#ffffff" stroke-width="2.5" fill="none" opacity="0.6" stroke-linecap="round" />
 
-    <!-- Leaf 3: Bottom Right Leaf -->
-    <path d="M 220 150 C 265 140 288 165 282 195 C 255 198 230 180 220 150 Z" fill="url(#leafBottomRightGrad)"/>
-    <path d="M 278 192 Q 252 174 224 153" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.85"/>
+  <!-- Bottom Right Leaf -->
+  <path d="M 225 150 C 265 135, 290 160, 298 185 C 268 205, 225 185, 210 158 Z" 
+        fill="url(#leafGradRight)" />
+  <path d="M 294 182 Q 260 170 215 156" stroke="#ffffff" stroke-width="2.5" fill="none" opacity="0.6" stroke-linecap="round" />
 
-    <!-- Central Almond Seed -->
-    <path d="M 200 48 C 235 95 242 165 200 188 C 158 165 165 95 200 48 Z" 
-          fill="url(#almondGrad)" 
-          stroke="#5c4a30" 
-          stroke-width="4.5"
-          filter="url(#subtleShadow)"/>
-
-    <ellipse cx="193" cy="85" rx="4.5" ry="9" fill="#5c4a30" opacity="0.75" transform="rotate(-15 193 85)"/>
-    <ellipse cx="196" cy="104" rx="3.5" ry="4" fill="#5c4a30" opacity="0.75"/>
-    <ellipse cx="203" cy="130" rx="2" ry="3.5" fill="#5c4a30" opacity="0.45"/>
-  </g>
-
-  <!-- Typography -->
-  <text x="200" y="248" 
-        text-anchor="middle" 
-        font-family="'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif" 
-        font-size="34" 
-        font-weight="800" 
-        letter-spacing="2" 
-        fill="#1e3b22">L'AMONDA</text>
+  <!-- Central Almond / Seed -->
+  <path d="M 200 65 C 235 115, 245 185, 205 210 C 165 215, 155 155, 190 70 Z" 
+        fill="url(#seedGrad)" stroke="#66462c" stroke-width="4.5" stroke-linejoin="round" />
   
-  <text x="200" y="284" 
-        text-anchor="middle" 
-        font-family="'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif" 
-        font-size="18" 
-        font-weight="700" 
-        letter-spacing="9" 
-        fill="#264b2c">STORE</text>
+  <!-- Seed Inner Texture / Dots -->
+  <ellipse cx="190" cy="110" rx="3.5" ry="6" transform="rotate(-15 190 110)" fill="#583c24" opacity="0.75" />
+  <circle cx="193" cy="125" r="2.5" fill="#583c24" opacity="0.75" />
+
+  <!-- Brand Typography -->
+  <text x="200" y="258" font-family="'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif" font-size="28" font-weight="900" fill="#1b4324" text-anchor="middle" letter-spacing="2">L'AMONDA</text>
+  <text x="200" y="286" font-family="'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif" font-size="20" font-weight="800" fill="#2d5835" text-anchor="middle" letter-spacing="4">STORE</text>
 </svg>

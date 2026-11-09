@@ -3,399 +3,1193 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>L'Amonda Store - Maillots Officiels &amp; Kits Sportifs Premium | Algérie</title>
+  <title>L'Amonda Store - Maillots Officiels &amp; Kits Sportifs (2 500 DA)</title>
   
-  <meta name="description" content="Découvrez la collection exclusive de maillots de football officiels chez L'Amonda Store : Mexico Jersey, Barcelona Jersey, Madrid Jersey à 2 500 DA. Paiement à la livraison 58 Wilayas.">
-  <meta name="keywords" content="maillots algerie, maillot football alger, mexico jersey, barcelona jersey, madrid jersey, l'amonda store, livraison 58 wilayas">
-  <meta name="author" content="L'Amonda Store Algérie">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  
-  <!-- Favicon -->
+  <meta name="description" content="Découvrez nos maillots officiels chez L'Amonda Store : Barcelona Jersey, Madrid Jersey, Mexico Jersey au tarif unique de 2 500 DA. Livraison 58 Wilayas et paiement à la livraison.">
   <link rel="icon" type="image/svg+xml" href="logo.svg">
   
-  <!-- Google Web Fonts: Outfit (Display) & Plus Jakarta Sans (Body) -->
+  <!-- Google Web Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <!-- Font Awesome 6.5.1 CDN -->
+  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
-  <!-- Custom Modern Stylesheet -->
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      --primary: #1b4324;
+      --primary-hover: #123319;
+      --primary-subtle: #edf7ee;
+      --secondary: #4a7c59;
+      --accent-leaf: #7cb342;
+      --accent-mint: #a8d5ba;
+      --accent-gold: #d4af37;
+      --bg-page: #f8fbf8;
+      --bg-surface: #ffffff;
+      --text-main: #142317;
+      --text-muted: #536b56;
+      --border-light: #e3ede3;
+      --border-medium: #cbdccb;
+      --success: #2e7d32;
+      --danger: #d32f2f;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 2px 10px rgba(27, 67, 36, 0.05);
+      --shadow-md: 0 8px 24px rgba(27, 67, 36, 0.08);
+      --shadow-lg: 0 16px 40px rgba(27, 67, 36, 0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Top Announcement Bar */
+    .top-ticker {
+      background: linear-gradient(90deg, #102815, #1b4324, #2c5530);
+      color: #ffffff;
+      font-size: 0.84rem;
+      font-weight: 600;
+      padding: 9px 16px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .ticker-badge {
+      background: var(--accent-gold);
+      color: #1a2416;
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    .ticker-phone {
+      color: var(--accent-mint);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .ticker-phone:hover { text-decoration: underline; }
+
+    /* Header */
+    header {
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-light);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .header-inner {
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-logo-img {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      object-fit: contain;
+    }
+
+    .brand-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.1;
+    }
+    .brand-title span { color: var(--accent-leaf); }
+    .brand-sub { font-size: 0.72rem; font-weight: 700; color: var(--text-muted); letter-spacing: 1px; }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-header-cart {
+      background: var(--primary);
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 0.92rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 4px 14px rgba(27, 67, 36, 0.25);
+      transition: all 0.2s;
+    }
+    .btn-header-cart:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+    }
+
+    .cart-count-badge {
+      background: var(--accent-gold);
+      color: #1a2416;
+      min-width: 20px;
+      height: 20px;
+      border-radius: var(--radius-full);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 0 6px;
+    }
+
+    .btn-admin-pill {
+      background: var(--primary-subtle);
+      color: var(--primary);
+      border: 1px solid var(--border-medium);
+      padding: 8px 14px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Hero Banner */
+    .hero {
+      background: linear-gradient(135deg, #102815, #1b4324 60%, #265932);
+      color: #ffffff;
+      padding: 50px 0 60px;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--accent-mint);
+      margin-bottom: 14px;
+    }
+
+    .hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.7rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+    .hero h1 span { color: var(--accent-mint); }
+
+    .hero p {
+      font-size: 1.05rem;
+      opacity: 0.92;
+      margin-bottom: 24px;
+      max-width: 540px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn-hero-cta {
+      background: #ffffff;
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 1rem;
+      padding: 14px 28px;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .btn-hero-cta:hover {
+      background: var(--accent-mint);
+      transform: translateY(-2px);
+    }
+
+    .btn-hero-wa {
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 24px;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-hero-wa:hover { background: rgba(255, 255, 255, 0.25); }
+
+    .hero-preview-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-preview-img {
+      height: 230px;
+      object-fit: contain;
+      margin: 0 auto 14px;
+      display: block;
+    }
+
+    /* Products Catalog Section */
+    .catalog-section {
+      padding: 60px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 40px;
+    }
+
+    .section-header h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .product-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      transition: all 0.2s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--border-medium);
+    }
+
+    .product-badge-top {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      background: var(--accent-gold);
+      color: #1a2416;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      z-index: 2;
+    }
+
+    .product-img-box {
+      height: 260px;
+      background: #fafdfa;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      padding: 16px;
+      overflow: hidden;
+    }
+
+    .product-img-box img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+      transition: transform 0.3s;
+    }
+    .product-card:hover .product-img-box img {
+      transform: scale(1.06);
+    }
+
+    .product-info h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .product-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      min-height: 42px;
+    }
+
+    .product-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .price-current {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .price-old {
+      font-size: 0.95rem;
+      color: #999;
+      text-decoration: line-through;
+    }
+
+    /* Size Selector on Card */
+    .size-select-box {
+      margin-bottom: 18px;
+    }
+
+    .size-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .size-buttons-group {
+      display: flex;
+      gap: 6px;
+    }
+
+    .size-btn {
+      flex: 1;
+      padding: 8px 0;
+      border: 1.5px solid var(--border-medium);
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      background: #ffffff;
+      cursor: pointer;
+      transition: all 0.15s;
+      text-align: center;
+    }
+
+    .size-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .size-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 2px 8px rgba(27, 67, 36, 0.25);
+    }
+
+    .stock-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--success);
+      background: #eaf6ea;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      margin-bottom: 16px;
+    }
+
+    .stock-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    /* Card Action Buttons */
+    .card-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-action-buy {
+      flex: 1;
+      background: var(--primary);
+      color: #ffffff;
+      padding: 12px;
+      border-radius: var(--radius-sm);
+      font-weight: 800;
+      font-size: 0.92rem;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+    .btn-action-buy:hover { background: var(--primary-hover); }
+
+    .btn-action-basket {
+      flex: 1;
+      background: var(--primary-subtle);
+      color: var(--primary);
+      border: 1.5px solid var(--border-medium);
+      padding: 12px;
+      border-radius: var(--radius-sm);
+      font-weight: 800;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-action-basket:hover {
+      background: var(--border-medium);
+    }
+
+    /* Checkout & Basket Section */
+    .checkout-section {
+      padding: 60px 0 80px;
+      background: #f1f6f1;
+    }
+
+    .checkout-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 36px;
+      align-items: flex-start;
+    }
+
+    .checkout-box {
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .checkout-box h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.45rem;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .checkout-sub {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid var(--border-medium);
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+      background: #ffffff;
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--primary);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .delivery-radios {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 6px;
+    }
+
+    .delivery-radio-card {
+      border: 1.5px solid var(--border-medium);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .delivery-radio-card input { margin-right: 6px; }
+
+    .btn-submit-order {
+      background: var(--primary);
+      color: #ffffff;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      padding: 16px;
+      width: 100%;
+      border-radius: var(--radius-sm);
+      border: none;
+      cursor: pointer;
+      margin-top: 14px;
+      box-shadow: 0 8px 24px rgba(27, 67, 36, 0.28);
+      transition: all 0.2s;
+    }
+    .btn-submit-order:hover { background: var(--primary-hover); transform: translateY(-2px); }
+
+    /* Summary Card (Right Column) */
+    .summary-box {
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      box-shadow: var(--shadow-sm);
+      position: sticky;
+      top: 94px;
+    }
+
+    .summary-box h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.3rem;
+      color: var(--primary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .basket-items-list {
+      list-style: none;
+      max-height: 280px;
+      overflow-y: auto;
+      margin-bottom: 20px;
+    }
+
+    .basket-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border-light);
+      gap: 12px;
+    }
+
+    .basket-item-info strong {
+      display: block;
+      font-size: 0.95rem;
+    }
+
+    .basket-item-size {
+      font-size: 0.78rem;
+      background: var(--primary-subtle);
+      color: var(--primary);
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      display: inline-block;
+      margin-top: 2px;
+    }
+
+    .basket-item-qty-controls {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .btn-qty {
+      padding: 2px 8px;
+      border: 1px solid #ccc;
+      background: #f7f7f7;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .basket-item-total {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .btn-item-del {
+      color: var(--danger);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      padding: 4px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .summary-total-row {
+      display: flex;
+      justify-content: space-between;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--primary);
+      padding-top: 14px;
+      border-top: 2px solid var(--border-light);
+      margin-top: 10px;
+    }
+
+    .empty-cart-msg {
+      text-align: center;
+      padding: 30px 10px;
+      color: #888;
+      font-style: italic;
+    }
+
+    /* Toast Notification */
+    .toast-msg {
+      position: fixed;
+      top: 90px;
+      right: 24px;
+      background: #ffffff;
+      color: var(--primary);
+      border-left: 4px solid var(--primary);
+      box-shadow: var(--shadow-lg);
+      padding: 14px 20px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      z-index: 9999;
+      display: none;
+      animation: slideIn 0.3s;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(16, 40, 21, 0.7);
+      backdrop-filter: blur(4px);
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      max-width: 500px;
+      width: 100%;
+      padding: 36px 30px;
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-wa-modal {
+      background: #25d366;
+      color: #ffffff;
+      text-decoration: none;
+      display: block;
+      padding: 14px;
+      border-radius: var(--radius-sm);
+      font-weight: 800;
+      font-size: 1rem;
+      margin-top: 18px;
+    }
+
+    /* Floating WhatsApp Pill */
+    .floating-wa-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #25d366;
+      color: #ffffff;
+      padding: 12px 20px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+      z-index: 999;
+    }
+
+    footer {
+      background: #102815;
+      color: #ffffff;
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: auto;
+    }
+
+    @media (max-width: 768px) {
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .hero-preview-card { display: none; }
+      .checkout-grid { grid-template-columns: 1fr; }
+      .delivery-radios { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- =========================================================================
-       1. TOP PROMO & ANNOUNCEMENT BAR
-       ========================================================================= -->
-  <div class="top-ticker" role="region" aria-label="Informations de livraison">
-    <div class="container ticker-inner">
-      <span class="ticker-badge"><i class="fa-solid fa-truck-fast"></i> 58 WILAYAS</span>
-      <span>Offre Spéciale : <strong>Tous nos maillots à 2 500 DA</strong> | Paiement en espèces à la livraison</span>
-      <a href="tel:0672434217" class="ticker-phone">
-        <i class="fa-solid fa-phone"></i> Infoline : 06 72 43 42 17
-      </a>
-    </div>
+  <!-- Top Announcement Bar -->
+  <div class="top-ticker">
+    <span class="ticker-badge"><i class="fa-solid fa-truck-fast"></i> 58 WILAYAS</span>
+    <span>Tarif Unique : <strong>Tous nos maillots sont à 2 500 DA</strong> | Paiement à la livraison</span>
+    <a href="tel:0672434217" class="ticker-phone"><i class="fa-solid fa-phone"></i> 06 72 43 42 17</a>
   </div>
 
-  <!-- =========================================================================
-       2. HEADER & NAVIGATION BAR
-       ========================================================================= -->
-  <header class="site-header" id="siteHeader">
+  <!-- Header -->
+  <header>
     <div class="container header-inner">
-      
-      <!-- Brand Logo Link -->
-      <a href="#hero" class="brand-link" aria-label="Page d'accueil L'Amonda Store">
-        <div class="brand-emblem">
-          <img src="logo.svg" alt="L'Amonda Store Logo" width="40" height="40">
-        </div>
-        <div class="brand-info">
-          <div class="brand-name">L'AMONDA <span>STORE</span></div>
-          <div class="brand-subtitle">Sport &amp; Athletic Boutique</div>
+      <a href="#hero" class="brand-link">
+        <img src="logo.svg" alt="L'Amonda Logo" class="brand-logo-img">
+        <div>
+          <div class="brand-title">L'AMONDA <span>STORE</span></div>
+          <div class="brand-sub">BOUTIQUE OFFICIELLE</div>
         </div>
       </a>
 
-      <!-- Desktop Navigation Menu -->
-      <nav class="main-nav" aria-label="Navigation Principale">
-        <a href="#hero" class="nav-link active">Accueil</a>
-        <a href="#catalog" class="nav-link">Nos 3 Maillots (2 500 DA)</a>
-        <a href="javascript:void(0)" class="nav-link" onclick="UI.openSizeGuide()">Guide des Tailles</a>
-        <a href="#testimonials" class="nav-link">Avis Clients</a>
-        <a href="#contact" class="nav-link">Contact</a>
-      </nav>
-
-      <!-- Header Actions -->
       <div class="header-actions">
-        <!-- Direct Link to Secure Admin Dashboard -->
-        <a href="dashboard.html" class="header-btn btn-admin-link" title="Portail Administrateur">
-          <i class="fa-solid fa-chart-line"></i> <span>Admin Portal</span>
+        <a href="dashboard.html" class="btn-admin-pill" title="Tableau de bord">
+          <i class="fa-solid fa-chart-line"></i> Admin
         </a>
-
-        <!-- Cart Button with Counter -->
-        <button type="button" class="header-btn btn-cart-nav" id="cartNavBtn" onclick="UI.openCartDrawer()" aria-label="Voir le panier">
+        <a href="#checkout" class="btn-header-cart" id="headerCartBtn">
           <i class="fa-solid fa-bag-shopping"></i>
           <span>Panier</span>
-          <span class="cart-counter-badge" id="cartNavCount">0</span>
-        </button>
-
-        <!-- Mobile Menu Toggle -->
-        <button type="button" class="mobile-toggle" onclick="UI.openCartDrawer()" aria-label="Ouvrir le panier">
-          <i class="fa-solid fa-bars"></i>
-        </button>
+          <span class="cart-count-badge" id="navCartCount">0</span>
+        </a>
       </div>
-
     </div>
   </header>
 
-  <!-- =========================================================================
-       3. HERO SECTION WITH SHOWCASE CARD (2,500 DA SPECIAL)
-       ========================================================================= -->
-  <section class="hero-section" id="hero">
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
     <div class="container hero-grid">
-      
-      <!-- Hero Copy -->
-      <div class="hero-content">
-        <div class="hero-badge-pill">
-          <i class="fa-solid fa-tag"></i> Tarif Unique Exceptionnel : 2 500 DA
-        </div>
-        
-        <h1 class="hero-title">
-          Vos Maillots de Légende <span class="highlight">À Seulement 2 500 DA</span>
-        </h1>
-        
-        <p class="hero-lead">
-          Découvrez nos éditions spéciales : <strong>Mexico Jersey</strong>, <strong>Barcelona Jersey</strong> (Édition Kobe Bryant), et <strong>Madrid Jersey</strong> (Vert Émeraude Rétro). Tissu respirant Dri-FIT, toutes les tailles disponibles du S au XXL.
+      <div>
+        <div class="hero-badge"><i class="fa-solid fa-tag"></i> Offre Spéciale : 2 500 DA / Maillot</div>
+        <h1>Les Maillots Officiels <span>À 2 500 DA</span></h1>
+        <p>
+          Découvrez nos 3 modèles exclusifs : <strong>Barcelona Jersey</strong> (Édition Kobe Bryant), <strong>Madrid Jersey</strong> (Vert Émeraude Rétro) et <strong>Mexico Jersey</strong>. Choisissez votre taille et commandez en 30 secondes.
         </p>
-
-        <div class="hero-actions">
-          <a href="#catalog" class="btn-primary-hero">
-            <i class="fa-solid fa-shirt"></i> Commander un Maillot (2 500 DA)
+        <div class="hero-buttons">
+          <a href="#catalog" class="btn-hero-cta"><i class="fa-solid fa-shirt"></i> Choisir Mon Maillot</a>
+          <a href="https://wa.me/213672434217?text=Bonjour,%20je%20souhaite%20commander%20un%20maillot%20à%202500%20DA" class="btn-hero-wa" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp Direct
           </a>
-          <a href="https://wa.me/213672434217?text=Bonjour%20L'Amonda%20Store,%20je%20souhaite%20commander%20un%20maillot%20à%202500%20DA" target="_blank" rel="noopener noreferrer" class="btn-secondary-hero">
-            <i class="fa-brands fa-whatsapp"></i> Commander par WhatsApp
-          </a>
-        </div>
-
-        <!-- Trust Features Grid in Hero -->
-        <div class="hero-trust-grid">
-          <div class="trust-item">
-            <div class="trust-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
-            <div class="trust-text">
-              <h4>Paiement à la Livraison</h4>
-              <p>Réglez uniquement à la réception</p>
-            </div>
-          </div>
-
-          <div class="trust-item">
-            <div class="trust-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
-            <div class="trust-text">
-              <h4>Livraison 58 Wilayas</h4>
-              <p>Expédition rapide Yalidine &amp; Domicile</p>
-            </div>
-          </div>
-
-          <div class="trust-item">
-            <div class="trust-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
-            <div class="trust-text">
-              <h4>Garantie Échange</h4>
-              <p>Tailles conformes S à XXL</p>
-            </div>
-          </div>
         </div>
       </div>
 
-      <!-- Hero Showcase Card -->
-      <div class="hero-card-showcase">
-        <span class="showcase-badge"><i class="fa-solid fa-fire"></i> Best-Seller 2026</span>
-        <div class="showcase-img-wrap">
-          <img src="../../.gemini/antigravity/brain/48d3c21d-944e-4d8c-ab75-54be72258b8e/.user_uploaded/media_1793912932103_121edc50.jpg" alt="Mexico Jersey"
-               onerror="this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsmSIL2OwObv6VgbeYuSxze01sYSGgQXNbqcGvTXjbQQ&s=10'">
-        </div>
-        <div class="showcase-details">
-          <h3>Mexico Jersey</h3>
-          <div class="showcase-price">2 500 DA</div>
-          <button type="button" class="btn-primary-hero" style="width:100%; justify-content:center; padding:12px;" onclick="UI.handleBuyNow('mexico')">
-            <i class="fa-solid fa-cart-shopping"></i> Acheter Maintenant (2 500 DA)
-          </button>
-        </div>
+      <div class="hero-preview-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsmSIL2OwObv6VgbeYuSxze01sYSGgQXNbqcGvTXjbQQ&s=10" 
+             id="heroPreviewImg"
+             alt="Mexico Jersey Preview" 
+             class="hero-preview-img">
+        <h3 style="font-family:'Outfit', sans-serif; font-size:1.3rem;">Mexico Jersey</h3>
+        <div style="font-size:1.6rem; font-weight:800; color:var(--accent-mint); margin:6px 0 12px;">2 500 DA</div>
+        <button type="button" class="btn-hero-cta" style="width:100%; justify-content:center;" onclick="quickBuy('Mexico Jersey', 2500, 'mexico')">
+          Acheter Immédiatement (2 500 DA)
+        </button>
       </div>
-
     </div>
   </section>
 
-  <!-- =========================================================================
-       4. PRODUCT CATALOG (3 ITEMS: MEXICO, BARCELONA, MADRID AT 2500 DA)
-       ========================================================================= -->
+  <!-- Catalog Section with 3 Items -->
   <main class="catalog-section" id="catalog">
     <div class="container">
       
-      <!-- Section Header -->
-      <div class="section-head">
-        <div class="section-title-wrap">
-          <h2>Collection Exclusive (2 500 DA)</h2>
-          <p>Choisissez votre maillot, sélectionnez votre taille et passez commande en 30 secondes.</p>
-        </div>
+      <div class="section-header">
+        <h2>Nos 3 Maillots Disponibles (2 500 DA)</h2>
+        <p>Sélectionnez votre taille sur le maillot de votre choix puis cliquez sur <strong>Acheter Direct</strong> ou <strong>+ Au Panier</strong>.</p>
       </div>
 
-      <!-- Catalog Filter Toolbar -->
-      <div class="catalog-toolbar">
-        
-        <!-- Search Input -->
-        <div class="search-box">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" class="search-input" id="jerseySearchInput" placeholder="Rechercher Mexico, Barcelona, Madrid..." autocomplete="off">
-        </div>
+      <div class="product-grid">
 
-        <!-- Filter Category Tabs -->
-        <div class="filter-tabs">
-          <button type="button" class="filter-btn active" data-category="all">Tous les Maillots (3)</button>
-          <button type="button" class="filter-btn" data-category="clubs">Clubs Européens</button>
-          <button type="button" class="filter-btn" data-category="national">Équipes Nationales</button>
-        </div>
+        <!-- ================= ITEM 1 : BARCELONA JERSEY ================= -->
+        <article class="product-card" id="item-barcelona">
+          <span class="product-badge-top">Édition Spéciale</span>
+          
+          <div class="product-img-box">
+            <img src="../../.gemini/antigravity/brain/48d3c21d-944e-4d8c-ab75-54be72258b8e/.user_uploaded/media_1793912932028_f678e3e9.jpg"
+                 onerror="handleImgFallback(this, 'file:///C:/Users/pc%20dell/.gemini/antigravity/brain/48d3c21d-944e-4d8c-ab75-54be72258b8e/.user_uploaded/media_1793912932028_f678e3e9.jpg', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMLYDWDIWWKcFaQcxCm-KMEbvufYcHh34FSYHFJwZzIg&s=10')"
+                 alt="Barcelona Jersey">
+          </div>
 
-      </div>
+          <div class="product-info">
+            <h3>Barcelona Jersey</h3>
+            <p class="product-desc">Édition Spéciale Kobe Bryant / Black Mamba. Dégradé noir et violet, sponsor Spotify doré et écusson violet officiel.</p>
+            
+            <div class="product-price-row">
+              <span class="price-current">2 500 DA</span>
+              <span class="price-old">3 500 DA</span>
+            </div>
 
-      <!-- Dynamic Product Cards Grid (Rendered by app.js) -->
-      <div class="product-grid" id="productsGrid">
-        <!-- Rendered dynamically -->
+            <!-- Size Selector -->
+            <div class="size-select-box">
+              <div class="size-label">
+                <span>Choisissez votre taille :</span>
+                <span style="color:var(--primary); font-weight:800;" id="size-display-barcelona">Taille : L</span>
+              </div>
+              <div class="size-buttons-group">
+                <button type="button" class="size-btn" onclick="selectSize('barcelona', 'S')">S</button>
+                <button type="button" class="size-btn" onclick="selectSize('barcelona', 'M')">M</button>
+                <button type="button" class="size-btn active" onclick="selectSize('barcelona', 'L')">L</button>
+                <button type="button" class="size-btn" onclick="selectSize('barcelona', 'XL')">XL</button>
+                <button type="button" class="size-btn" onclick="selectSize('barcelona', 'XXL')">XXL</button>
+              </div>
+            </div>
+
+            <div class="stock-indicator">
+              <span class="stock-dot"></span> <span id="stock-barcelona">En stock (10 restants)</span>
+            </div>
+          </div>
+
+          <div class="card-actions">
+            <button type="button" class="btn-action-buy" onclick="quickBuy('Barcelona Jersey', 2500, 'barcelona')">
+              <i class="fa-solid fa-bolt"></i> Acheter Direct
+            </button>
+            <button type="button" class="btn-action-basket" onclick="addToBasket('Barcelona Jersey', 2500, 'barcelona')">
+              <i class="fa-solid fa-cart-plus"></i> + Au Panier
+            </button>
+          </div>
+        </article>
+
+        <!-- ================= ITEM 2 : MADRID JERSEY ================= -->
+        <article class="product-card" id="item-madrid">
+          <span class="product-badge-top">Édition Rétro</span>
+          
+          <div class="product-img-box">
+            <img src="../../.gemini/antigravity/brain/48d3c21d-944e-4d8c-ab75-54be72258b8e/.user_uploaded/media_1793912932083_686e1421.webp"
+                 onerror="handleImgFallback(this, 'file:///C:/Users/pc%20dell/.gemini/antigravity/brain/48d3c21d-944e-4d8c-ab75-54be72258b8e/.user_uploaded/media_1793912932083_686e1421.webp', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeLNCqjm1eLpFIL8InT4WHNG9sQl0nGy3n9gz-A-CdLQ&s=10')"
+                 alt="Madrid Jersey">
+          </div>
+
+          <div class="product-info">
+            <h3>Madrid Jersey</h3>
+            <p class="product-desc">Édition Rétro Vert Émeraude. Monogramme royal RMCF en filigrane, logo Adidas Trefoil classique et col blanc élégant.</p>
+            
+            <div class="product-price-row">
+              <span class="price-current">2 500 DA</span>
+              <span class="price-old">3 500 DA</span>
+            </div>
+
+            <!-- Size Selector -->
+            <div class="size-select-box">
+              <div class="size-label">
+                <span>Choisissez votre taille :</span>
+                <span style="color:var(--primary); font-weight:800;" id="size-display-madrid">Taille : L</span>
+              </div>
+              <div class="size-buttons-group">
+                <button type="button" class="size-btn" onclick="selectSize('madrid', 'S')">S</button>
+                <button type="button" class="size-btn" onclick="selectSize('madrid', 'M')">M</button>
+                <button type="button" class="size-btn active" onclick="selectSize('madrid', 'L')">L</button>
+                <button type="button" class="size-btn" onclick="selectSize('madrid', 'XL')">XL</button>
+                <button type="button" class="size-btn" onclick="selectSize('madrid', 'XXL')">XXL</button>
+              </div>
+            </div>
+
+            <div class="stock-indicator">
+              <span class="stock-dot"></span> <span id="stock-madrid">En stock (10 restants)</span>
+            </div>
+          </div>
+
+          <div class="card-actions">
+            <button type="button" class="btn-action-buy" onclick="quickBuy('Madrid Jersey', 2500, 'madrid')">
+              <i class="fa-solid fa-bolt"></i> Acheter Direct
+            </button>
+            <button type="button" class="btn-action-basket" onclick="addToBasket('Madrid Jersey', 2500, 'madrid')">
+              <i class="fa-solid fa-cart-plus"></i> + Au Panier
+            </button>
+          </div>
+        </article>
+
+        <!-- ================= ITEM 3 : MEXICO JERSEY ================= -->
+        <article class="product-card" id="item-mexico">
+          <span class="product-badge-top">Best-Seller</span>
+          
+          <div class="product-img-box">
+            <img src="../../.gemini/antigravity/brain/48d3c21d-944e-4d8c-ab75-54be72258b8e/.user_uploaded/media_1793912932103_121edc50.jpg"
+                 onerror="handleImgFallback(this, 'file:///C:/Users/pc%20dell/.gemini/antigravity/brain/48d3c21d-944e-4d8c-ab75-54be72258b8e/.user_uploaded/media_1793912932103_121edc50.jpg', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsmSIL2OwObv6VgbeYuSxze01sYSGgQXNbqcGvTXjbQQ&s=10')"
+                 alt="Mexico Jersey">
+          </div>
+
+          <div class="product-info">
+            <h3>Mexico Jersey</h3>
+            <p class="product-desc">Maillot officiel Coupe du Monde vert à motifs aztèques traditionnels. Tissu Dry-Fit respirant et écusson thermocollé de haute précision.</p>
+            
+            <div class="product-price-row">
+              <span class="price-current">2 500 DA</span>
+              <span class="price-old">3 500 DA</span>
+            </div>
+
+            <!-- Size Selector -->
+            <div class="size-select-box">
+              <div class="size-label">
+                <span>Choisissez votre taille :</span>
+                <span style="color:var(--primary); font-weight:800;" id="size-display-mexico">Taille : L</span>
+              </div>
+              <div class="size-buttons-group">
+                <button type="button" class="size-btn" onclick="selectSize('mexico', 'S')">S</button>
+                <button type="button" class="size-btn" onclick="selectSize('mexico', 'M')">M</button>
+                <button type="button" class="size-btn active" onclick="selectSize('mexico', 'L')">L</button>
+                <button type="button" class="size-btn" onclick="selectSize('mexico', 'XL')">XL</button>
+                <button type="button" class="size-btn" onclick="selectSize('mexico', 'XXL')">XXL</button>
+              </div>
+            </div>
+
+            <div class="stock-indicator">
+              <span class="stock-dot"></span> <span id="stock-mexico">En stock (10 restants)</span>
+            </div>
+          </div>
+
+          <div class="card-actions">
+            <button type="button" class="btn-action-buy" onclick="quickBuy('Mexico Jersey', 2500, 'mexico')">
+              <i class="fa-solid fa-bolt"></i> Acheter Direct
+            </button>
+            <button type="button" class="btn-action-basket" onclick="addToBasket('Mexico Jersey', 2500, 'mexico')">
+              <i class="fa-solid fa-cart-plus"></i> + Au Panier
+            </button>
+          </div>
+        </article>
+
       </div>
 
     </div>
   </main>
 
-  <!-- =========================================================================
-       5. ALGERIA 58 WILAYAS CHECKOUT & BASKET SECTION
-       ========================================================================= -->
-  <section class="checkout-section" id="checkoutSection">
+  <!-- Checkout & Basket Section -->
+  <section class="checkout-section" id="checkout">
     <div class="container">
       
       <div class="checkout-grid">
         
-        <!-- Left Column: High-Security Order Form -->
-        <div class="card-checkout">
-          <div class="form-header-bar">
-            <div class="form-header-icon">
-              <i class="fa-solid fa-truck-moving"></i>
-            </div>
-            <div class="form-header-text">
-              <h3>Formulaire de Commande Sécurisé</h3>
-              <p>Remplissez vos coordonnées pour recevoir votre colis. Paiement en espèces à la livraison.</p>
-            </div>
-          </div>
+        <!-- Order Form -->
+        <div class="checkout-box">
+          <h3><i class="fa-solid fa-truck-fast"></i> Formulaire de Commande Sécurisé</h3>
+          <p class="checkout-sub">Remplissez vos coordonnées pour recevoir votre colis. Paiement en espèces à la livraison (Cash on Delivery).</p>
 
-          <form id="orderForm" class="secure-form" novalidate>
-            
-            <!-- Anti-Spam Honeypot Field -->
-            <input type="text" name="_website_botcheck" class="anti-bot-honey" tabindex="-1" autocomplete="off">
+          <form id="orderForm" onsubmit="handleOrderSubmit(event)">
+            <input type="hidden" id="hiddenCartField" name="Items_Ordered" value="">
 
-            <!-- Full Name -->
             <div class="form-group">
-              <label class="form-label" for="clientName">
-                <span>Nom &amp; Prénom <span class="label-required">*</span></span>
-                <span class="form-hint">Ex: Amine Benali</span>
-              </label>
-              <div class="input-wrap">
-                <i class="fa-solid fa-user input-icon"></i>
-                <input type="text" id="clientName" name="client_name" class="form-input" placeholder="Entrez votre nom complet" required autocomplete="name">
-              </div>
+              <label class="form-label" for="clientName">Nom &amp; Prénom *</label>
+              <input type="text" id="clientName" name="Client_Name" class="form-input" placeholder="Ex: Amine Benali" required>
             </div>
 
-            <!-- Phone Number & Wilaya Row -->
-            <div class="form-row">
-              
-              <!-- Algerian Phone Number -->
-              <div class="form-group">
-                <label class="form-label" for="clientPhone">
-                  <span>Numéro de Téléphone <span class="label-required">*</span></span>
-                  <span class="form-hint">Format Algérien</span>
-                </label>
-                <div class="input-wrap">
-                  <i class="fa-solid fa-phone input-icon"></i>
-                  <input type="tel" id="clientPhone" name="client_phone" class="form-input" placeholder="06 72 43 42 17" required autocomplete="tel">
-                </div>
-              </div>
-
-              <!-- Wilaya Selector (All 58 Wilayas) -->
-              <div class="form-group">
-                <label class="form-label" for="clientWilaya">
-                  <span>Wilaya de Livraison <span class="label-required">*</span></span>
-                  <span class="form-hint">58 Wilayas</span>
-                </label>
-                <div class="input-wrap">
-                  <i class="fa-solid fa-map-location-dot input-icon"></i>
-                  <select id="clientWilaya" name="client_wilaya" class="form-select" required>
-                    <!-- Populated dynamically -->
-                  </select>
-                </div>
-              </div>
-
-            </div>
-
-            <!-- Delivery Mode Selection -->
             <div class="form-group">
-              <label class="form-label">
-                <span>Mode de Livraison Souhaité :</span>
-              </label>
-              <div class="delivery-options-grid">
-                
-                <label class="delivery-radio-label">
-                  <input type="radio" name="delivery_type" value="home" checked>
-                  <div class="delivery-card-tile">
-                    <div class="delivery-title">
-                      <i class="fa-solid fa-house"></i> À Domicile
-                    </div>
-                    <div class="delivery-desc">Livré directement chez vous par le livreur</div>
-                  </div>
-                </label>
-
-                <label class="delivery-radio-label">
-                  <input type="radio" name="delivery_type" value="desk">
-                  <div class="delivery-card-tile">
-                    <div class="delivery-title">
-                      <i class="fa-solid fa-building"></i> Point Relais / Stop Desk
-                    </div>
-                    <div class="delivery-desc">Récupération au bureau Yalidine de votre Wilaya</div>
-                  </div>
-                </label>
-
-              </div>
+              <label class="form-label" for="clientPhone">Numéro de Téléphone *</label>
+              <input type="tel" id="clientPhone" name="Client_Phone" class="form-input" placeholder="Ex: 06 72 43 42 17" required>
             </div>
 
-            <!-- Full Address -->
             <div class="form-group">
-              <label class="form-label" for="clientAddress">
-                <span>Adresse Complète ou Commune <span class="label-required">*</span></span>
-                <span class="form-hint">Quartier, rue, n° de porte</span>
-              </label>
-              <div class="input-wrap">
-                <i class="fa-solid fa-location-dot input-icon"></i>
-                <textarea id="clientAddress" name="client_address" class="form-textarea" placeholder="Ex: Cité 500 logements, Batiment B, Alger..." required></textarea>
-              </div>
+              <label class="form-label" for="clientWilaya">Wilaya de Livraison (58 Wilayas) *</label>
+              <select id="clientWilaya" name="Client_Wilaya" class="form-select" onchange="updateDeliveryFee()" required>
+                <option value="" disabled selected>Sélectionnez votre Wilaya...</option>
+                <option value="01">01 - Adrar</option>
+                <option value="02">02 - Chlef</option>
+                <option value="03">03 - Laghouat</option>
+                <option value="04">04 - Oum El Bouaghi</option>
+                <option value="05">05 - Batna</option>
+                <option value="06">06 - Béjaïa</option>
+                <option value="07">07 - Biskra</option>
+                <option value="08">08 - Béchar</option>
+                <option value="09">09 - Blida</option>
+                <option value="10">10 - Bouira</option>
+                <option value="11">11 - Tamanrasset</option>
+                <option value="12">12 - Tébessa</option>
+                <option value="13">13 - Tlemcen</option>
+                <option value="14">14 - Tiaret</option>
+                <option value="15">15 - Tizi Ouzou</option>
+                <option value="16" selected>16 - Alger</option>
+                <option value="17">17 - Djelfa</option>
+                <option value="18">18 - Jijel</option>
+                <option value="19">19 - Sétif</option>
+                <option value="20">20 - Saïda</option>
+                <option value="21">21 - Skikda</option>
+                <option value="22">22 - Sidi Bel Abbès</option>
+                <option value="23">23 - Annaba</option>
+                <option value="24">24 - Guelma</option>
+                <option value="25">25 - Constantine</option>
+                <option value="26">26 - Médéa</option>
+                <option value="27">27 - Mostaganem</option>
+                <option value="28">28 - M'Sila</option>
+                <option value="29">29 - Mascara</option>
+                <option value="30">30 - Ouargla</option>
+                <option value="31">31 - Oran</option>
+                <option value="32">32 - El Bayadh</option>
+                <option value="33">33 - Illizi</option>
+                <option value="34">34 - Bordj Bou Arréridj</option>
+                <option value="35">35 - Boumerdès</option>
+                <option value="36">36 - El Tarf</option>
+                <option value="37">37 - Tindouf</option>
+                <option value="38">38 - Tissemsilt</option>
+                <option value="39">39 - El Oued</option>
+                <option value="40">40 - Khenchela</option>
+                <option value="41">41 - Souk Ahras</option>
+                <option value="42">42 - Tipaza</option>
+                <option value="43">43 - Mila</option>
+                <option value="44">44 - Aïn Defla</option>
+                <option value="45">45 - Naâma</option>
+                <option value="46">46 - Aïn Témouchent</option>
+                <option value="47">47 - Ghardaïa</option>
+                <option value="48">48 - Relizane</option>
+                <option value="49">49 - El M'Ghair</option>
+                <option value="50">50 - El Menia</option>
+                <option value="51">51 - Ouled Djellal</option>
+                <option value="52">52 - Bordj Baji Mokhtar</option>
+                <option value="53">53 - Béni Abbès</option>
+                <option value="54">54 - Timimoun</option>
+                <option value="55">55 - Touggourt</option>
+                <option value="56">56 - Djanet</option>
+                <option value="57">57 - In Salah</option>
+                <option value="58">58 - In Guezzam</option>
+              </select>
             </div>
 
-            <!-- Optional Courier Instructions -->
             <div class="form-group">
-              <label class="form-label" for="clientNotes">
-                <span>Remarques ou instructions pour le livreur (Optionnel) :</span>
-              </label>
-              <div class="input-wrap">
-                <input type="text" id="clientNotes" name="client_notes" class="form-input" placeholder="Ex: Appelez-moi avant de passer le matin">
+              <label class="form-label">Mode d'Expédition :</label>
+              <div class="delivery-radios">
+                <label class="delivery-radio-card">
+                  <input type="radio" name="delivery_type" value="home" checked onchange="updateDeliveryFee()">
+                  <strong>À Domicile</strong>
+                  <div style="font-size:0.75rem; color:#777;">Livré à votre adresse</div>
+                </label>
+                <label class="delivery-radio-card">
+                  <input type="radio" name="delivery_type" value="desk" onchange="updateDeliveryFee()">
+                  <strong>Stop Desk</strong>
+                  <div style="font-size:0.75rem; color:#777;">Bureau Yalidine</div>
+                </label>
               </div>
             </div>
 
-            <!-- Payment Security Guarantee Box -->
-            <div class="payment-badge-box">
-              <i class="fa-solid fa-shield-check payment-icon-shield"></i>
-              <div class="payment-text">
-                <h4>Paiement 100% à la Livraison (Cash on Delivery)</h4>
-                <p>Vous ne payez rien en ligne. Vous inspectez votre colis et réglez le livreur en espèces.</p>
-              </div>
+            <div class="form-group">
+              <label class="form-label" for="clientAddress">Adresse Complète / Commune *</label>
+              <textarea id="clientAddress" name="Client_Address" class="form-textarea" placeholder="Quartier, rue, numéro de maison..." required></textarea>
             </div>
 
-            <!-- Order Submit Button -->
             <button type="submit" class="btn-submit-order" id="btnSubmitOrder">
               <i class="fa-solid fa-lock"></i> Confirmer Ma Commande (Paiement à la livraison)
             </button>
-
-            <!-- Security Seals -->
-            <div class="security-seal-row">
-              <span><i class="fa-solid fa-lock"></i> Connexion SSL 256-bit</span>
-              <span><i class="fa-solid fa-shield-virus"></i> Protection Anti-Spam</span>
-              <span><i class="fa-solid fa-truck"></i> Expédition Garantie</span>
-            </div>
-
           </form>
         </div>
 
-        <!-- Right Column: Real-Time Order & Basket Summary -->
-        <div class="order-summary-box">
-          
-          <div class="summary-heading">
-            <h3><i class="fa-solid fa-bag-shopping"></i> Votre Panier</h3>
-            <button type="button" class="size-guide-btn" onclick="cart.clearCart()">Vider</button>
-          </div>
+        <!-- Basket Summary -->
+        <div class="summary-box">
+          <h3>
+            <span><i class="fa-solid fa-basket-shopping"></i> Votre Panier</span>
+            <button type="button" onclick="clearBasket()" style="font-size:0.8rem; color:#c62828; background:none; border:none; cursor:pointer;">Vider</button>
+          </h3>
 
-          <!-- Empty Cart Notice -->
-          <div id="checkoutEmptyState" class="empty-cart-state" style="display:none;">
-            <i class="fa-solid fa-cart-arrow-down"></i>
-            <p>Votre panier est vide. Choisissez un maillot à 2 500 DA ci-dessus !</p>
-          </div>
-
-          <!-- Selected Items List -->
-          <ul class="summary-items-list" id="checkoutItemsList">
-            <!-- Rendered dynamically -->
+          <ul class="basket-items-list" id="basketList">
+            <li class="empty-cart-msg">Votre panier est vide. Choisissez un maillot ci-dessus !</li>
           </ul>
 
-          <!-- Promo Coupon Box -->
-          <div class="coupon-box">
-            <input type="text" id="couponCodeInput" class="coupon-input" placeholder="Code Promo (ex: AMONDA10)">
-            <button type="button" id="btnApplyCoupon" class="btn-apply-coupon">Appliquer</button>
+          <div class="summary-row">
+            <span>Sous-total articles :</span>
+            <strong id="subtotalDisplay">0 DA</strong>
           </div>
 
-          <!-- Financial Calculation Breakdown -->
-          <div class="summary-totals">
-            <div class="summary-row">
-              <span>Sous-total articles :</span>
-              <strong id="summarySubtotal">0 DA</strong>
-            </div>
-
-            <div class="summary-row">
-              <span>Frais de livraison estimés :</span>
-              <strong id="summaryDelivery">0 DA</strong>
-            </div>
-
-            <div class="summary-row total-row">
-              <span>Total à Payer :</span>
-              <span id="summaryGrandTotal">0 DA</span>
-            </div>
+          <div class="summary-row">
+            <span>Frais de livraison :</span>
+            <strong id="deliveryDisplay">500 DA</strong>
           </div>
 
-          <!-- Direct WhatsApp Alternative Button -->
-          <a href="https://wa.me/213672434217?text=Bonjour,%20je%20souhaite%20commander%20un%20maillot%20à%202500%20DA" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-order">
+          <div class="summary-total-row">
+            <span>Total à Payer :</span>
+            <span id="grandTotalDisplay">0 DA</span>
+          </div>
+
+          <a href="https://wa.me/213672434217?text=Bonjour,%20je%20souhaite%20commander%20un%20maillot" class="btn-wa-modal" target="_blank" rel="noopener noreferrer" style="text-align:center;">
             <i class="fa-brands fa-whatsapp"></i> Commander Directement sur WhatsApp
           </a>
-
         </div>
 
       </div>
@@ -403,327 +1197,385 @@
     </div>
   </section>
 
-  <!-- =========================================================================
-       6. REVIEWS & TESTIMONIALS
-       ========================================================================= -->
-  <section class="trust-section" id="testimonials">
+  <!-- Toast Notification -->
+  <div class="toast-msg" id="toastBox">Article ajouté au panier !</div>
+
+  <!-- Order Confirmation Modal -->
+  <div class="modal-backdrop" id="successModal">
+    <div class="modal-card">
+      <div style="width:64px; height:64px; background:#eaf6ea; color:#2e7d32; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:2rem; margin:0 auto 14px;">
+        <i class="fa-solid fa-check"></i>
+      </div>
+      <h3 style="font-family:'Outfit', sans-serif; font-size:1.6rem; color:var(--primary); margin-bottom:8px;">Commande Validée !</h3>
+      <p style="color:#666; font-size:0.9rem; margin-bottom:14px;">
+        Merci pour votre confiance. Votre commande est enregistrée avec succès. Notre équipe vous appellera avant la livraison.
+      </p>
+
+      <div id="modalOrderDetails" style="background:#f7faf7; border:1px dashed #ccc; border-radius:8px; padding:14px; text-align:left; font-size:0.88rem; margin-bottom:16px;"></div>
+
+      <a id="modalWaBtn" href="#" class="btn-wa-modal" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-whatsapp"></i> Confirmer sur WhatsApp en 1 Clic
+      </a>
+
+      <button type="button" onclick="closeModal()" style="margin-top:10px; background:none; border:none; color:#777; cursor:pointer; font-size:0.85rem; padding:8px;">
+        Fermer cette fenêtre
+      </button>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp Action -->
+  <a href="https://wa.me/213672434217?text=Bonjour%20L'Amonda%20Store" class="floating-wa-btn" target="_blank" rel="noopener noreferrer">
+    <i class="fa-brands fa-whatsapp" style="font-size:1.3rem;"></i>
+    <span>WhatsApp</span>
+  </a>
+
+  <!-- Footer -->
+  <footer>
     <div class="container">
-      
-      <div style="text-align: center; max-width: 650px; margin: 0 auto;">
-        <span class="ticker-badge" style="background:#edf7ed; color:var(--primary); font-size:0.8rem;">
-          <i class="fa-solid fa-star"></i> AVIS CLIENTS VÉRIFIÉS
-        </span>
-        <h2 style="font-family:var(--font-display); font-size:2.1rem; color:var(--primary); margin-top:10px;">
-          Plus de 1 200 Clients Satisfaits en Algérie
-        </h2>
-        <p style="color:var(--text-muted); font-size:0.95rem;">
-          Des maillots de qualité exceptionnelle au meilleur tarif garanti de 2 500 DA.
-        </p>
-      </div>
-
-      <div class="reviews-grid">
-        
-        <div class="review-card">
-          <div class="review-stars">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-          </div>
-          <p class="review-body">
-            "Maillot du Mexique reçu en 24h à Alger ! Les motifs aztèques et le tissu sont magnifiques. À 2 500 DA c'est une excellente affaire !"
-          </p>
-          <div class="review-author">
-            <div class="author-avatar">YB</div>
-            <div class="author-info">
-              <h4>Youcef B.</h4>
-              <span>Alger (Wilaya 16) - Acheteur Vérifié</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="review-card">
-          <div class="review-stars">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-          </div>
-          <p class="review-body">
-            "Le maillot spécial Kobe Bryant de Barcelone est tout simplement incroyable. Le dégradé violet et les détails dorés rendent super bien."
-          </p>
-          <div class="review-author">
-            <div class="author-avatar">KM</div>
-            <div class="author-info">
-              <h4>Karim M.</h4>
-              <span>Oran (Wilaya 31) - Acheteur Vérifié</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="review-card">
-          <div class="review-stars">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-          </div>
-          <p class="review-body">
-            "Maillot vert émeraude du Real Madrid reçu en parfait état. Le logo rétro Adidas Trefoil donne un style unique. Paiement à la livraison au top."
-          </p>
-          <div class="review-author">
-            <div class="author-avatar">SN</div>
-            <div class="author-info">
-              <h4>Samir N.</h4>
-              <span>Sétif (Wilaya 19) - Acheteur Vérifié</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       7. FOOTER
-       ========================================================================= -->
-  <footer class="site-footer" id="contact">
-    <div class="container footer-grid">
-      
-      <div class="footer-col">
-        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
-          <img src="logo.svg" alt="L'Amonda Logo" width="36" height="36" style="filter: brightness(0) invert(1);">
-          <span style="font-family:var(--font-display); font-size:1.35rem; font-weight:800; letter-spacing:-0.5px;">L'AMONDA STORE</span>
-        </div>
-        <p>
-          Boutique officielle de maillots de football de prestige en Algérie : Mexico Jersey, Barcelona Jersey, Madrid Jersey. Qualité certifiée et livraison garantie 58 Wilayas.
-        </p>
-        <div style="display:flex; gap:10px; font-size:1.2rem; color:var(--accent-mint);">
-          <a href="https://wa.me/213672434217" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
-          <a href="tel:0672434217"><i class="fa-solid fa-phone"></i></a>
-          <a href="mailto:gangasteralg@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-        </div>
-      </div>
-
-      <div class="footer-col">
-        <h4>Nos 3 Maillots (2 500 DA)</h4>
-        <ul class="footer-links">
-          <li><a href="#catalog">Mexico Jersey (2 500 DA)</a></li>
-          <li><a href="#catalog">Barcelona Jersey (2 500 DA)</a></li>
-          <li><a href="#catalog">Madrid Jersey (2 500 DA)</a></li>
-          <li><a href="javascript:void(0)" onclick="UI.openSizeGuide()">Guide des Tailles</a></li>
-          <li><a href="dashboard.html">Portail Admin</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Engagements &amp; Aide</h4>
-        <ul class="footer-links">
-          <li><a href="javascript:void(0)">Paiement à la Livraison</a></li>
-          <li><a href="javascript:void(0)">Tarifs Yalidine 58 Wilayas</a></li>
-          <li><a href="javascript:void(0)">Politique d'Échange (48h)</a></li>
-          <li><a href="javascript:void(0)">Conseils d'Entretien Textiles</a></li>
-          <li><a href="javascript:void(0)">Confidentialité &amp; Sécurité</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Nous Contacter</h4>
-        <ul class="footer-contact-list">
-          <li class="footer-contact-item">
-            <i class="fa-solid fa-phone"></i>
-            <div>
-              <strong>Service Client &amp; Commandes :</strong><br>
-              <a href="tel:0672434217" style="color:var(--accent-mint); font-weight:700;">06 72 43 42 17</a>
-            </div>
-          </li>
-          <li class="footer-contact-item">
-            <i class="fa-brands fa-whatsapp"></i>
-            <div>
-              <strong>WhatsApp Direct :</strong><br>
-              <a href="https://wa.me/213672434217" target="_blank" rel="noopener noreferrer" style="color:var(--whatsapp); font-weight:700;">+213 672 43 42 17</a>
-            </div>
-          </li>
-          <li class="footer-contact-item">
-            <i class="fa-solid fa-envelope"></i>
-            <div>
-              <strong>Email :</strong><br>
-              <span>gangasteralg@gmail.com</span>
-            </div>
-          </li>
-          <li class="footer-contact-item">
-            <i class="fa-solid fa-location-dot"></i>
-            <div>
-              <strong>Expédition :</strong><br>
-              <span>Actif sur les 58 Wilayas d'Algérie</span>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-    </div>
-
-    <div class="container footer-bottom">
-      <div>
-        &copy; 2026 <strong>L'Amonda Store</strong>. Tous droits réservés. Plateforme E-Commerce Sécurisée.
-      </div>
-      <div style="display:flex; gap:16px; align-items:center;">
-        <span><i class="fa-solid fa-shield-halved"></i> Données Chiffrées</span>
-        <span><i class="fa-solid fa-box-open"></i> Contrôle Colis Autorisé</span>
-      </div>
+      <p>&copy; 2026 <strong>L'Amonda Store</strong>. Tous droits réservés. Service client : 06 72 43 42 17.</p>
     </div>
   </footer>
 
   <!-- =========================================================================
-       8. FLOATING ACTION BUTTONS
+       COMPLETE SELF-CONTAINED JAVASCRIPT ENGINE (ZERO DEPENDENCIES)
        ========================================================================= -->
-  <div class="floating-actions-bar" aria-label="Assistance Rapide">
-    <a href="https://wa.me/213672434217?text=Bonjour%20L'Amonda%20Store" target="_blank" rel="noopener noreferrer" class="floating-pill pill-whatsapp" title="Discuter sur WhatsApp">
-      <i class="fa-brands fa-whatsapp"></i>
-      <span>WhatsApp</span>
-    </a>
-    <a href="tel:0672434217" class="floating-pill pill-call" title="Appeler le Service Client">
-      <i class="fa-solid fa-phone"></i>
-      <span>06 72 43 42 17</span>
-    </a>
-  </div>
+  <script>
+    // Selected sizes for each jersey card
+    const selectedSizes = {
+      'barcelona': 'L',
+      'madrid': 'L',
+      'mexico': 'L'
+    };
 
-  <!-- =========================================================================
-       9. SLIDE-OUT CART DRAWER
-       ========================================================================= -->
-  <div class="cart-drawer-backdrop" id="cartDrawerBackdrop" onclick="UI.closeCartDrawer()">
-    <div class="cart-drawer" onclick="event.stopPropagation()">
-      <div class="drawer-header">
-        <h3><i class="fa-solid fa-bag-shopping"></i> Mon Panier</h3>
-        <button type="button" class="btn-close-modal" onclick="UI.closeCartDrawer()">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
+    // Inventory counts
+    const inventory = {
+      'Barcelona Jersey': 10,
+      'Madrid Jersey': 10,
+      'Mexico Jersey': 10
+    };
 
-      <div class="drawer-body" id="drawerItemsList">
-        <!-- Rendered dynamically -->
-      </div>
+    // Basket array
+    let basket = [];
 
-      <div class="drawer-footer">
-        <div class="drawer-totals-row">
-          <span>Sous-total :</span>
-          <span id="drawerTotalAmount">0 DA</span>
-        </div>
-        <button type="button" class="btn-submit-order" onclick="UI.closeCartDrawer(); document.getElementById('checkoutSection').scrollIntoView({behavior:'smooth'});">
-          Passer à la Caisse <i class="fa-solid fa-arrow-right"></i>
-        </button>
-      </div>
-    </div>
-  </div>
+    // Helper: Image fallback chain with ultimate SVG guarantee
+    function handleImgFallback(imgElement, fallback1, fallback2) {
+      if (!imgElement.dataset.step) {
+        imgElement.dataset.step = '1';
+        imgElement.src = fallback1;
+      } else if (imgElement.dataset.step === '1') {
+        imgElement.dataset.step = '2';
+        imgElement.src = fallback2;
+      } else {
+        imgElement.onerror = null;
+        imgElement.src = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 240' width='100%' height='100%'><rect width='300' height='240' fill='%23edf7ee' rx='12'/><path d='M90 50 L130 50 C135 65 165 65 170 50 L210 50 L240 85 L215 105 L200 95 L200 200 L100 200 L100 95 L85 105 L60 85 Z' fill='%231b4324'/><text x='150' y='145' font-family='sans-serif' font-size='16' font-weight='bold' fill='%23a8d5ba' text-anchor='middle'>2 500 DA</text><text x='150' y='170' font-family='sans-serif' font-size='12' font-weight='bold' fill='white' text-anchor='middle'>EDITION LIMITEE</text></svg>";
+      }
+    }
 
-  <!-- =========================================================================
-       10. QUICK VIEW PRODUCT DETAIL MODAL
-       ========================================================================= -->
-  <div class="modal-overlay" id="quickViewModal">
-    <div class="modal-dialog">
-      <button type="button" class="btn-close-modal" onclick="UI.closeModal('quickViewModal')">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-      <div id="quickViewModalBody">
-        <!-- Injected securely by app.js -->
-      </div>
-    </div>
-  </div>
-
-  <!-- =========================================================================
-       11. SIZE GUIDE MODAL
-       ========================================================================= -->
-  <div class="modal-overlay" id="sizeGuideModal">
-    <div class="modal-dialog">
-      <button type="button" class="btn-close-modal" onclick="UI.closeModal('sizeGuideModal')">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-      <div style="text-align:center; margin-bottom:20px;">
-        <i class="fa-solid fa-ruler-combined" style="font-size:2rem; color:var(--primary);"></i>
-        <h3 style="font-family:var(--font-display); font-size:1.5rem; color:var(--primary); margin-top:8px;">Guide des Tailles Maillots</h3>
-        <p style="font-size:0.88rem; color:var(--text-muted);">Mesures standards en centimètres (cm) pour les maillots athlétiques.</p>
-      </div>
-
-      <table style="width:100%; border-collapse:collapse; text-align:center; font-size:0.9rem;">
-        <thead>
-          <tr style="background:#edf7ee; color:var(--primary);">
-            <th style="padding:10px; border:1px solid #ddd;">Taille</th>
-            <th style="padding:10px; border:1px solid #ddd;">Tour de Poitrine</th>
-            <th style="padding:10px; border:1px solid #ddd;">Longueur</th>
-            <th style="padding:10px; border:1px solid #ddd;">Poids Conseillé</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style="padding:10px; border:1px solid #ddd; font-weight:800;">S</td>
-            <td style="padding:10px; border:1px solid #ddd;">92 - 97 cm</td>
-            <td style="padding:10px; border:1px solid #ddd;">70 cm</td>
-            <td style="padding:10px; border:1px solid #ddd;">55 - 68 kg</td>
-          </tr>
-          <tr>
-            <td style="padding:10px; border:1px solid #ddd; font-weight:800;">M</td>
-            <td style="padding:10px; border:1px solid #ddd;">98 - 104 cm</td>
-            <td style="padding:10px; border:1px solid #ddd;">72 cm</td>
-            <td style="padding:10px; border:1px solid #ddd;">68 - 78 kg</td>
-          </tr>
-          <tr>
-            <td style="padding:10px; border:1px solid #ddd; font-weight:800;">L</td>
-            <td style="padding:10px; border:1px solid #ddd;">105 - 111 cm</td>
-            <td style="padding:10px; border:1px solid #ddd;">74 cm</td>
-            <td style="padding:10px; border:1px solid #ddd;">78 - 88 kg</td>
-          </tr>
-          <tr>
-            <td style="padding:10px; border:1px solid #ddd; font-weight:800;">XL</td>
-            <td style="padding:10px; border:1px solid #ddd;">112 - 118 cm</td>
-            <td style="padding:10px; border:1px solid #ddd;">76 cm</td>
-            <td style="padding:10px; border:1px solid #ddd;">88 - 98 kg</td>
-          </tr>
-          <tr>
-            <td style="padding:10px; border:1px solid #ddd; font-weight:800;">XXL</td>
-            <td style="padding:10px; border:1px solid #ddd;">119 - 126 cm</td>
-            <td style="padding:10px; border:1px solid #ddd;">78 cm</td>
-            <td style="padding:10px; border:1px solid #ddd;">98 - 110 kg</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div style="background:#fafafa; border-radius:8px; padding:12px; margin-top:16px; font-size:0.85rem; color:#555;">
-        <i class="fa-solid fa-circle-info" style="color:var(--primary);"></i> <strong>Conseil :</strong> Si vous préférez une coupe plus ample, choisissez une taille au-dessus.
-      </div>
-    </div>
-  </div>
-
-  <!-- =========================================================================
-       12. ORDER CONFIRMATION & RECEIPT SUCCESS MODAL
-       ========================================================================= -->
-  <div class="modal-overlay" id="orderSuccessModal">
-    <div class="modal-dialog" style="text-align:center;">
-      <div class="success-checkmark-box">
-        <i class="fa-solid fa-check"></i>
-      </div>
+    // Size Selection Handler
+    function selectSize(jerseyKey, size) {
+      selectedSizes[jerseyKey] = size;
       
-      <h3 style="font-family:var(--font-display); font-size:1.8rem; color:var(--primary); margin-bottom:6px;">Commande Confirmée !</h3>
-      <p style="color:var(--text-muted); font-size:0.95rem;">
-        Merci pour votre confiance. Votre commande a été enregistrée avec succès. Notre équipe vous contactera par téléphone avant l'expédition.
-      </p>
+      // Update label
+      const label = document.getElementById('size-display-' + jerseyKey);
+      if (label) label.innerText = 'Taille : ' + size;
 
-      <!-- Printable Order Receipt Box -->
-      <div class="receipt-box" id="orderReceiptBox">
-        <!-- Injected securely -->
-      </div>
+      // Update button highlights
+      const parentCard = document.getElementById('item-' + jerseyKey);
+      if (parentCard) {
+        const buttons = parentCard.querySelectorAll('.size-btn');
+        buttons.forEach(btn => {
+          if (btn.innerText.trim() === size) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
+        });
+      }
+    }
 
-      <div style="display:flex; flex-direction:column; gap:10px; margin-top:20px;">
-        <a id="btnModalWhatsAppConfirm" href="#" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-order" style="margin:0; font-size:1rem; padding:14px;">
-          <i class="fa-brands fa-whatsapp"></i> Confirmer sur WhatsApp en 1 Clic
-        </a>
+    // Add to Basket
+    function addToBasket(jerseyName, price, jerseyKey) {
+      const size = selectedSizes[jerseyKey] || 'L';
+      
+      // Check if already in basket with same size
+      const existing = basket.find(item => item.name === jerseyName && item.size === size);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        basket.push({
+          name: jerseyName,
+          price: price,
+          size: size,
+          qty: 1
+        });
+      }
 
-        <button type="button" class="btn-card btn-add-basket" style="padding:12px;" onclick="window.print()">
-          <i class="fa-solid fa-print"></i> Imprimer le Reçu
-        </button>
+      updateBasketUI();
+      showToast('✓ ' + jerseyName + ' (' + size + ') ajouté au panier !');
+    }
 
-        <button type="button" class="btn-card" style="padding:10px; background:none; color:var(--text-muted);" onclick="UI.closeModal('orderSuccessModal')">
-          Fermer et continuer vos achats
-        </button>
-      </div>
-    </div>
-  </div>
+    // Quick Buy: Add to basket and scroll to checkout form
+    function quickBuy(jerseyName, price, jerseyKey) {
+      addToBasket(jerseyName, price, jerseyKey);
+      const checkoutEl = document.getElementById('checkout');
+      if (checkoutEl) {
+        checkoutEl.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
 
-  <!-- Toast Notification Container -->
-  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+    // Change Item Quantity
+    function changeQty(index, delta) {
+      if (index >= 0 && index < basket.length) {
+        basket[index].qty += delta;
+        if (basket[index].qty <= 0) {
+          basket.splice(index, 1);
+        }
+        updateBasketUI();
+      }
+    }
 
-  <!-- Client Application Script -->
-  <script src="app.js"></script>
+    // Remove Item from Basket
+    function removeItem(index) {
+      if (index >= 0 && index < basket.length) {
+        basket.splice(index, 1);
+        updateBasketUI();
+      }
+    }
+
+    // Clear Basket
+    function clearBasket() {
+      basket = [];
+      updateBasketUI();
+    }
+
+    // Calculate Delivery Fee based on Wilaya and Delivery Type
+    function getDeliveryFee() {
+      if (basket.length === 0) return 0;
+      
+      const wilayaSelect = document.getElementById('clientWilaya');
+      const wilaya = wilayaSelect ? wilayaSelect.value : '16';
+      const isHome = document.querySelector('input[name="delivery_type"]:checked')?.value === 'home';
+
+      // Algiers (16): 500 DA home / 300 DA desk
+      // Nearby (09, 35, 42): 550 DA home / 350 DA desk
+      // Far South (11, 33, 37, 52, 56, 58): 1200 DA home / 800 DA desk
+      // Others standard: 650 DA home / 450 DA desk
+      if (wilaya === '16') {
+        return isHome ? 500 : 300;
+      } else if (['09', '35', '42'].includes(wilaya)) {
+        return isHome ? 550 : 350;
+      } else if (['11', '33', '37', '52', '56', '58'].includes(wilaya)) {
+        return isHome ? 1200 : 800;
+      } else {
+        return isHome ? 650 : 450;
+      }
+    }
+
+    function updateDeliveryFee() {
+      updateBasketUI();
+    }
+
+    // Update Basket UI
+    function updateBasketUI() {
+      const basketList = document.getElementById('basketList');
+      const navCount = document.getElementById('navCartCount');
+      const subtotalEl = document.getElementById('subtotalDisplay');
+      const deliveryEl = document.getElementById('deliveryDisplay');
+      const grandTotalEl = document.getElementById('grandTotalDisplay');
+      const hiddenField = document.getElementById('hiddenCartField');
+
+      // Total item count
+      const totalCount = basket.reduce((sum, item) => sum + item.qty, 0);
+      if (navCount) navCount.innerText = totalCount;
+
+      if (basket.length === 0) {
+        if (basketList) basketList.innerHTML = '<li class="empty-cart-msg">Votre panier est vide. Choisissez un maillot ci-dessus !</li>';
+        if (subtotalEl) subtotalEl.innerText = '0 DA';
+        if (deliveryEl) deliveryEl.innerText = '0 DA';
+        if (grandTotalEl) grandTotalEl.innerText = '0 DA';
+        if (hiddenField) hiddenField.value = '';
+        return;
+      }
+
+      let listHTML = '';
+      let subtotal = 0;
+      let orderSummaryText = '';
+
+      basket.forEach((item, index) => {
+        const itemTotal = item.price * item.qty;
+        subtotal += itemTotal;
+        orderSummaryText += `[${item.name} (${item.size}) x${item.qty} = ${itemTotal} DA] `;
+
+        listHTML += `
+          <li class="basket-item">
+            <div class="basket-item-info">
+              <strong>${item.name}</strong>
+              <span class="basket-item-size">Taille : ${item.size}</span>
+              <div class="basket-item-qty-controls">
+                <button type="button" class="btn-qty" onclick="changeQty(${index}, -1)">-</button>
+                <span style="font-weight:700;">${item.qty}</span>
+                <button type="button" class="btn-qty" onclick="changeQty(${index}, 1)">+</button>
+              </div>
+            </div>
+            <div style="text-align:right;">
+              <span class="basket-item-total">${itemTotal.toLocaleString()} DA</span><br>
+              <button type="button" class="btn-item-del" onclick="removeItem(${index})" title="Supprimer">
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+            </div>
+          </li>
+        `;
+      });
+
+      const deliveryFee = getDeliveryFee();
+      const grandTotal = subtotal + deliveryFee;
+
+      if (basketList) basketList.innerHTML = listHTML;
+      if (subtotalEl) subtotalEl.innerText = subtotal.toLocaleString() + ' DA';
+      if (deliveryEl) deliveryEl.innerText = deliveryFee.toLocaleString() + ' DA';
+      if (grandTotalEl) grandTotalEl.innerText = grandTotal.toLocaleString() + ' DA';
+      if (hiddenField) hiddenField.value = `${orderSummaryText} | Livraison: ${deliveryFee} DA | Total: ${grandTotal} DA`;
+    }
+
+    // Toast Alert
+    function showToast(text) {
+      const toast = document.getElementById('toastBox');
+      if (toast) {
+        toast.innerText = text;
+        toast.style.display = 'block';
+        setTimeout(() => {
+          toast.style.display = 'none';
+        }, 3200);
+      }
+    }
+
+    // Modal Close
+    function closeModal() {
+      const modal = document.getElementById('successModal');
+      if (modal) modal.style.display = 'none';
+    }
+
+    // Order Submission Handler
+    async function handleOrderSubmit(event) {
+      event.preventDefault();
+
+      if (basket.length === 0) {
+        alert("Votre panier est vide ! Veuillez choisir au moins un maillot avant de commander.");
+        return;
+      }
+
+      const form = event.target;
+      const submitBtn = document.getElementById('btnSubmitOrder');
+
+      const name = document.getElementById('clientName').value.trim();
+      const phone = document.getElementById('clientPhone').value.trim();
+      const wilayaSelect = document.getElementById('clientWilaya');
+      const wilayaText = wilayaSelect.options[wilayaSelect.selectedIndex]?.text || '';
+      const address = document.getElementById('clientAddress').value.trim();
+      const deliveryType = document.querySelector('input[name="delivery_type"]:checked')?.value === 'home' ? 'À Domicile' : 'Stop Desk';
+
+      const orderId = 'AMD-' + Math.floor(100000 + Math.random() * 900000);
+      const deliveryFee = getDeliveryFee();
+      const subtotal = basket.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      const grandTotal = subtotal + deliveryFee;
+
+      // Summary string
+      const itemsString = basket.map(it => `${it.name} (Taille ${it.size}) x${it.qty}`).join(' | ');
+
+      // Loading state
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Transmission de la commande...';
+      }
+
+      // Payload for Formspree & SheetBest
+      const payload = {
+        Order_ID: orderId,
+        Client_Name: name,
+        Client_Phone: phone,
+        Client_Wilaya: wilayaText,
+        Client_Address: address,
+        Delivery_Type: deliveryType,
+        Items_Ordered: itemsString,
+        Delivery_Fee: deliveryFee + ' DA',
+        Total_Price: grandTotal + ' DA',
+        Order_Date: new Date().toLocaleString('fr-FR')
+      };
+
+      // Send to Formspree
+      try {
+        fetch('https://formspree.io/f/xlgyrgpg', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
+        }).catch(e => console.log('Formspree background:', e));
+
+        // Send to SheetBest
+        fetch('https://api.sheetbest.com/sheets/30e3bc87-c617-4fdc-9923-d873060d3c46', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).catch(e => console.log('SheetBest background:', e));
+      } catch (err) {
+        console.log('Network catch:', err);
+      }
+
+      // Prepare WhatsApp message
+      const waText = encodeURIComponent(
+        `*NOUVELLE COMMANDE L'AMONDA STORE*\n` +
+        `--------------------------------\n` +
+        `*N° Commande :* ${orderId}\n` +
+        `*Client :* ${name}\n` +
+        `*Téléphone :* ${phone}\n` +
+        `*Wilaya :* ${wilayaText}\n` +
+        `*Adresse :* ${address}\n` +
+        `*Mode Livraison :* ${deliveryType}\n\n` +
+        `*Articles :*\n` +
+        basket.map(it => `• ${it.name} (${it.size}) x${it.qty} = ${(it.price * it.qty).toLocaleString()} DA`).join('\n') +
+        `\n\n*Livraison :* ${deliveryFee} DA\n` +
+        `*TOTAL À PAYER :* *${grandTotal.toLocaleString()} DA*\n` +
+        `--------------------------------\n` +
+        `Merci de confirmer l'expédition.`
+      );
+
+      const waUrl = 'https://wa.me/213672434217?text=' + waText;
+
+      // Update Modal
+      const modal = document.getElementById('successModal');
+      const detailsBox = document.getElementById('modalOrderDetails');
+      const modalWaBtn = document.getElementById('modalWaBtn');
+
+      if (detailsBox) {
+        detailsBox.innerHTML = `
+          <div><strong>Commande :</strong> #${orderId}</div>
+          <div><strong>Client :</strong> ${name} (${phone})</div>
+          <div><strong>Destination :</strong> ${wilayaText} - ${address}</div>
+          <div style="margin:8px 0; border-top:1px solid #ddd; padding-top:6px;">
+            ${basket.map(it => `<div>• ${it.name} (${it.size}) x${it.qty} - ${(it.price * it.qty).toLocaleString()} DA</div>`).join('')}
+          </div>
+          <div style="font-size:1.1rem; font-weight:800; color:var(--primary); border-top:1px solid #ddd; padding-top:6px;">
+            Total à payer : ${grandTotal.toLocaleString()} DA
+          </div>
+        `;
+      }
+
+      if (modalWaBtn) modalWaBtn.href = waUrl;
+      if (modal) modal.style.display = 'flex';
+
+      // Reset form and basket
+      form.reset();
+      clearBasket();
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fa-solid fa-lock"></i> Confirmer Ma Commande (Paiement à la livraison)';
+      }
+    }
+
+    // Initialize on load
+    window.onload = function() {
+      updateBasketUI();
+    };
+  </script>
 </body>
 </html>
