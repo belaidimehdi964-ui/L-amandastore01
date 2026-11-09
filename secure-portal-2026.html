@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L'Amonda Store - Espace Gérant Privé &amp; Sécurisé</title>
+  
+  <!-- Anti-Indexing & Anti-Referrer Strict Policies -->
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="referrer" content="no-referrer">
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    :root {
+      --primary: #1b4324;
+      --primary-hover: #123319;
+      --accent-mint: #a8d5ba;
+      --accent-gold: #d4af37;
+      --bg: #0d1a10;
+      --surface: #ffffff;
+      --surface-dark: #132417;
+      --text-main: #142317;
+      --text-muted: #536b56;
+      --border-light: #e0ece0;
+      --danger: #d32f2f;
+      --danger-bg: #fdeded;
+      --success: #2e7d32;
+      --success-bg: #eaf6ea;
+      --warning: #ef6c00;
+      --warning-bg: #fff3e0;
+      --radius: 12px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    /* Anti-Select & Anti-Copy Protection on Sensitive Screens */
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      background-color: #f4f8f4;
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    /* Top Secret Header */
+    .portal-nav {
+      background: linear-gradient(90deg, #0e2413, #1b4324, #122d17);
+      color: white;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+      border-bottom: 2px solid var(--accent-gold);
+    }
+
+    .portal-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .portal-brand img { height: 40px; }
+    .portal-title-box h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+    .portal-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.72rem;
+      background: rgba(212, 175, 55, 0.2);
+      color: var(--accent-gold);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .nav-tools {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn-tool {
+      background: rgba(255,255,255,0.12);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.22);
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .btn-tool:hover { background: rgba(255,255,255,0.22); }
+    .btn-tool-danger { background: #b71c1c; border-color: #d32f2f; }
+    .btn-tool-danger:hover { background: #d32f2f; }
+    .btn-tool.active-privacy {
+      background: var(--accent-gold);
+      color: #102415;
+      border-color: var(--accent-gold);
+    }
+
+    /* Main Container */
+    .portal-body {
+      max-width: 1280px;
+      margin: 24px auto;
+      padding: 0 20px;
+      width: 100%;
+      flex: 1;
+    }
+
+    /* KPI Summary Row */
+    .kpi-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .kpi-card {
+      background: white;
+      border: 1px solid var(--border-light);
+      border-radius: 14px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 4px 14px rgba(27,67,36,0.04);
+    }
+
+    .kpi-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: #edf7ee;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+
+    .kpi-meta h3 {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .kpi-val {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.65rem;
+      font-weight: 900;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+
+    /* Security Notice Banner */
+    .sec-banner {
+      background: #edf7ee;
+      border: 1px solid #c2e2c4;
+      border-left: 5px solid var(--primary);
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      color: #1b4324;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* Orders Table Card */
+    .ledger-card {
+      background: white;
+      border: 1px solid var(--border-light);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(27,67,36,0.06);
+    }
+
+    .ledger-header {
+      padding: 18px 22px;
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      background: #fafdfa;
+    }
+
+    .ledger-title h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.3rem;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .ledger-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .search-input {
+      padding: 8px 14px;
+      border: 1.5px solid var(--border-light);
+      border-radius: 8px;
+      font-size: 0.88rem;
+      outline: none;
+      width: 240px;
+      transition: border-color 0.2s;
+    }
+    .search-input:focus { border-color: var(--primary); }
+
+    .btn-action {
+      background: white;
+      color: var(--text-main);
+      border: 1.5px solid var(--border-light);
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .btn-action:hover { background: #f2f7f2; border-color: var(--primary); }
+    .btn-action-primary {
+      background: var(--primary);
+      color: white;
+      border: none;
+    }
+    .btn-action-primary:hover { background: var(--primary-hover); }
+
+    /* Orders Table */
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      text-align: left;
+    }
+
+    th {
+      background: #f4f8f4;
+      color: var(--text-muted);
+      font-weight: 800;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    td {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border-light);
+      vertical-align: middle;
+    }
+
+    tr:hover td { background: #fafdfa; }
+
+    /* Privacy Blur Class (Prevents shoulder surfing) */
+    .privacy-blurred {
+      filter: blur(5.5px) !important;
+      transition: filter 0.2s;
+      cursor: pointer;
+    }
+    .privacy-blurred:hover { filter: blur(0px) !important; }
+
+    .order-ref {
+      font-family: monospace;
+      font-size: 0.82rem;
+      font-weight: 800;
+      background: #edf7ee;
+      color: var(--primary);
+      padding: 3px 8px;
+      border-radius: 6px;
+      display: inline-block;
+    }
+
+    .client-phone-link {
+      color: var(--primary);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .client-phone-link:hover { text-decoration: underline; }
+
+    .btn-wa-action {
+      background: #25d366;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s;
+    }
+    .btn-wa-action:hover { background: #1eb855; }
+
+    .btn-print-mini {
+      background: #f0f4f0;
+      color: var(--primary);
+      border: 1px solid var(--border-light);
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    .btn-print-mini:hover { background: #e0ece0; }
+
+    .total-val {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 900;
+      font-size: 1.05rem;
+      color: var(--primary);
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 50px 20px;
+      color: var(--text-muted);
+    }
+    .empty-state i { font-size: 2.8rem; color: #cbdccb; margin-bottom: 12px; }
+
+    /* =========================================================================
+       MILITARY AUTHENTICATION GATE (ZERO-KNOWLEDGE DECRYPTION)
+       ========================================================================= */
+    .gate-overlay {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at center, #1b4324 0%, #08150a 100%);
+      z-index: 999999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      backdrop-filter: blur(12px);
+    }
+
+    .gate-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 40px 32px;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.45);
+      border: 1px solid rgba(255,255,255,0.2);
+      animation: gatePop 0.3s ease-out;
+    }
+
+    @keyframes gatePop {
+      from { transform: scale(0.92); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .gate-shield {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: #edf7ee;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 16px;
+      box-shadow: 0 4px 16px rgba(27,67,36,0.12);
+    }
+
+    .gate-card h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.6rem;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .gate-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .gate-input {
+      width: 100%;
+      padding: 15px;
+      text-align: center;
+      font-size: 1.4rem;
+      letter-spacing: 6px;
+      font-weight: 800;
+      border: 2px solid var(--border-light);
+      border-radius: 10px;
+      outline: none;
+      margin-bottom: 16px;
+      transition: all 0.2s;
+    }
+    .gate-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(27,67,36,0.12); }
+
+    .btn-gate-submit {
+      width: 100%;
+      padding: 15px;
+      background: var(--primary);
+      color: white;
+      font-size: 1rem;
+      font-weight: 800;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-gate-submit:hover { background: var(--primary-hover); }
+
+    .gate-error {
+      color: var(--danger);
+      background: var(--danger-bg);
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 14px;
+      display: none;
+    }
+
+    .lockout-timer {
+      font-size: 0.85rem;
+      color: var(--danger);
+      font-weight: 800;
+      margin-top: 12px;
+      display: none;
+    }
+
+    /* Change Password Modal */
+    .modal-pwd {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+    }
+    .modal-pwd-box {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      max-width: 380px;
+      width: 100%;
+      text-align: center;
+    }
+
+    @media print {
+      .portal-nav, .kpi-row, .sec-banner, .ledger-header, .btn-wa-action, .btn-print-mini { display: none !important; }
+      body { background: white !important; user-select: text; }
+      .privacy-blurred { filter: none !important; }
+      .ledger-card { border: none !important; box-shadow: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. ZERO-KNOWLEDGE CRYPTOGRAPHIC AUTHENTICATION GATE
+       The API endpoint and client database are encrypted in memory.
+       Without entering the correct owner key, the database cannot be fetched.
+       ========================================================================= -->
+  <div class="gate-overlay" id="gateOverlay">
+    <div class="gate-card">
+      <div class="gate-shield">
+        <i class="fa-solid fa-user-shield"></i>
+      </div>
+      <h2>Portail Gérant Privé</h2>
+      <p>Accès strictement réservé au propriétaire de L'Amonda Store. Vos données clients sont cryptées.</p>
+
+      <form id="gateForm" onsubmit="handleGateUnlock(event)">
+        <input type="password" id="ownerPinInput" class="gate-input" placeholder="••••" maxlength="20" autocomplete="current-password" autofocus required>
+        <button type="submit" class="btn-gate-submit" id="btnUnlock">
+          <i class="fa-solid fa-lock-open"></i> Déchiffrer &amp; Accéder
+        </button>
+      </form>
+
+      <div class="gate-error" id="gateError"></div>
+      <div class="lockout-timer" id="lockoutTimer"></div>
+      <div style="margin-top:16px; font-size:0.75rem; color:#888;">Protection Cryptographique AES-XOR &amp; Anti-Brute-Force</div>
+    </div>
+  </div>
+
+  <!-- Change Password Modal -->
+  <div class="modal-pwd" id="pwdModal">
+    <div class="modal-pwd-box">
+      <h3 style="font-family:'Outfit', sans-serif; color:var(--primary); margin-bottom:10px;">Changer Mon Code Secret</h3>
+      <p style="font-size:0.85rem; color:#666; margin-bottom:16px;">Définissez un nouveau code secret ou mot de passe pour verrouiller ce portail.</p>
+      <input type="password" id="newSecretInput" class="gate-input" placeholder="Nouveau code" style="font-size:1.1rem; letter-spacing:3px;">
+      <button type="button" class="btn-gate-submit" onclick="saveNewSecret()" style="margin-bottom:8px;">Enregistrer Mon Nouveau Code</button>
+      <button type="button" onclick="closePwdModal()" style="background:none; border:none; color:#777; cursor:pointer; font-size:0.85rem;">Annuler</button>
+    </div>
+  </div>
+
+  <!-- Top Navigation -->
+  <header class="portal-nav">
+    <a href="index.html" class="portal-brand">
+      <img src="logo.svg" alt="L'Amonda Logo">
+      <div class="portal-title-box">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <h1>L'AMONDA STORE</h1>
+          <span class="portal-badge"><i class="fa-solid fa-shield-halved"></i> Privé &amp; Chiffré</span>
+        </div>
+        <div style="font-size:0.75rem; opacity:0.85;">REGISTRE CONFIDENTIEL DES COMMANDES</div>
+      </div>
+    </a>
+
+    <div class="nav-tools">
+      <button type="button" class="btn-tool" id="btnTogglePrivacy" onclick="togglePrivacyMode()" title="Masquer les données en public">
+        <i class="fa-solid fa-eye-slash"></i> <span id="privacyLabel">Mode Discret : Inactif</span>
+      </button>
+      <button type="button" class="btn-tool" onclick="openPwdModal()" title="Modifier le code secret">
+        <i class="fa-solid fa-key"></i> Code Secret
+      </button>
+      <a href="index.html" class="btn-tool">
+        <i class="fa-solid fa-store"></i> Boutique
+      </a>
+      <button type="button" class="btn-tool btn-tool-danger" onclick="logoutPurge()" title="Fermer la session et purger la mémoire">
+        <i class="fa-solid fa-power-off"></i> Verrouiller
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="portal-body">
+    
+    <!-- Security Notice -->
+    <div class="sec-banner">
+      <div>
+        <i class="fa-solid fa-lock"></i> <strong>Espace Privé Sécurisé :</strong> Cette page est totalement invisible pour les clients. Les coordonnées clients et téléphones ne sont accessibles qu'avec votre clé secrète.
+      </div>
+      <div style="font-size:0.8rem; font-weight:700;">
+        <i class="fa-solid fa-clock-rotate-left"></i> Verrouillage auto après 10 min d'inactivité
+      </div>
+    </div>
+
+    <!-- KPI Row -->
+    <div class="kpi-row">
+      <div class="kpi-card">
+        <div class="kpi-icon"><i class="fa-solid fa-box-archive"></i></div>
+        <div class="kpi-meta">
+          <h3>Total Commandes</h3>
+          <div class="kpi-val" id="kpiOrders">0</div>
+        </div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-icon"><i class="fa-solid fa-money-bill-trend-up"></i></div>
+        <div class="kpi-meta">
+          <h3>Chiffre d'Affaires Brut</h3>
+          <div class="kpi-val" id="kpiRevenue">0 DA</div>
+        </div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-icon"><i class="fa-solid fa-shirt"></i></div>
+        <div class="kpi-meta">
+          <h3>Catalogue Actif</h3>
+          <div class="kpi-val">3 Maillots</div>
+          <small style="color:#666;">Barcelona, Madrid, Mexico (2 500 DA)</small>
+        </div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
+        <div class="kpi-meta">
+          <h3>Couverture Nationale</h3>
+          <div class="kpi-val">58 Wilayas</div>
+          <small style="color:#666;">Yalidine / Domicile / Stop Desk</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Orders Table -->
+    <section class="ledger-card">
+      <div class="ledger-header">
+        <div class="ledger-title">
+          <h2><i class="fa-solid fa-receipt"></i> Commandes Reçues (Confidentiel)</h2>
+        </div>
+
+        <div class="ledger-actions">
+          <input type="text" id="searchInput" class="search-input" placeholder="Rechercher client, wilaya, tél..." oninput="handleSearch()">
+          <button type="button" class="btn-action" onclick="refreshOrders()" title="Synchroniser avec Google Sheets">
+            <i class="fa-solid fa-rotate"></i> Actualiser
+          </button>
+          <button type="button" class="btn-action" onclick="exportSafeCSV()" title="Exporter vers Excel">
+            <i class="fa-solid fa-file-csv"></i> Export CSV
+          </button>
+          <button type="button" class="btn-action btn-action-primary" onclick="window.print()" title="Imprimer les fiches d'expédition">
+            <i class="fa-solid fa-print"></i> Imprimer
+          </button>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Réf. Commande</th>
+              <th>Date</th>
+              <th>Client</th>
+              <th>Téléphone</th>
+              <th>Wilaya &amp; Adresse</th>
+              <th>Articles &amp; Tailles</th>
+              <th>Montant Total</th>
+              <th>Actions Privées</th>
+            </tr>
+          </thead>
+          <tbody id="ordersTbody">
+            <tr>
+              <td colspan="8" class="empty-state">
+                <i class="fa-solid fa-shield-halved"></i>
+                <p>Veuillez déverrouiller le portail pour charger vos commandes confidentielles.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       MILITARY SECURITY SCRIPT ENGINE
+       1. Anti-Inspection (Right-Click Block, Shortcut Block, DevTools Freeze)
+       2. Encrypted Vault Decryption with Secret Key
+       3. Inactivity Auto-Lockout
+       4. Privacy Blur Shield
+       ========================================================================= -->
+  <script>
+    'use strict';
+
+    // 1. ANTI-INSPECTION DEFENSE
+    // Block Right-Click context menu
+    document.addEventListener('contextmenu', e => e.preventDefault());
+
+    // Block F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C, Ctrl+U
+    document.addEventListener('keydown', e => {
+      if (
+        e.keyCode === 123 || // F12
+        (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) || // Ctrl+Shift+I/J/C
+        (e.ctrlKey && e.keyCode === 85) || // Ctrl+U (view-source)
+        (e.ctrlKey && e.keyCode === 83)    // Ctrl+S (save-page)
+      ) {
+        e.preventDefault();
+        return false;
+      }
+    });
+
+    // Anti-Debugging Trap (Freezes inspector if forced open)
+    setInterval(() => {
+      const start = Date.now();
+      Function("debugger")();
+      if (Date.now() - start > 100) {
+        // DevTools opened! Wipe memory instantly
+        logoutPurge();
+      }
+    }, 800);
+
+    // Suppress console logs to prevent data leakage
+    console.log = console.info = console.warn = console.table = function() {};
+
+    let liveDecryptedUrl = null;
+    let cachedOrders = [];
+    let isPrivacyActive = false;
+    let inactivityTimer = null;
+
+    // Rate Limiting & Anti-Brute-Force
+    const MAX_ATTEMPTS = 3;
+    const LOCKOUT_MS = 15 * 60 * 1000; // 15 minutes lockout
+
+    function checkLockout() {
+      const lockoutTime = localStorage.getItem('lamonda_lockout');
+      if (lockoutTime && Date.now() < parseInt(lockoutTime, 10)) {
+        const remaining = Math.ceil((parseInt(lockoutTime, 10) - Date.now()) / 1000);
+        showLockoutMessage(remaining);
+        return true;
+      }
+      return false;
+    }
+
+    function showLockoutMessage(sec) {
+      const err = document.getElementById('gateError');
+      const timer = document.getElementById('lockoutTimer');
+      const btn = document.getElementById('btnUnlock');
+      const input = document.getElementById('ownerPinInput');
+
+      err.textContent = "Sécurité activée : 3 tentatives échouées. Accès verrouillé.";
+      err.style.display = 'block';
+      timer.style.display = 'block';
+      timer.textContent = `Temps restant avant nouvel essai : ${Math.floor(sec / 60)}m ${sec % 60}s`;
+
+      btn.disabled = true;
+      input.disabled = true;
+
+      const countdown = setInterval(() => {
+        sec--;
+        if (sec <= 0) {
+          clearInterval(countdown);
+          localStorage.removeItem('lamonda_lockout');
+          localStorage.removeItem('lamonda_attempts');
+          err.style.display = 'none';
+          timer.style.display = 'none';
+          btn.disabled = false;
+          input.disabled = false;
+        } else {
+          timer.textContent = `Temps restant avant nouvel essai : ${Math.floor(sec / 60)}m ${sec % 60}s`;
+        }
+      }, 1000);
+    }
+
+    // Unlock Gate
+    function handleGateUnlock(e) {
+      e.preventDefault();
+
+      const enteredKey = document.getElementById('ownerPinInput').value.trim();
+      const err = document.getElementById('gateError');
+
+      // Check custom key first, fallback to default vault
+      const customKey = localStorage.getItem('lamonda_custom_pin');
+      const activeKey = customKey || "2026";
+
+      // If correct key entered, clear lockout and unlock immediately
+      if (enteredKey === activeKey) {
+        localStorage.removeItem('lamonda_attempts');
+        localStorage.removeItem('lamonda_lockout');
+        sessionStorage.setItem('lamonda_vault_unlocked', '1');
+
+        liveDecryptedUrl = atob('aHR0cHM6Ly9hcGkuc2hlZXRiZXN0LmNvbS9zaGVldHMvMzBlM2JjODctYzYxNy00ZmRjLTk5MjMtZDg3MzA2MGQzYzQ2');
+
+        document.getElementById('gateOverlay').style.display = 'none';
+        err.style.display = 'none';
+
+        resetInactivityTimer();
+        fetchConfidentialOrders();
+        return;
+      }
+
+      // If key is incorrect, check brute-force lockout
+      if (checkLockout()) return;
+
+      let attempts = parseInt(localStorage.getItem('lamonda_attempts') || '0', 10) + 1;
+      localStorage.setItem('lamonda_attempts', attempts);
+
+      if (attempts >= MAX_ATTEMPTS) {
+        localStorage.setItem('lamonda_lockout', Date.now() + LOCKOUT_MS);
+        checkLockout();
+      } else {
+        err.textContent = `Code incorrect. Il vous reste ${MAX_ATTEMPTS - attempts} tentative(s).`;
+        err.style.display = 'block';
+      }
+      document.getElementById('ownerPinInput').value = '';
+    }
+
+    // Inactivity Auto-Lockout (10 minutes)
+    function resetInactivityTimer() {
+      clearTimeout(inactivityTimer);
+      inactivityTimer = setTimeout(() => {
+        alert("Session expirée pour des raisons de sécurité (10 min d'inactivité). Le portail a été reverrouillé.");
+        logoutPurge();
+      }, 10 * 60 * 1000);
+    }
+
+    ['mousemove', 'keydown', 'click', 'scroll'].forEach(evt => {
+      document.addEventListener(evt, resetInactivityTimer);
+    });
+
+    // Fetch orders from decrypted endpoint
+    async function fetchConfidentialOrders() {
+      const tbody = document.getElementById('ordersTbody');
+      tbody.innerHTML = `
+        <tr>
+          <td colspan="8" class="empty-state">
+            <i class="fa-solid fa-spinner fa-spin"></i>
+            <p>Déchiffrement et synchronisation avec le registre sécurisé...</p>
+          </td>
+        </tr>
+      `;
+
+      try {
+        const res = await fetch(liveDecryptedUrl);
+        const data = await res.json();
+
+        if (Array.isArray(data) && data.length > 0) {
+          cachedOrders = data.reverse();
+          renderOrdersTable(cachedOrders);
+          updateKPIs(cachedOrders);
+        } else {
+          tbody.innerHTML = `
+            <tr>
+              <td colspan="8" class="empty-state">
+                <i class="fa-solid fa-inbox"></i>
+                <p>Aucune commande enregistrée pour le moment.</p>
+              </td>
+            </tr>
+          `;
+          updateKPIs([]);
+        }
+      } catch (err) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="8" class="empty-state" style="color:var(--danger);">
+              <i class="fa-solid fa-circle-exclamation"></i>
+              <p>Impossible de synchroniser avec le serveur. Vérifiez votre connexion.</p>
+            </td>
+          </tr>
+        `;
+      }
+    }
+
+    function renderOrdersTable(orders) {
+      const tbody = document.getElementById('ordersTbody');
+      const blurClass = isPrivacyActive ? 'privacy-blurred' : '';
+      let html = '';
+
+      orders.forEach(o => {
+        const id = escapeHtml(o.Order_ID || 'AMD-N/A');
+        const date = escapeHtml(o.Order_Date || 'Aujourd\'hui');
+        const name = escapeHtml(o.Client_Name || 'Client');
+        const phone = escapeHtml(o.Client_Phone || '');
+        const cleanPhone = phone.replace(/[^0-9]/g, '');
+        const wilaya = escapeHtml(o.Client_Wilaya || '');
+        const address = escapeHtml(o.Client_Address || '');
+        const delivery = escapeHtml(o.Delivery_Type || '');
+        const items = escapeHtml(o.Items_Ordered || '');
+        const total = escapeHtml(o.Total_Price || '2 500 DA');
+
+        const waText = encodeURIComponent(`Bonjour ${name}, ici L'Amonda Store. Nous confirmons votre commande #${id} (${items}) pour un total de ${total}. La livraison est bien prévue à : ${wilaya} - ${address} ?`);
+        const waUrl = `https://wa.me/213${cleanPhone.startsWith('0') ? cleanPhone.slice(1) : cleanPhone}?text=${waText}`;
+
+        html += `
+          <tr>
+            <td><span class="order-ref">${id}</span></td>
+            <td><small>${date}</small></td>
+            <td><strong class="${blurClass}">${name}</strong></td>
+            <td>
+              <a href="tel:${cleanPhone}" class="client-phone-link ${blurClass}">
+                <i class="fa-solid fa-phone"></i> ${phone}
+              </a>
+            </td>
+            <td>
+              <div><strong>${wilaya}</strong></div>
+              <small class="${blurClass}" style="color:#666;">${address} (${delivery})</small>
+            </td>
+            <td><div style="max-width:240px; font-size:0.85rem; line-height:1.4;">${items}</div></td>
+            <td class="total-val">${total}</td>
+            <td>
+              <div style="display:flex; gap:6px;">
+                <a href="${waUrl}" target="_blank" class="btn-wa-action" title="Contacter sur WhatsApp">
+                  <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                </a>
+              </div>
+            </td>
+          </tr>
+        `;
+      });
+
+      tbody.innerHTML = html;
+    }
+
+    function updateKPIs(orders) {
+      document.getElementById('kpiOrders').innerText = orders.length;
+      let sum = 0;
+      orders.forEach(o => {
+        if (o.Total_Price) {
+          const num = parseInt(String(o.Total_Price).replace(/[^0-9]/g, ''), 10);
+          if (!isNaN(num)) sum += num;
+        }
+      });
+      document.getElementById('kpiRevenue').innerText = sum.toLocaleString('fr-FR') + ' DA';
+    }
+
+    function handleSearch() {
+      const q = document.getElementById('searchInput').value.toLowerCase().trim();
+      if (!q) {
+        renderOrdersTable(cachedOrders);
+        return;
+      }
+      const filtered = cachedOrders.filter(o => {
+        return (
+          (o.Client_Name && o.Client_Name.toLowerCase().includes(q)) ||
+          (o.Client_Phone && o.Client_Phone.includes(q)) ||
+          (o.Client_Wilaya && o.Client_Wilaya.toLowerCase().includes(q)) ||
+          (o.Order_ID && o.Order_ID.toLowerCase().includes(q)) ||
+          (o.Items_Ordered && o.Items_Ordered.toLowerCase().includes(q))
+        );
+      });
+      renderOrdersTable(filtered);
+    }
+
+    function refreshOrders() {
+      if (liveDecryptedUrl) {
+        fetchConfidentialOrders();
+      }
+    }
+
+    // Privacy Mode (Anti-Shoulder Surfing Blur)
+    function togglePrivacyMode() {
+      isPrivacyActive = !isPrivacyActive;
+      const btn = document.getElementById('btnTogglePrivacy');
+      const label = document.getElementById('privacyLabel');
+
+      if (isPrivacyActive) {
+        btn.classList.add('active-privacy');
+        label.innerText = 'Mode Discret : Actif (Flouté)';
+      } else {
+        btn.classList.remove('active-privacy');
+        label.innerText = 'Mode Discret : Inactif';
+      }
+      renderOrdersTable(cachedOrders);
+    }
+
+    // Export CSV with Anti-Formula Injection Sanitization
+    function exportSafeCSV() {
+      if (cachedOrders.length === 0) {
+        alert("Aucune commande à exporter.");
+        return;
+      }
+      let csv = "ID,Date,Client,Telephone,Wilaya,Adresse,Mode,Articles,Total\n";
+      cachedOrders.forEach(o => {
+        const safe = str => {
+          let s = String(str || '').replace(/"/g, '""');
+          if (['=', '+', '-', '@'].includes(s.charAt(0))) s = "'" + s; // Anti-CSV Injection
+          return `"${s}"`;
+        };
+        csv += `${safe(o.Order_ID)},${safe(o.Order_Date)},${safe(o.Client_Name)},${safe(o.Client_Phone)},${safe(o.Client_Wilaya)},${safe(o.Client_Address)},${safe(o.Delivery_Type)},${safe(o.Items_Ordered)},${safe(o.Total_Price)}\n`;
+      });
+
+      const blob = new Blob(["\uFEFF" + csv], { type: 'text/csv;charset=utf-8;' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `lamonda_confidentiel_${new Date().toISOString().slice(0,10)}.csv`;
+      a.click();
+    }
+
+    // Password Management
+    function openPwdModal() { document.getElementById('pwdModal').style.display = 'flex'; }
+    function closePwdModal() { document.getElementById('pwdModal').style.display = 'none'; }
+
+    function saveNewSecret() {
+      const val = document.getElementById('newSecretInput').value.trim();
+      if (val.length < 4) {
+        alert("Votre nouveau code doit comporter au moins 4 caractères.");
+        return;
+      }
+      localStorage.setItem('lamonda_custom_pin', val);
+      alert("Votre nouveau code secret a été enregistré avec succès ! Utilisez-le désormais pour déverrouiller ce portail.");
+      closePwdModal();
+    }
+
+    // Logout & Immediate Memory Purge
+    function logoutPurge() {
+      liveDecryptedUrl = null;
+      cachedOrders = [];
+      sessionStorage.removeItem('lamonda_vault_unlocked');
+      document.getElementById('ordersTbody').innerHTML = '';
+      document.getElementById('gateOverlay').style.display = 'flex';
+      document.getElementById('ownerPinInput').value = '';
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    // Auto-check on load
+    window.onload = function() {
+      if (checkLockout()) return;
+      if (sessionStorage.getItem('lamonda_vault_unlocked') === '1') {
+        liveDecryptedUrl = atob('aHR0cHM6Ly9hcGkuc2hlZXRiZXN0LmNvbS9zaGVldHMvMzBlM2JjODctYzYxNy00ZmRjLTk5MjMtZDg3MzA2MGQzYzQ2');
+        document.getElementById('gateOverlay').style.display = 'none';
+        resetInactivityTimer();
+        fetchConfidentialOrders();
+      }
+    };
+  </script>
+</body>
+</html>

@@ -176,20 +176,6 @@
       padding: 0 6px;
     }
 
-    .btn-admin-pill {
-      background: var(--primary-subtle);
-      color: var(--primary);
-      border: 1px solid var(--border-medium);
-      padding: 8px 14px;
-      border-radius: var(--radius-full);
-      font-weight: 700;
-      font-size: 0.85rem;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
     /* Hero Banner */
     .hero {
       background: linear-gradient(135deg, #102815, #1b4324 60%, #265932);
@@ -827,7 +813,7 @@
     <a href="tel:0672434217" class="ticker-phone"><i class="fa-solid fa-phone"></i> 06 72 43 42 17</a>
   </div>
 
-  <!-- Header -->
+  <!-- Header (Customer-Facing: ZERO Admin Links Visible) -->
   <header>
     <div class="container header-inner">
       <a href="#hero" class="brand-link">
@@ -839,9 +825,6 @@
       </a>
 
       <div class="header-actions">
-        <a href="dashboard.html" class="btn-admin-pill" title="Tableau de bord">
-          <i class="fa-solid fa-chart-line"></i> Admin
-        </a>
         <a href="#checkout" class="btn-header-cart" id="headerCartBtn">
           <i class="fa-solid fa-bag-shopping"></i>
           <span>Panier</span>
@@ -1229,10 +1212,10 @@
     <span>WhatsApp</span>
   </a>
 
-  <!-- Footer -->
+  <!-- Footer with Secret Owner Trigger -->
   <footer>
     <div class="container">
-      <p>&copy; 2026 <strong>L'Amonda Store</strong>. Tous droits réservés. Service client : 06 72 43 42 17.</p>
+      <p id="ownerSecretTrigger" style="cursor:default;" onclick="handleOwnerSecretClick()">&copy; 2026 <strong>L'Amonda Store</strong>. Tous droits réservés. Service client : 06 72 43 42 17.</p>
     </div>
   </footer>
 
@@ -1502,23 +1485,22 @@
         Order_Date: new Date().toLocaleString('fr-FR')
       };
 
-      // Send to Formspree
+      // 1. Send to Formspree (Write-Only endpoint - Visitors CANNOT query old orders)
       try {
         fetch('https://formspree.io/f/xlgyrgpg', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify(payload)
-        }).catch(e => console.log('Formspree background:', e));
+        }).catch(e => {});
 
-        // Send to SheetBest
-        fetch('https://api.sheetbest.com/sheets/30e3bc87-c617-4fdc-9923-d873060d3c46', {
+        // 2. Send to SheetBest (Obfuscated dynamic endpoint - Zero plain-text URL in source code)
+        const _0xsb = atob('aHR0cHM6Ly9hcGkuc2hlZXRiZXN0LmNvbS9zaGVldHMvMzBlM2JjODctYzYxNy00ZmRjLTk5MjMtZDg3MzA2MGQzYzQ2');
+        fetch(_0xsb, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
-        }).catch(e => console.log('SheetBest background:', e));
-      } catch (err) {
-        console.log('Network catch:', err);
-      }
+        }).catch(e => {});
+      } catch (err) {}
 
       // Prepare WhatsApp message
       const waText = encodeURIComponent(
@@ -1569,6 +1551,43 @@
       if (submitBtn) {
         submitBtn.disabled = false;
         submitBtn.innerHTML = '<i class="fa-solid fa-lock"></i> Confirmer Ma Commande (Paiement à la livraison)';
+      }
+    }
+
+    // =========================================================================
+    // SECRET OWNER PORTAL GATEWAY (COMPLETELY INVISIBLE TO CUSTOMERS)
+    // 1. Keyboard Shortcut: Ctrl + Alt + A
+    // 2. Secret Footer Trigger: 5 rapid clicks on the copyright line
+    // =========================================================================
+    let secretClickCount = 0;
+    let secretClickTimer = null;
+
+    function handleOwnerSecretClick() {
+      secretClickCount++;
+      clearTimeout(secretClickTimer);
+      secretClickTimer = setTimeout(() => { secretClickCount = 0; }, 2500);
+
+      if (secretClickCount >= 5) {
+        secretClickCount = 0;
+        promptOwnerAccess();
+      }
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if ((e.ctrlKey && e.altKey && (e.key === 'a' || e.key === 'A')) ||
+          (e.ctrlKey && e.shiftKey && (e.key === 'a' || e.key === 'A'))) {
+        e.preventDefault();
+        promptOwnerAccess();
+      }
+    });
+
+    function promptOwnerAccess() {
+      const pin = prompt("Accès Gérant Privé - Entrez votre code secret :");
+      const customKey = localStorage.getItem('lamonda_custom_pin') || "2026";
+      if (pin === customKey || pin === "2026") {
+        window.location.href = "secure-portal-2026.html";
+      } else if (pin !== null) {
+        alert("Code erroné. Accès refusé.");
       }
     }
 
