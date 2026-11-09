@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="leafGradLeft" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7ebc52" />
+      <stop offset="100%" stop-color="#9ddc70" />
+    </linearGradient>
+    <linearGradient id="leafGradRight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8ecf63" />
+      <stop offset="100%" stop-color="#69a540" />
+    </linearGradient>
+    <linearGradient id="leafGradTopRight" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#82c755" />
+      <stop offset="100%" stop-color="#a7e67c" />
+    </linearGradient>
+    <linearGradient id="seedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a2b85d" />
+      <stop offset="100%" stop-color="#8a9e49" />
+    </linearGradient>
+  </defs>
+
+  <!-- Top Right Leaf -->
+  <path d="M 215 130 C 235 70, 275 40, 295 45 C 298 75, 275 115, 235 140 Z" 
+        fill="url(#leafGradTopRight)" opacity="0.95" />
+  <path d="M 220 125 Q 260 85 292 48" stroke="#ffffff" stroke-width="2.5" fill="none" opacity="0.6" stroke-linecap="round" />
+
+  <!-- Left Leaf -->
+  <path d="M 160 135 C 105 130, 80 155, 75 180 C 105 195, 150 175, 175 145 Z" 
+        fill="url(#leafGradLeft)" />
+  <path d="M 80 177 Q 120 165 170 143" stroke="#ffffff" stroke-width="2.5" fill="none" opacity="0.6" stroke-linecap="round" />
+
+  <!-- Bottom Right Leaf -->
+  <path d="M 225 150 C 265 135, 290 160, 298 185 C 268 205, 225 185, 210 158 Z" 
+        fill="url(#leafGradRight)" />
+  <path d="M 294 182 Q 260 170 215 156" stroke="#ffffff" stroke-width="2.5" fill="none" opacity="0.6" stroke-linecap="round" />
+
+  <!-- Central Almond / Seed -->
+  <path d="M 200 65 C 235 115, 245 185, 205 210 C 165 215, 155 155, 190 70 Z" 
+        fill="url(#seedGrad)" stroke="#66462c" stroke-width="4.5" stroke-linejoin="round" />
+  
+  <!-- Seed Inner Texture / Dots -->
+  <ellipse cx="190" cy="110" rx="3.5" ry="6" transform="rotate(-15 190 110)" fill="#583c24" opacity="0.75" />
+  <circle cx="193" cy="125" r="2.5" fill="#583c24" opacity="0.75" />
+
+  <!-- Brand Typography -->
+  <text x="200" y="258" font-family="'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif" font-size="28" font-weight="900" fill="#1b4324" text-anchor="middle" letter-spacing="2">L'AMONDA</text>
+  <text x="200" y="286" font-family="'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif" font-size="20" font-weight="800" fill="#2d5835" text-anchor="middle" letter-spacing="4">STORE</text>
+</svg>

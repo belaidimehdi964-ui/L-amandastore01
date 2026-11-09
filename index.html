@@ -1,650 +1,1581 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L'Amanda Store - Premium Sports Jerseys</title>
-    <link rel="icon" type="image/png" href="Gemini_Generated_Image_khus8pkhus8pkhus.png">
-    <style>
-        :root {
-            --primary-color: #2c5530; /* Emerald from your logo */
-            --secondary-color: #4a7c59;
-            --accent-color: #a8d5ba;
-            --bg-color: #f7fbf7;
-            --text-dark: #222;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L'Amonda Store - Maillots Officiels &amp; Kits Sportifs (2 500 DA)</title>
+  
+  <meta name="description" content="Découvrez nos maillots officiels chez L'Amonda Store : Barcelona Jersey, Madrid Jersey, Mexico Jersey au tarif unique de 2 500 DA. Livraison 58 Wilayas et paiement à la livraison.">
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <style>
+    :root {
+      --primary: #1b4324;
+      --primary-hover: #123319;
+      --primary-subtle: #edf7ee;
+      --secondary: #4a7c59;
+      --accent-leaf: #7cb342;
+      --accent-mint: #a8d5ba;
+      --accent-gold: #d4af37;
+      --bg-page: #f8fbf8;
+      --bg-surface: #ffffff;
+      --text-main: #142317;
+      --text-muted: #536b56;
+      --border-light: #e3ede3;
+      --border-medium: #cbdccb;
+      --success: #2e7d32;
+      --danger: #d32f2f;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 2px 10px rgba(27, 67, 36, 0.05);
+      --shadow-md: 0 8px 24px rgba(27, 67, 36, 0.08);
+      --shadow-lg: 0 16px 40px rgba(27, 67, 36, 0.12);
+    }
 
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color); 
-            color: var(--text-dark);
-            scroll-behavior: smooth;
-        }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-        header {
-            background-color: white; 
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
-        .header-logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+    /* Top Announcement Bar */
+    .top-ticker {
+      background: linear-gradient(90deg, #102815, #1b4324, #2c5530);
+      color: #ffffff;
+      font-size: 0.84rem;
+      font-weight: 600;
+      padding: 9px 16px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
 
-        .site-logo {
-            height: 45px;
-            width: auto;
-            object-fit: contain;
-        }
+    .ticker-badge {
+      background: var(--accent-gold);
+      color: #1a2416;
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
 
-        header h1 {
-            margin: 0;
-            font-size: 1.5em;
-            color: var(--primary-color);
-            letter-spacing: -0.5px;
-        }
+    .ticker-phone {
+      color: var(--accent-mint);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .ticker-phone:hover { text-decoration: underline; }
 
-        .header-cart-btn {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.2s ease;
-        }
+    /* Header */
+    header {
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-light);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-sm);
+    }
 
-        .header-cart-btn:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-1px);
-        }
+    .header-inner {
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
-        .welcome-banner {
-            background: linear-gradient(135deg, #1e3a20, var(--primary-color));
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
-        }
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
 
-        .welcome-banner h2 {
-            margin: 0 0 10px 0;
-            font-size: 2.4em;
-        }
+    .brand-logo-img {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      object-fit: contain;
+    }
 
-        .welcome-banner p {
-            margin: 0;
-            font-size: 1.1em;
-            opacity: 0.9;
-        }
+    .brand-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.1;
+    }
+    .brand-title span { color: var(--accent-leaf); }
+    .brand-sub { font-size: 0.72rem; font-weight: 700; color: var(--text-muted); letter-spacing: 1px; }
 
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
+    .btn-header-cart {
+      background: var(--primary);
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 0.92rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 4px 14px rgba(27, 67, 36, 0.25);
+      transition: all 0.2s;
+    }
+    .btn-header-cart:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+    }
 
-        .product-item {
-            background-color: white;
-            padding: 24px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-            border: 1px solid #e6f0e6;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
+    .cart-count-badge {
+      background: var(--accent-gold);
+      color: #1a2416;
+      min-width: 20px;
+      height: 20px;
+      border-radius: var(--radius-full);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 0 6px;
+    }
 
-        .product-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-        }
+    .btn-admin-pill {
+      background: var(--primary-subtle);
+      color: var(--primary);
+      border: 1px solid var(--border-medium);
+      padding: 8px 14px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
 
-        .product-item img {
-            max-width: 100%;
-            height: 200px;
-            object-fit: contain;
-            border-radius: 6px;
-            margin-bottom: 15px;
-            background-color: #fafafa;
-        }
+    /* Hero Banner */
+    .hero {
+      background: linear-gradient(135deg, #102815, #1b4324 60%, #265932);
+      color: #ffffff;
+      padding: 50px 0 60px;
+      position: relative;
+    }
 
-        .product-item h3 {
-            margin: 10px 0 5px;
-            color: #111;
-            font-size: 1.2em;
-            text-transform: capitalize;
-        }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 40px;
+    }
 
-        .product-item p.price {
-            color: var(--primary-color);
-            font-weight: 700;
-            font-size: 1.3em;
-            margin: 0 0 12px;
-        }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--accent-mint);
+      margin-bottom: 14px;
+    }
 
-        .stock-indicator {
-            font-size: 0.85em;
-            margin-bottom: 15px;
-            font-weight: 600;
-            padding: 4px 10px;
-            border-radius: 20px;
-            display: inline-block;
-        }
-        
-        .stock-in {
-            background-color: #edf7ed;
-            color: #2e7d32;
-        }
-        
-        .stock-out {
-            background-color: #fdeded;
-            color: #d32f2f;
-        }
+    .hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.7rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+    .hero h1 span { color: var(--accent-mint); }
 
-        .btn-container {
-            display: flex;
-            gap: 10px;
-        }
+    .hero p {
+      font-size: 1.05rem;
+      opacity: 0.92;
+      margin-bottom: 24px;
+      max-width: 540px;
+    }
 
-        .btn {
-            flex: 1;
-            padding: 12px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: bold;
-            text-decoration: none;
-            text-align: center;
-            font-size: 0.95em;
-            transition: all 0.2s;
-        }
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
 
-        .btn-buy {
-            background-color: var(--primary-color);
-            color: white;
-        }
+    .btn-hero-cta {
+      background: #ffffff;
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 1rem;
+      padding: 14px 28px;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .btn-hero-cta:hover {
+      background: var(--accent-mint);
+      transform: translateY(-2px);
+    }
 
-        .btn-buy:hover:not(:disabled) {
-            background-color: #1e3a20;
-        }
+    .btn-hero-wa {
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 24px;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-hero-wa:hover { background: rgba(255, 255, 255, 0.25); }
 
-        .btn-basket {
-            background-color: #f0f7f0;
-            color: var(--primary-color);
-            border: 1px solid var(--accent-color);
-        }
+    .hero-preview-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
 
-        .btn-basket:hover:not(:disabled) {
-            background-color: var(--accent-color);
-        }
+    .hero-preview-img {
+      height: 230px;
+      object-fit: contain;
+      margin: 0 auto 14px;
+      display: block;
+    }
 
-        .btn:disabled {
-            background-color: #eaeaea;
-            color: #aaa;
-            cursor: not-allowed;
-            border: none;
-        }
+    /* Products Catalog Section */
+    .catalog-section {
+      padding: 60px 0;
+    }
 
-        /* Side Contact Bar */
-        .side-contact-bar {
-            position: fixed;
-            right: 0;
-            top: 35%;
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
+    .section-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 40px;
+    }
 
-        .contact-tab {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 12px 16px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.9em;
-            border-radius: 8px 0 0 8px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            transform: translateX(calc(100% - 46px));
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: -2px 4px 10px rgba(0,0,0,0.1);
-        }
+    .section-header h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
 
-        .contact-tab:hover {
-            transform: translateX(0);
-            background-color: var(--secondary-color);
-        }
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
 
-        .contact-tab svg {
-            min-width: 18px;
-            fill: white;
-        }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
 
-        /* Checkout Form Section */
-        .checkout-section {
-            background-color: white;
-            padding: 40px;
-            border-radius: 12px;
-            max-width: 600px;
-            margin: 40px auto;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-            border: 1px solid #e6f0e6;
-        }
+    .product-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      transition: all 0.2s;
+    }
 
-        .checkout-section h2 {
-            text-align: center;
-            color: var(--primary-color);
-            margin-top: 0;
-            font-size: 1.8em;
-        }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--border-medium);
+    }
 
-        .basket-summary {
-            background-color: #fafbfa;
-            border: 1px dashed var(--accent-color);
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 25px;
-        }
+    .product-badge-top {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      background: var(--accent-gold);
+      color: #1a2416;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      z-index: 2;
+    }
 
-        .basket-items-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+    .product-img-box {
+      height: 260px;
+      background: #fafdfa;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      padding: 16px;
+      overflow: hidden;
+    }
 
-        .basket-items-list li {
-            display: flex;
-            justify-content: space-between;
-            padding: 8px 0;
-            border-bottom: 1px solid #edf4ed;
-        }
+    .product-img-box img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+      transition: transform 0.3s;
+    }
+    .product-card:hover .product-img-box img {
+      transform: scale(1.06);
+    }
 
-        .total-price-box {
-            text-align: right;
-            font-weight: bold;
-            font-size: 1.2em;
-            color: var(--primary-color);
-            margin-top: 15px;
-        }
+    .product-info h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
 
-        .checkout-form {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-        }
+    .product-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      min-height: 42px;
+    }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 6px;
-            font-weight: 600;
-            color: var(--secondary-color);
-            font-size: 0.95em;
-        }
+    .product-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
 
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 14px;
-            border: 1px solid #c2dec2;
-            border-radius: 6px;
-            font-size: 1em;
-            box-sizing: border-box;
-            background-color: white;
-            transition: border-color 0.2s;
-        }
+    .price-current {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
 
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-        }
+    .price-old {
+      font-size: 0.95rem;
+      color: #999;
+      text-decoration: line-through;
+    }
 
-        .form-group textarea {
-            resize: vertical;
-            height: 100px;
-        }
+    /* Size Selector on Card */
+    .size-select-box {
+      margin-bottom: 18px;
+    }
 
-        .btn-send {
-            background-color: var(--primary-color);
-            color: white;
-            font-size: 1.1em;
-            padding: 14px;
-            width: 100%;
-            border: none;
-            border-radius: 6px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 10px;
-            transition: background 0.2s;
-        }
+    .size-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
 
-        .btn-send:hover {
-            background-color: #1e3a20;
-        }
+    .size-buttons-group {
+      display: flex;
+      gap: 6px;
+    }
 
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            color: #777;
-            font-size: 0.9em;
-            border-top: 1px solid #edf4ed;
-            background-color: white;
-        }
+    .size-btn {
+      flex: 1;
+      padding: 8px 0;
+      border: 1.5px solid var(--border-medium);
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      background: #ffffff;
+      cursor: pointer;
+      transition: all 0.15s;
+      text-align: center;
+    }
 
-        @media (max-width: 768px) {
-            header {
-                padding: 15px 20px;
-                flex-direction: column;
-                gap: 12px;
-            }
-            main {
-                padding: 20px;
-            }
-            .checkout-section {
-                padding: 25px 20px;
-            }
-            .welcome-banner h2 {
-                font-size: 1.8em;
-            }
-        }
-    </style>
+    .size-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .size-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 2px 8px rgba(27, 67, 36, 0.25);
+    }
+
+    .stock-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--success);
+      background: #eaf6ea;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      margin-bottom: 16px;
+    }
+
+    .stock-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    /* Card Action Buttons */
+    .card-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-action-buy {
+      flex: 1;
+      background: var(--primary);
+      color: #ffffff;
+      padding: 12px;
+      border-radius: var(--radius-sm);
+      font-weight: 800;
+      font-size: 0.92rem;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+    .btn-action-buy:hover { background: var(--primary-hover); }
+
+    .btn-action-basket {
+      flex: 1;
+      background: var(--primary-subtle);
+      color: var(--primary);
+      border: 1.5px solid var(--border-medium);
+      padding: 12px;
+      border-radius: var(--radius-sm);
+      font-weight: 800;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-action-basket:hover {
+      background: var(--border-medium);
+    }
+
+    /* Checkout & Basket Section */
+    .checkout-section {
+      padding: 60px 0 80px;
+      background: #f1f6f1;
+    }
+
+    .checkout-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 36px;
+      align-items: flex-start;
+    }
+
+    .checkout-box {
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .checkout-box h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.45rem;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .checkout-sub {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid var(--border-medium);
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+      background: #ffffff;
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--primary);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .delivery-radios {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 6px;
+    }
+
+    .delivery-radio-card {
+      border: 1.5px solid var(--border-medium);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .delivery-radio-card input { margin-right: 6px; }
+
+    .btn-submit-order {
+      background: var(--primary);
+      color: #ffffff;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      padding: 16px;
+      width: 100%;
+      border-radius: var(--radius-sm);
+      border: none;
+      cursor: pointer;
+      margin-top: 14px;
+      box-shadow: 0 8px 24px rgba(27, 67, 36, 0.28);
+      transition: all 0.2s;
+    }
+    .btn-submit-order:hover { background: var(--primary-hover); transform: translateY(-2px); }
+
+    /* Summary Card (Right Column) */
+    .summary-box {
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      box-shadow: var(--shadow-sm);
+      position: sticky;
+      top: 94px;
+    }
+
+    .summary-box h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.3rem;
+      color: var(--primary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .basket-items-list {
+      list-style: none;
+      max-height: 280px;
+      overflow-y: auto;
+      margin-bottom: 20px;
+    }
+
+    .basket-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border-light);
+      gap: 12px;
+    }
+
+    .basket-item-info strong {
+      display: block;
+      font-size: 0.95rem;
+    }
+
+    .basket-item-size {
+      font-size: 0.78rem;
+      background: var(--primary-subtle);
+      color: var(--primary);
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      display: inline-block;
+      margin-top: 2px;
+    }
+
+    .basket-item-qty-controls {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .btn-qty {
+      padding: 2px 8px;
+      border: 1px solid #ccc;
+      background: #f7f7f7;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .basket-item-total {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .btn-item-del {
+      color: var(--danger);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      padding: 4px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .summary-total-row {
+      display: flex;
+      justify-content: space-between;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--primary);
+      padding-top: 14px;
+      border-top: 2px solid var(--border-light);
+      margin-top: 10px;
+    }
+
+    .empty-cart-msg {
+      text-align: center;
+      padding: 30px 10px;
+      color: #888;
+      font-style: italic;
+    }
+
+    /* Toast Notification */
+    .toast-msg {
+      position: fixed;
+      top: 90px;
+      right: 24px;
+      background: #ffffff;
+      color: var(--primary);
+      border-left: 4px solid var(--primary);
+      box-shadow: var(--shadow-lg);
+      padding: 14px 20px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      z-index: 9999;
+      display: none;
+      animation: slideIn 0.3s;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(16, 40, 21, 0.7);
+      backdrop-filter: blur(4px);
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      max-width: 500px;
+      width: 100%;
+      padding: 36px 30px;
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-wa-modal {
+      background: #25d366;
+      color: #ffffff;
+      text-decoration: none;
+      display: block;
+      padding: 14px;
+      border-radius: var(--radius-sm);
+      font-weight: 800;
+      font-size: 1rem;
+      margin-top: 18px;
+    }
+
+    /* Floating WhatsApp Pill */
+    .floating-wa-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #25d366;
+      color: #ffffff;
+      padding: 12px 20px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+      z-index: 999;
+    }
+
+    footer {
+      background: #102815;
+      color: #ffffff;
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: auto;
+    }
+
+    @media (max-width: 768px) {
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .hero-preview-card { display: none; }
+      .checkout-grid { grid-template-columns: 1fr; }
+      .delivery-radios { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-    <div class="side-contact-bar">
-        <a href="tel:0672434217" class="contact-tab">
-            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-            <span>Call Us Now</span>
+  <!-- Top Announcement Bar -->
+  <div class="top-ticker">
+    <span class="ticker-badge"><i class="fa-solid fa-truck-fast"></i> 58 WILAYAS</span>
+    <span>Tarif Unique : <strong>Tous nos maillots sont à 2 500 DA</strong> | Paiement à la livraison</span>
+    <a href="tel:0672434217" class="ticker-phone"><i class="fa-solid fa-phone"></i> 06 72 43 42 17</a>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <a href="#hero" class="brand-link">
+        <img src="logo.svg" alt="L'Amonda Logo" class="brand-logo-img">
+        <div>
+          <div class="brand-title">L'AMONDA <span>STORE</span></div>
+          <div class="brand-sub">BOUTIQUE OFFICIELLE</div>
+        </div>
+      </a>
+
+      <div class="header-actions">
+        <a href="dashboard.html" class="btn-admin-pill" title="Tableau de bord">
+          <i class="fa-solid fa-chart-line"></i> Admin
         </a>
-        <a href="mailto:lamandastore998@gmail.com?subject=l'Amanda%20Store%20Inquiry" class="contact-tab">
-            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-            <span>Email Support</span>
+        <a href="#checkout" class="btn-header-cart" id="headerCartBtn">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span>Panier</span>
+          <span class="cart-count-badge" id="navCartCount">0</span>
         </a>
+      </div>
     </div>
+  </header>
 
-    <header>
-        <div class="header-logo-container">
-            <img src="Gemini_Generated_Image_khus8pkhus8pkhus.png" alt="l'Amanda store Logo" class="site-logo">
-            <h1>L'Amanda Store</h1>
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-badge"><i class="fa-solid fa-tag"></i> Offre Spéciale : 2 500 DA / Maillot</div>
+        <h1>Les Maillots Officiels <span>À 2 500 DA</span></h1>
+        <p>
+          Découvrez nos 3 modèles exclusifs : <strong>Barcelona Jersey</strong> (Édition Kobe Bryant), <strong>Madrid Jersey</strong> (Vert Émeraude Rétro) et <strong>Mexico Jersey</strong>. Choisissez votre taille et commandez en 30 secondes.
+        </p>
+        <div class="hero-buttons">
+          <a href="#catalog" class="btn-hero-cta"><i class="fa-solid fa-shirt"></i> Choisir Mon Maillot</a>
+          <a href="https://wa.me/213672434217?text=Bonjour,%20je%20souhaite%20commander%20un%20maillot%20à%202500%20DA" class="btn-hero-wa" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp Direct
+          </a>
         </div>
-        <a href="#checkout" class="header-cart-btn" id="cartNavBtn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-            <span>Basket (0)</span>
-        </a>
-    </header>
+      </div>
 
-    <div class="welcome-banner">
-        <h2>Welcome to L'Amanda Store</h2>
-        <p>Discover our premium selection of authentic sports jerseys. Reliable delivery options available!</p>
+      <div class="hero-preview-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsmSIL2OwObv6VgbeYuSxze01sYSGgQXNbqcGvTXjbQQ&s=10" 
+             id="heroPreviewImg"
+             alt="Mexico Jersey Preview" 
+             class="hero-preview-img">
+        <h3 style="font-family:'Outfit', sans-serif; font-size:1.3rem;">Mexico Jersey</h3>
+        <div style="font-size:1.6rem; font-weight:800; color:var(--accent-mint); margin:6px 0 12px;">2 500 DA</div>
+        <button type="button" class="btn-hero-cta" style="width:100%; justify-content:center;" onclick="quickBuy('Mexico Jersey', 2500, 'mexico')">
+          Acheter Immédiatement (2 500 DA)
+        </button>
+      </div>
     </div>
+  </section>
 
-    <main>
-        <div class="product-grid">
+  <!-- Catalog Section with 3 Items -->
+  <main class="catalog-section" id="catalog">
+    <div class="container">
+      
+      <div class="section-header">
+        <h2>Nos 3 Maillots Disponibles (2 500 DA)</h2>
+        <p>Sélectionnez votre taille sur le maillot de votre choix puis cliquez sur <strong>Acheter Direct</strong> ou <strong>+ Au Panier</strong>.</p>
+      </div>
+
+      <div class="product-grid">
+
+        <!-- ================= ITEM 1 : BARCELONA JERSEY ================= -->
+        <article class="product-card" id="item-barcelona">
+          <span class="product-badge-top">Édition Spéciale</span>
+          
+          <div class="product-img-box">
+            <img src="../../.gemini/antigravity/brain/48d3c21d-944e-4d8c-ab75-54be72258b8e/.user_uploaded/media_1793912932028_f678e3e9.jpg"
+                 onerror="handleImgFallback(this, 'file:///C:/Users/pc%20dell/.gemini/antigravity/brain/48d3c21d-944e-4d8c-ab75-54be72258b8e/.user_uploaded/media_1793912932028_f678e3e9.jpg', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMLYDWDIWWKcFaQcxCm-KMEbvufYcHh34FSYHFJwZzIg&s=10')"
+                 alt="Barcelona Jersey">
+          </div>
+
+          <div class="product-info">
+            <h3>Barcelona Jersey</h3>
+            <p class="product-desc">Édition Spéciale Kobe Bryant / Black Mamba. Dégradé noir et violet, sponsor Spotify doré et écusson violet officiel.</p>
             
-            <!-- Item 1 -->
-            <div class="product-item" id="item-mexico">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsmSIL2OwObv6VgbeYuSxze01sYSGgQXNbqcGvTXjbQQ&s=10" alt="Mexico Jersey">
-                <h3>Mexico Jersey</h3>
-                <p class="price">3,000 DA</p>
-                <div class="stock-indicator" id="stock-mexico"></div>
-                <div class="btn-container">
-                    <button class="btn btn-buy" onclick="purchaseAction('Mexico Jersey', 3000, true)">Buy</button>
-                    <button class="btn btn-basket" onclick="purchaseAction('Mexico Jersey', 3000, false)">To Basket</button>
-                </div>
+            <div class="product-price-row">
+              <span class="price-current">2 500 DA</span>
+              <span class="price-old">3 500 DA</span>
             </div>
 
-            <!-- Item 2 -->
-            <div class="product-item" id="item-barcelona">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMLYDWDIWWKcFaQcxCm-KMEbvufYcHh34FSYHFJwZzIg&s=10" alt="Barcelona Jersey">
-                <h3>Barcelona Jersey</h3>
-                <p class="price">3,000 DA</p>
-                <div class="stock-indicator" id="stock-barcelona"></div>
-                <div class="btn-container">
-                    <button class="btn btn-buy" onclick="purchaseAction('Barcelona Jersey', 3000, true)">Buy</button>
-                    <button class="btn btn-basket" onclick="purchaseAction('Barcelona Jersey', 3000, false)">To Basket</button>
-                </div>
+            <!-- Size Selector -->
+            <div class="size-select-box">
+              <div class="size-label">
+                <span>Choisissez votre taille :</span>
+                <span style="color:var(--primary); font-weight:800;" id="size-display-barcelona">Taille : L</span>
+              </div>
+              <div class="size-buttons-group">
+                <button type="button" class="size-btn" onclick="selectSize('barcelona', 'S')">S</button>
+                <button type="button" class="size-btn" onclick="selectSize('barcelona', 'M')">M</button>
+                <button type="button" class="size-btn active" onclick="selectSize('barcelona', 'L')">L</button>
+                <button type="button" class="size-btn" onclick="selectSize('barcelona', 'XL')">XL</button>
+                <button type="button" class="size-btn" onclick="selectSize('barcelona', 'XXL')">XXL</button>
+              </div>
             </div>
 
-            <!-- Item 3 -->
-            <div class="product-item" id="item-manchester">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwaHVin5kq-Kp3tNd8Y2C4Jd5cOFsL2zgyIVHEznRXWg&s" alt="Manchester United Jersey">
-                <h3>Manchester United Full Kit</h3>
-                <p class="price">2,500 DA</p>
-                <div class="stock-indicator" id="stock-manchester"></div>
-                <div class="btn-container">
-                    <button class="btn btn-buy" onclick="purchaseAction('Manchester United Full Kit', 2500, true)">Buy</button>
-                    <button class="btn btn-basket" onclick="purchaseAction('Manchester United Full Kit', 2500, false)">To Basket</button>
-                </div>
+            <div class="stock-indicator">
+              <span class="stock-dot"></span> <span id="stock-barcelona">En stock (10 restants)</span>
+            </div>
+          </div>
+
+          <div class="card-actions">
+            <button type="button" class="btn-action-buy" onclick="quickBuy('Barcelona Jersey', 2500, 'barcelona')">
+              <i class="fa-solid fa-bolt"></i> Acheter Direct
+            </button>
+            <button type="button" class="btn-action-basket" onclick="addToBasket('Barcelona Jersey', 2500, 'barcelona')">
+              <i class="fa-solid fa-cart-plus"></i> + Au Panier
+            </button>
+          </div>
+        </article>
+
+        <!-- ================= ITEM 2 : MADRID JERSEY ================= -->
+        <article class="product-card" id="item-madrid">
+          <span class="product-badge-top">Édition Rétro</span>
+          
+          <div class="product-img-box">
+            <img src="../../.gemini/antigravity/brain/48d3c21d-944e-4d8c-ab75-54be72258b8e/.user_uploaded/media_1793912932083_686e1421.webp"
+                 onerror="handleImgFallback(this, 'file:///C:/Users/pc%20dell/.gemini/antigravity/brain/48d3c21d-944e-4d8c-ab75-54be72258b8e/.user_uploaded/media_1793912932083_686e1421.webp', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeLNCqjm1eLpFIL8InT4WHNG9sQl0nGy3n9gz-A-CdLQ&s=10')"
+                 alt="Madrid Jersey">
+          </div>
+
+          <div class="product-info">
+            <h3>Madrid Jersey</h3>
+            <p class="product-desc">Édition Rétro Vert Émeraude. Monogramme royal RMCF en filigrane, logo Adidas Trefoil classique et col blanc élégant.</p>
+            
+            <div class="product-price-row">
+              <span class="price-current">2 500 DA</span>
+              <span class="price-old">3 500 DA</span>
             </div>
 
-            <!-- Item 4 (Note: Replace this image src with a real link) -->
-            <div class="product-item" id="item-madrid">
-                <img src="https://placehold.co/300x200/edf7ed/2c5530?text=Madrid+Jersey" alt="Madrid Jersey">
-                <h3>Madrid Jersey</h3>
-                <p class="price">3,000 DA</p>
-                <div class="stock-indicator" id="stock-madrid"></div>
-                <div class="btn-container">
-                    <button class="btn btn-buy" onclick="purchaseAction('Madrid Jersey', 3000, true)">Buy</button>
-                    <button class="btn btn-basket" onclick="purchaseAction('Madrid Jersey', 3000, false)">To Basket</button>
-                </div> 
+            <!-- Size Selector -->
+            <div class="size-select-box">
+              <div class="size-label">
+                <span>Choisissez votre taille :</span>
+                <span style="color:var(--primary); font-weight:800;" id="size-display-madrid">Taille : L</span>
+              </div>
+              <div class="size-buttons-group">
+                <button type="button" class="size-btn" onclick="selectSize('madrid', 'S')">S</button>
+                <button type="button" class="size-btn" onclick="selectSize('madrid', 'M')">M</button>
+                <button type="button" class="size-btn active" onclick="selectSize('madrid', 'L')">L</button>
+                <button type="button" class="size-btn" onclick="selectSize('madrid', 'XL')">XL</button>
+                <button type="button" class="size-btn" onclick="selectSize('madrid', 'XXL')">XXL</button>
+              </div>
             </div>
 
-            <!-- Item 5 -->
-            <div class="product-item" id="item-blank1">
-                <img src="https://placehold.co/300x200/edf7ed/2c5530?text=Premium+Jersey+1" alt="Premium Jersey 1">
-                <h3>Premium Jersey 1</h3>
-                <p class="price">2,800 DA</p>
-                <div class="stock-indicator" id="stock-blank1"></div>
-                <div class="btn-container">
-                    <button class="btn btn-buy" onclick="purchaseAction('Premium Jersey 1', 2800, true)">Buy</button>
-                    <button class="btn btn-basket" onclick="purchaseAction('Premium Jersey 1', 2800, false)">To Basket</button>
-                </div> 
-            </div>        
-
-            <!-- Item 6 -->
-            <div class="product-item" id="item-blank2">
-                <img src="https://placehold.co/300x200/edf7ed/2c5530?text=Premium+Jersey+2" alt="Premium Jersey 2">
-                <h3>Premium Jersey 2</h3>
-                <p class="price">2,800 DA</p>
-                <div class="stock-indicator" id="stock-blank2"></div>
-                <div class="btn-container">
-                    <button class="btn btn-buy" onclick="purchaseAction('Premium Jersey 2', 2800, true)">Buy</button>
-                    <button class="btn btn-basket" onclick="purchaseAction('Premium Jersey 2', 2800, false)">To Basket</button>
-                </div>
+            <div class="stock-indicator">
+              <span class="stock-dot"></span> <span id="stock-madrid">En stock (10 restants)</span>
             </div>
+          </div>
+
+          <div class="card-actions">
+            <button type="button" class="btn-action-buy" onclick="quickBuy('Madrid Jersey', 2500, 'madrid')">
+              <i class="fa-solid fa-bolt"></i> Acheter Direct
+            </button>
+            <button type="button" class="btn-action-basket" onclick="addToBasket('Madrid Jersey', 2500, 'madrid')">
+              <i class="fa-solid fa-cart-plus"></i> + Au Panier
+            </button>
+          </div>
+        </article>
+
+        <!-- ================= ITEM 3 : MEXICO JERSEY ================= -->
+        <article class="product-card" id="item-mexico">
+          <span class="product-badge-top">Best-Seller</span>
+          
+          <div class="product-img-box">
+            <img src="../../.gemini/antigravity/brain/48d3c21d-944e-4d8c-ab75-54be72258b8e/.user_uploaded/media_1793912932103_121edc50.jpg"
+                 onerror="handleImgFallback(this, 'file:///C:/Users/pc%20dell/.gemini/antigravity/brain/48d3c21d-944e-4d8c-ab75-54be72258b8e/.user_uploaded/media_1793912932103_121edc50.jpg', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsmSIL2OwObv6VgbeYuSxze01sYSGgQXNbqcGvTXjbQQ&s=10')"
+                 alt="Mexico Jersey">
+          </div>
+
+          <div class="product-info">
+            <h3>Mexico Jersey</h3>
+            <p class="product-desc">Maillot officiel Coupe du Monde vert à motifs aztèques traditionnels. Tissu Dry-Fit respirant et écusson thermocollé de haute précision.</p>
+            
+            <div class="product-price-row">
+              <span class="price-current">2 500 DA</span>
+              <span class="price-old">3 500 DA</span>
+            </div>
+
+            <!-- Size Selector -->
+            <div class="size-select-box">
+              <div class="size-label">
+                <span>Choisissez votre taille :</span>
+                <span style="color:var(--primary); font-weight:800;" id="size-display-mexico">Taille : L</span>
+              </div>
+              <div class="size-buttons-group">
+                <button type="button" class="size-btn" onclick="selectSize('mexico', 'S')">S</button>
+                <button type="button" class="size-btn" onclick="selectSize('mexico', 'M')">M</button>
+                <button type="button" class="size-btn active" onclick="selectSize('mexico', 'L')">L</button>
+                <button type="button" class="size-btn" onclick="selectSize('mexico', 'XL')">XL</button>
+                <button type="button" class="size-btn" onclick="selectSize('mexico', 'XXL')">XXL</button>
+              </div>
+            </div>
+
+            <div class="stock-indicator">
+              <span class="stock-dot"></span> <span id="stock-mexico">En stock (10 restants)</span>
+            </div>
+          </div>
+
+          <div class="card-actions">
+            <button type="button" class="btn-action-buy" onclick="quickBuy('Mexico Jersey', 2500, 'mexico')">
+              <i class="fa-solid fa-bolt"></i> Acheter Direct
+            </button>
+            <button type="button" class="btn-action-basket" onclick="addToBasket('Mexico Jersey', 2500, 'mexico')">
+              <i class="fa-solid fa-cart-plus"></i> + Au Panier
+            </button>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Checkout & Basket Section -->
+  <section class="checkout-section" id="checkout">
+    <div class="container">
+      
+      <div class="checkout-grid">
+        
+        <!-- Order Form -->
+        <div class="checkout-box">
+          <h3><i class="fa-solid fa-truck-fast"></i> Formulaire de Commande Sécurisé</h3>
+          <p class="checkout-sub">Remplissez vos coordonnées pour recevoir votre colis. Paiement en espèces à la livraison (Cash on Delivery).</p>
+
+          <form id="orderForm" onsubmit="handleOrderSubmit(event)">
+            <input type="hidden" id="hiddenCartField" name="Items_Ordered" value="">
+
+            <div class="form-group">
+              <label class="form-label" for="clientName">Nom &amp; Prénom *</label>
+              <input type="text" id="clientName" name="Client_Name" class="form-input" placeholder="Ex: Amine Benali" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="clientPhone">Numéro de Téléphone *</label>
+              <input type="tel" id="clientPhone" name="Client_Phone" class="form-input" placeholder="Ex: 06 72 43 42 17" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="clientWilaya">Wilaya de Livraison (58 Wilayas) *</label>
+              <select id="clientWilaya" name="Client_Wilaya" class="form-select" onchange="updateDeliveryFee()" required>
+                <option value="" disabled selected>Sélectionnez votre Wilaya...</option>
+                <option value="01">01 - Adrar</option>
+                <option value="02">02 - Chlef</option>
+                <option value="03">03 - Laghouat</option>
+                <option value="04">04 - Oum El Bouaghi</option>
+                <option value="05">05 - Batna</option>
+                <option value="06">06 - Béjaïa</option>
+                <option value="07">07 - Biskra</option>
+                <option value="08">08 - Béchar</option>
+                <option value="09">09 - Blida</option>
+                <option value="10">10 - Bouira</option>
+                <option value="11">11 - Tamanrasset</option>
+                <option value="12">12 - Tébessa</option>
+                <option value="13">13 - Tlemcen</option>
+                <option value="14">14 - Tiaret</option>
+                <option value="15">15 - Tizi Ouzou</option>
+                <option value="16" selected>16 - Alger</option>
+                <option value="17">17 - Djelfa</option>
+                <option value="18">18 - Jijel</option>
+                <option value="19">19 - Sétif</option>
+                <option value="20">20 - Saïda</option>
+                <option value="21">21 - Skikda</option>
+                <option value="22">22 - Sidi Bel Abbès</option>
+                <option value="23">23 - Annaba</option>
+                <option value="24">24 - Guelma</option>
+                <option value="25">25 - Constantine</option>
+                <option value="26">26 - Médéa</option>
+                <option value="27">27 - Mostaganem</option>
+                <option value="28">28 - M'Sila</option>
+                <option value="29">29 - Mascara</option>
+                <option value="30">30 - Ouargla</option>
+                <option value="31">31 - Oran</option>
+                <option value="32">32 - El Bayadh</option>
+                <option value="33">33 - Illizi</option>
+                <option value="34">34 - Bordj Bou Arréridj</option>
+                <option value="35">35 - Boumerdès</option>
+                <option value="36">36 - El Tarf</option>
+                <option value="37">37 - Tindouf</option>
+                <option value="38">38 - Tissemsilt</option>
+                <option value="39">39 - El Oued</option>
+                <option value="40">40 - Khenchela</option>
+                <option value="41">41 - Souk Ahras</option>
+                <option value="42">42 - Tipaza</option>
+                <option value="43">43 - Mila</option>
+                <option value="44">44 - Aïn Defla</option>
+                <option value="45">45 - Naâma</option>
+                <option value="46">46 - Aïn Témouchent</option>
+                <option value="47">47 - Ghardaïa</option>
+                <option value="48">48 - Relizane</option>
+                <option value="49">49 - El M'Ghair</option>
+                <option value="50">50 - El Menia</option>
+                <option value="51">51 - Ouled Djellal</option>
+                <option value="52">52 - Bordj Baji Mokhtar</option>
+                <option value="53">53 - Béni Abbès</option>
+                <option value="54">54 - Timimoun</option>
+                <option value="55">55 - Touggourt</option>
+                <option value="56">56 - Djanet</option>
+                <option value="57">57 - In Salah</option>
+                <option value="58">58 - In Guezzam</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Mode d'Expédition :</label>
+              <div class="delivery-radios">
+                <label class="delivery-radio-card">
+                  <input type="radio" name="delivery_type" value="home" checked onchange="updateDeliveryFee()">
+                  <strong>À Domicile</strong>
+                  <div style="font-size:0.75rem; color:#777;">Livré à votre adresse</div>
+                </label>
+                <label class="delivery-radio-card">
+                  <input type="radio" name="delivery_type" value="desk" onchange="updateDeliveryFee()">
+                  <strong>Stop Desk</strong>
+                  <div style="font-size:0.75rem; color:#777;">Bureau Yalidine</div>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="clientAddress">Adresse Complète / Commune *</label>
+              <textarea id="clientAddress" name="Client_Address" class="form-textarea" placeholder="Quartier, rue, numéro de maison..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit-order" id="btnSubmitOrder">
+              <i class="fa-solid fa-lock"></i> Confirmer Ma Commande (Paiement à la livraison)
+            </button>
+          </form>
         </div>
 
-        <div id="checkout" class="checkout-section">
-            <h2>Checkout Form</h2>
-            
-            <div class="basket-summary">
-                <h4 style="margin-top: 0; color: var(--primary-color);">Your Selected Items:</h4>
-                <ul class="basket-items-list" id="basketList">
-                    <li style="color: #888;">Your basket is empty.</li>
-                </ul>
-                <div class="total-price-box">Total: <span id="totalPrice">0</span> DA</div>
-            </div>
+        <!-- Basket Summary -->
+        <div class="summary-box">
+          <h3>
+            <span><i class="fa-solid fa-basket-shopping"></i> Votre Panier</span>
+            <button type="button" onclick="clearBasket()" style="font-size:0.8rem; color:#c62828; background:none; border:none; cursor:pointer;">Vider</button>
+          </h3>
 
-            <form id="orderForm" action="https://formspree.io/f/xlgyrgpg" method="POST" class="checkout-form">
-                <input type="hidden" id="hiddenCartData" name="Items_Ordered" value="">
+          <ul class="basket-items-list" id="basketList">
+            <li class="empty-cart-msg">Votre panier est vide. Choisissez un maillot ci-dessus !</li>
+          </ul>
 
-                <div class="form-group">
-                    <label for="clientName">Full Name:</label>
-                    <input type="text" id="clientName" name="Client_Name" required placeholder="Enter your name">
-                </div>
-                
-                <div class="form-group">
-                    <label for="clientPhone">Phone Number:</label>
-                    <input type="tel" id="clientPhone" name="Client_Phone" required placeholder="Enter your phone number">
-                </div>
+          <div class="summary-row">
+            <span>Sous-total articles :</span>
+            <strong id="subtotalDisplay">0 DA</strong>
+          </div>
 
-                <div class="form-group">
-                    <label for="clientSize">Choose Your Size:</label>
-                    <select id="clientSize" name="Client_Size" required>
-                        <option value="" disabled selected>Select a size...</option>
-                        <option value="M">M</option>
-                        <option value="L">L</option>
-                        <option value="XL">XL</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="clientAddress">Shipping Address:</label>
-                    <textarea id="clientAddress" name="Client_Address" required placeholder="Enter your full address details"></textarea>
-                </div>
-                
-                <button type="submit" class="btn-send">Send Order</button>
-            </form>
+          <div class="summary-row">
+            <span>Frais de livraison :</span>
+            <strong id="deliveryDisplay">500 DA</strong>
+          </div>
+
+          <div class="summary-total-row">
+            <span>Total à Payer :</span>
+            <span id="grandTotalDisplay">0 DA</span>
+          </div>
+
+          <a href="https://wa.me/213672434217?text=Bonjour,%20je%20souhaite%20commander%20un%20maillot" class="btn-wa-modal" target="_blank" rel="noopener noreferrer" style="text-align:center;">
+            <i class="fa-brands fa-whatsapp"></i> Commander Directement sur WhatsApp
+          </a>
         </div>
-    </main>
 
-    <footer>
-        &copy; 2026 L'Amanda Store. All rights reserved.
-    </footer>
+      </div>
 
-    <script>
-        const initialInventory = {
-            'Mexico Jersey': 5,
-            'Barcelona Jersey': 2,
-            'Manchester United Full Kit': 0, 
-            'Madrid Jersey': 8,
-            'Premium Jersey 1': 4,
-            'Premium Jersey 2': 1
-        };
+    </div>
+  </section>
 
-        let inventory = JSON.parse(localStorage.getItem('store_inventory'));
-        if (!inventory) {
-            inventory = { ...initialInventory };
-            localStorage.setItem('store_inventory', JSON.stringify(inventory));
-        }
+  <!-- Toast Notification -->
+  <div class="toast-msg" id="toastBox">Article ajouté au panier !</div>
 
-        let cart = [];
+  <!-- Order Confirmation Modal -->
+  <div class="modal-backdrop" id="successModal">
+    <div class="modal-card">
+      <div style="width:64px; height:64px; background:#eaf6ea; color:#2e7d32; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:2rem; margin:0 auto 14px;">
+        <i class="fa-solid fa-check"></i>
+      </div>
+      <h3 style="font-family:'Outfit', sans-serif; font-size:1.6rem; color:var(--primary); margin-bottom:8px;">Commande Validée !</h3>
+      <p style="color:#666; font-size:0.9rem; margin-bottom:14px;">
+        Merci pour votre confiance. Votre commande est enregistrée avec succès. Notre équipe vous appellera avant la livraison.
+      </p>
 
-        function renderStockDisplay() {
-            const stockMap = {
-                'Mexico Jersey': 'stock-mexico',
-                'Barcelona Jersey': 'stock-barcelona',
-                'Manchester United Full Kit': 'stock-manchester',
-                'Madrid Jersey': 'stock-madrid',
-                'Premium Jersey 1': 'stock-blank1',
-                'Premium Jersey 2': 'stock-blank2'
-            };
+      <div id="modalOrderDetails" style="background:#f7faf7; border:1px dashed #ccc; border-radius:8px; padding:14px; text-align:left; font-size:0.88rem; margin-bottom:16px;"></div>
 
-            for (let name in inventory) {
-                let currentStock = inventory[name];
-                let elementId = stockMap[name];
-                let container = document.getElementById(elementId);
-                
-                if (container) {
-                    let parentItem = container.closest('.product-item');
-                    let actionButtons = parentItem.querySelectorAll('.btn');
+      <a id="modalWaBtn" href="#" class="btn-wa-modal" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-whatsapp"></i> Confirmer sur WhatsApp en 1 Clic
+      </a>
 
-                    if (currentStock <= 0) {
-                        container.innerHTML = `<span class="stock-out">Sold Out</span>`;
-                        actionButtons.forEach(btn => btn.disabled = true);
-                    } else {
-                        container.innerHTML = `<span class="stock-in">Only ${currentStock} left</span>`;
-                        actionButtons.forEach(btn => btn.disabled = false);
-                    }
-                }
-            }
-        }
+      <button type="button" onclick="closeModal()" style="margin-top:10px; background:none; border:none; color:#777; cursor:pointer; font-size:0.85rem; padding:8px;">
+        Fermer cette fenêtre
+      </button>
+    </div>
+  </div>
 
-        function purchaseAction(itemName, itemPrice, autoScroll) {
-            let totalInCart = cart.filter(item => item.name === itemName).length;
+  <!-- Floating WhatsApp Action -->
+  <a href="https://wa.me/213672434217?text=Bonjour%20L'Amonda%20Store" class="floating-wa-btn" target="_blank" rel="noopener noreferrer">
+    <i class="fa-brands fa-whatsapp" style="font-size:1.3rem;"></i>
+    <span>WhatsApp</span>
+  </a>
 
-            if (inventory[itemName] - totalInCart <= 0) {
-                alert("Sorry, there are no more quantities available of this item!");
-                return;
-            }
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 <strong>L'Amonda Store</strong>. Tous droits réservés. Service client : 06 72 43 42 17.</p>
+    </div>
+  </footer>
 
-            addToCart(itemName, itemPrice, autoScroll);
-        }
+  <!-- =========================================================================
+       COMPLETE SELF-CONTAINED JAVASCRIPT ENGINE (ZERO DEPENDENCIES)
+       ========================================================================= -->
+  <script>
+    // Selected sizes for each jersey card
+    const selectedSizes = {
+      'barcelona': 'L',
+      'madrid': 'L',
+      'mexico': 'L'
+    };
 
-        function addToCart(itemName, itemPrice, autoScroll) {
-            cart.push({ name: itemName, price: itemPrice });
-            updateBasketUI();
+    // Inventory counts
+    const inventory = {
+      'Barcelona Jersey': 10,
+      'Madrid Jersey': 10,
+      'Mexico Jersey': 10
+    };
 
-            if(autoScroll) {
-                document.getElementById('checkout').scrollIntoView({ behavior: 'smooth' });
-            }
-        }
+    // Basket array
+    let basket = [];
 
-        function updateBasketUI() {
-            document.getElementById('cartNavBtn').querySelector('span').innerText = `Basket (${cart.length})`;
+    // Helper: Image fallback chain with ultimate SVG guarantee
+    function handleImgFallback(imgElement, fallback1, fallback2) {
+      if (!imgElement.dataset.step) {
+        imgElement.dataset.step = '1';
+        imgElement.src = fallback1;
+      } else if (imgElement.dataset.step === '1') {
+        imgElement.dataset.step = '2';
+        imgElement.src = fallback2;
+      } else {
+        imgElement.onerror = null;
+        imgElement.src = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 240' width='100%' height='100%'><rect width='300' height='240' fill='%23edf7ee' rx='12'/><path d='M90 50 L130 50 C135 65 165 65 170 50 L210 50 L240 85 L215 105 L200 95 L200 200 L100 200 L100 95 L85 105 L60 85 Z' fill='%231b4324'/><text x='150' y='145' font-family='sans-serif' font-size='16' font-weight='bold' fill='%23a8d5ba' text-anchor='middle'>2 500 DA</text><text x='150' y='170' font-family='sans-serif' font-size='12' font-weight='bold' fill='white' text-anchor='middle'>EDITION LIMITEE</text></svg>";
+      }
+    }
 
-            const listContainer = document.getElementById('basketList');
-            const totalContainer = document.getElementById('totalPrice');
-            
-            if (cart.length === 0) {
-                listContainer.innerHTML = `<li style="color: #888;">Your basket is empty.</li>`;
-                totalContainer.innerText = "0";
-                document.getElementById('hiddenCartData').value = "";
-                return;
-            }
+    // Size Selection Handler
+    function selectSize(jerseyKey, size) {
+      selectedSizes[jerseyKey] = size;
+      
+      // Update label
+      const label = document.getElementById('size-display-' + jerseyKey);
+      if (label) label.innerText = 'Taille : ' + size;
 
-            let listHTML = "";
-            let finalTotal = 0;
-            let emailText = "";
-
-            cart.forEach((item, index) => {
-                listHTML += `<li><span>${item.name}</span> <strong>${item.price.toLocaleString()} DA</strong></li>`;
-                finalTotal += item.price;
-                emailText += `[Item ${index + 1}: ${item.name} - ${item.price} DA] `;
-            });
-
-            listContainer.innerHTML = listHTML;
-            totalContainer.innerText = finalTotal.toLocaleString();
-
-            document.getElementById('hiddenCartData').value = `${emailText} | Total Price: ${finalTotal} DA`;
-        }
-
-        document.getElementById('orderForm').addEventListener('submit', function(event) {
-            if(cart.length === 0) {
-                event.preventDefault(); 
-                alert("Your basket is empty! Please add a jersey before submitting.");
-                return;
-            }
-
-            cart.forEach(item => {
-                if(inventory[item.name] > 0) {
-                    inventory[item.name]--;
-                }
-            });
-
-            localStorage.setItem('store_inventory', JSON.stringify(inventory));
-            alert("Thank you for buying! Your order is being sent via Formspree.");
+      // Update button highlights
+      const parentCard = document.getElementById('item-' + jerseyKey);
+      if (parentCard) {
+        const buttons = parentCard.querySelectorAll('.size-btn');
+        buttons.forEach(btn => {
+          if (btn.innerText.trim() === size) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
         });
+      }
+    }
 
-        renderStockDisplay();
-    </script>
+    // Add to Basket
+    function addToBasket(jerseyName, price, jerseyKey) {
+      const size = selectedSizes[jerseyKey] || 'L';
+      
+      // Check if already in basket with same size
+      const existing = basket.find(item => item.name === jerseyName && item.size === size);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        basket.push({
+          name: jerseyName,
+          price: price,
+          size: size,
+          qty: 1
+        });
+      }
+
+      updateBasketUI();
+      showToast('✓ ' + jerseyName + ' (' + size + ') ajouté au panier !');
+    }
+
+    // Quick Buy: Add to basket and scroll to checkout form
+    function quickBuy(jerseyName, price, jerseyKey) {
+      addToBasket(jerseyName, price, jerseyKey);
+      const checkoutEl = document.getElementById('checkout');
+      if (checkoutEl) {
+        checkoutEl.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Change Item Quantity
+    function changeQty(index, delta) {
+      if (index >= 0 && index < basket.length) {
+        basket[index].qty += delta;
+        if (basket[index].qty <= 0) {
+          basket.splice(index, 1);
+        }
+        updateBasketUI();
+      }
+    }
+
+    // Remove Item from Basket
+    function removeItem(index) {
+      if (index >= 0 && index < basket.length) {
+        basket.splice(index, 1);
+        updateBasketUI();
+      }
+    }
+
+    // Clear Basket
+    function clearBasket() {
+      basket = [];
+      updateBasketUI();
+    }
+
+    // Calculate Delivery Fee based on Wilaya and Delivery Type
+    function getDeliveryFee() {
+      if (basket.length === 0) return 0;
+      
+      const wilayaSelect = document.getElementById('clientWilaya');
+      const wilaya = wilayaSelect ? wilayaSelect.value : '16';
+      const isHome = document.querySelector('input[name="delivery_type"]:checked')?.value === 'home';
+
+      // Algiers (16): 500 DA home / 300 DA desk
+      // Nearby (09, 35, 42): 550 DA home / 350 DA desk
+      // Far South (11, 33, 37, 52, 56, 58): 1200 DA home / 800 DA desk
+      // Others standard: 650 DA home / 450 DA desk
+      if (wilaya === '16') {
+        return isHome ? 500 : 300;
+      } else if (['09', '35', '42'].includes(wilaya)) {
+        return isHome ? 550 : 350;
+      } else if (['11', '33', '37', '52', '56', '58'].includes(wilaya)) {
+        return isHome ? 1200 : 800;
+      } else {
+        return isHome ? 650 : 450;
+      }
+    }
+
+    function updateDeliveryFee() {
+      updateBasketUI();
+    }
+
+    // Update Basket UI
+    function updateBasketUI() {
+      const basketList = document.getElementById('basketList');
+      const navCount = document.getElementById('navCartCount');
+      const subtotalEl = document.getElementById('subtotalDisplay');
+      const deliveryEl = document.getElementById('deliveryDisplay');
+      const grandTotalEl = document.getElementById('grandTotalDisplay');
+      const hiddenField = document.getElementById('hiddenCartField');
+
+      // Total item count
+      const totalCount = basket.reduce((sum, item) => sum + item.qty, 0);
+      if (navCount) navCount.innerText = totalCount;
+
+      if (basket.length === 0) {
+        if (basketList) basketList.innerHTML = '<li class="empty-cart-msg">Votre panier est vide. Choisissez un maillot ci-dessus !</li>';
+        if (subtotalEl) subtotalEl.innerText = '0 DA';
+        if (deliveryEl) deliveryEl.innerText = '0 DA';
+        if (grandTotalEl) grandTotalEl.innerText = '0 DA';
+        if (hiddenField) hiddenField.value = '';
+        return;
+      }
+
+      let listHTML = '';
+      let subtotal = 0;
+      let orderSummaryText = '';
+
+      basket.forEach((item, index) => {
+        const itemTotal = item.price * item.qty;
+        subtotal += itemTotal;
+        orderSummaryText += `[${item.name} (${item.size}) x${item.qty} = ${itemTotal} DA] `;
+
+        listHTML += `
+          <li class="basket-item">
+            <div class="basket-item-info">
+              <strong>${item.name}</strong>
+              <span class="basket-item-size">Taille : ${item.size}</span>
+              <div class="basket-item-qty-controls">
+                <button type="button" class="btn-qty" onclick="changeQty(${index}, -1)">-</button>
+                <span style="font-weight:700;">${item.qty}</span>
+                <button type="button" class="btn-qty" onclick="changeQty(${index}, 1)">+</button>
+              </div>
+            </div>
+            <div style="text-align:right;">
+              <span class="basket-item-total">${itemTotal.toLocaleString()} DA</span><br>
+              <button type="button" class="btn-item-del" onclick="removeItem(${index})" title="Supprimer">
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+            </div>
+          </li>
+        `;
+      });
+
+      const deliveryFee = getDeliveryFee();
+      const grandTotal = subtotal + deliveryFee;
+
+      if (basketList) basketList.innerHTML = listHTML;
+      if (subtotalEl) subtotalEl.innerText = subtotal.toLocaleString() + ' DA';
+      if (deliveryEl) deliveryEl.innerText = deliveryFee.toLocaleString() + ' DA';
+      if (grandTotalEl) grandTotalEl.innerText = grandTotal.toLocaleString() + ' DA';
+      if (hiddenField) hiddenField.value = `${orderSummaryText} | Livraison: ${deliveryFee} DA | Total: ${grandTotal} DA`;
+    }
+
+    // Toast Alert
+    function showToast(text) {
+      const toast = document.getElementById('toastBox');
+      if (toast) {
+        toast.innerText = text;
+        toast.style.display = 'block';
+        setTimeout(() => {
+          toast.style.display = 'none';
+        }, 3200);
+      }
+    }
+
+    // Modal Close
+    function closeModal() {
+      const modal = document.getElementById('successModal');
+      if (modal) modal.style.display = 'none';
+    }
+
+    // Order Submission Handler
+    async function handleOrderSubmit(event) {
+      event.preventDefault();
+
+      if (basket.length === 0) {
+        alert("Votre panier est vide ! Veuillez choisir au moins un maillot avant de commander.");
+        return;
+      }
+
+      const form = event.target;
+      const submitBtn = document.getElementById('btnSubmitOrder');
+
+      const name = document.getElementById('clientName').value.trim();
+      const phone = document.getElementById('clientPhone').value.trim();
+      const wilayaSelect = document.getElementById('clientWilaya');
+      const wilayaText = wilayaSelect.options[wilayaSelect.selectedIndex]?.text || '';
+      const address = document.getElementById('clientAddress').value.trim();
+      const deliveryType = document.querySelector('input[name="delivery_type"]:checked')?.value === 'home' ? 'À Domicile' : 'Stop Desk';
+
+      const orderId = 'AMD-' + Math.floor(100000 + Math.random() * 900000);
+      const deliveryFee = getDeliveryFee();
+      const subtotal = basket.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      const grandTotal = subtotal + deliveryFee;
+
+      // Summary string
+      const itemsString = basket.map(it => `${it.name} (Taille ${it.size}) x${it.qty}`).join(' | ');
+
+      // Loading state
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Transmission de la commande...';
+      }
+
+      // Payload for Formspree & SheetBest
+      const payload = {
+        Order_ID: orderId,
+        Client_Name: name,
+        Client_Phone: phone,
+        Client_Wilaya: wilayaText,
+        Client_Address: address,
+        Delivery_Type: deliveryType,
+        Items_Ordered: itemsString,
+        Delivery_Fee: deliveryFee + ' DA',
+        Total_Price: grandTotal + ' DA',
+        Order_Date: new Date().toLocaleString('fr-FR')
+      };
+
+      // Send to Formspree
+      try {
+        fetch('https://formspree.io/f/xlgyrgpg', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
+        }).catch(e => console.log('Formspree background:', e));
+
+        // Send to SheetBest
+        fetch('https://api.sheetbest.com/sheets/30e3bc87-c617-4fdc-9923-d873060d3c46', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).catch(e => console.log('SheetBest background:', e));
+      } catch (err) {
+        console.log('Network catch:', err);
+      }
+
+      // Prepare WhatsApp message
+      const waText = encodeURIComponent(
+        `*NOUVELLE COMMANDE L'AMONDA STORE*\n` +
+        `--------------------------------\n` +
+        `*N° Commande :* ${orderId}\n` +
+        `*Client :* ${name}\n` +
+        `*Téléphone :* ${phone}\n` +
+        `*Wilaya :* ${wilayaText}\n` +
+        `*Adresse :* ${address}\n` +
+        `*Mode Livraison :* ${deliveryType}\n\n` +
+        `*Articles :*\n` +
+        basket.map(it => `• ${it.name} (${it.size}) x${it.qty} = ${(it.price * it.qty).toLocaleString()} DA`).join('\n') +
+        `\n\n*Livraison :* ${deliveryFee} DA\n` +
+        `*TOTAL À PAYER :* *${grandTotal.toLocaleString()} DA*\n` +
+        `--------------------------------\n` +
+        `Merci de confirmer l'expédition.`
+      );
+
+      const waUrl = 'https://wa.me/213672434217?text=' + waText;
+
+      // Update Modal
+      const modal = document.getElementById('successModal');
+      const detailsBox = document.getElementById('modalOrderDetails');
+      const modalWaBtn = document.getElementById('modalWaBtn');
+
+      if (detailsBox) {
+        detailsBox.innerHTML = `
+          <div><strong>Commande :</strong> #${orderId}</div>
+          <div><strong>Client :</strong> ${name} (${phone})</div>
+          <div><strong>Destination :</strong> ${wilayaText} - ${address}</div>
+          <div style="margin:8px 0; border-top:1px solid #ddd; padding-top:6px;">
+            ${basket.map(it => `<div>• ${it.name} (${it.size}) x${it.qty} - ${(it.price * it.qty).toLocaleString()} DA</div>`).join('')}
+          </div>
+          <div style="font-size:1.1rem; font-weight:800; color:var(--primary); border-top:1px solid #ddd; padding-top:6px;">
+            Total à payer : ${grandTotal.toLocaleString()} DA
+          </div>
+        `;
+      }
+
+      if (modalWaBtn) modalWaBtn.href = waUrl;
+      if (modal) modal.style.display = 'flex';
+
+      // Reset form and basket
+      form.reset();
+      clearBasket();
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fa-solid fa-lock"></i> Confirmer Ma Commande (Paiement à la livraison)';
+      }
+    }
+
+    // Initialize on load
+    window.onload = function() {
+      updateBasketUI();
+    };
+  </script>
 </body>
 </html>
